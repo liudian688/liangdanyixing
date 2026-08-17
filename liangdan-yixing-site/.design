@@ -1,0 +1,251 @@
+{
+  "data": [
+    {
+      "id": "page-index",
+      "title": "首页",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1755254400000,
+      "canvasData": {
+        "x": 0,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 1951,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-18b18aab",
+          "measuredAt": 1786796674119
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/index.html",
+        "interactions": [
+          {
+            "id": "top-nav-between-pages",
+            "domId": "main-nav",
+            "targetPageId": "page-timeline",
+            "trigger": "click nav link",
+            "target": "timeline.html",
+            "effect": "跳转到时间线页面"
+          },
+          {
+            "id": "top-nav-between-pages",
+            "domId": "main-nav",
+            "targetPageId": "page-timeline",
+            "trigger": "click nav link",
+            "target": "timeline.html",
+            "effect": "跳转到时间线页面"
+          },
+          {
+            "id": "top-nav-between-pages",
+            "domId": "main-nav",
+            "targetPageId": "page-timeline",
+            "trigger": "click nav link",
+            "target": "timeline.html",
+            "effect": "跳转到时间线页面"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-figures",
+      "title": "人物志",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1755254400000,
+      "canvasData": {
+        "x": 0,
+        "y": 679,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 2621,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-bc270fd0",
+          "measuredAt": 1786796674119
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/figures.html",
+        "interactions": [
+          {
+            "id": "top-nav-between-pages",
+            "domId": "main-nav",
+            "targetPageId": "page-timeline",
+            "trigger": "click nav link",
+            "target": "timeline.html",
+            "effect": "跳转到时间线页面"
+          },
+          {
+            "id": "top-nav-between-pages",
+            "domId": "main-nav",
+            "targetPageId": "page-timeline",
+            "trigger": "click nav link",
+            "target": "timeline.html",
+            "effect": "跳转到时间线页面"
+          },
+          {
+            "id": "figure-card-hover",
+            "domId": "figures-grid",
+            "targetPageId": "page-figures",
+            "trigger": "hover figure card",
+            "target": "figures-grid article",
+            "effect": "卡片微抬升、阴影加深"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-timeline",
+      "title": "时间线",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1755254400000,
+      "canvasData": {
+        "x": 480,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 2034,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-eadb1e1c",
+          "measuredAt": 1786796674119
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/timeline.html",
+        "interactions": [
+          {
+            "id": "top-nav-between-pages",
+            "domId": "main-nav",
+            "targetPageId": "page-figures",
+            "trigger": "click nav link",
+            "target": "figures.html",
+            "effect": "跳转到人物志页面"
+          },
+          {
+            "id": "top-nav-between-pages",
+            "domId": "main-nav",
+            "targetPageId": "page-figures",
+            "trigger": "click nav link",
+            "target": "figures.html",
+            "effect": "跳转到人物志页面"
+          },
+          {
+            "id": "timeline-node-click",
+            "domId": "timeline-path",
+            "targetPageId": "page-timeline",
+            "trigger": "click timeline dot/card",
+            "target": "timeline-modal",
+            "effect": "打开全屏详情浮层，显示事件文字、图片与视频占位"
+          },
+          {
+            "id": "modal-close",
+            "domId": "timeline-modal",
+            "targetPageId": "page-timeline",
+            "trigger": "click close button, backdrop, or Escape",
+            "target": "timeline-modal",
+            "effect": "关闭详情浮层并暂停视频"
+          }
+        ]
+      }
+    },
+    {
+      "id": "image-001",
+      "title": "首页海报",
+      "type": "image",
+      "version": 1,
+      "createdAt": 1755254400000,
+      "canvasData": {
+        "x": 0,
+        "y": 1553,
+        "naturalSize": {
+          "width": 2560,
+          "height": 1440
+        }
+      },
+      "devMetadata": {
+        "imageSrc": "assets/hero_poster.jpg"
+      }
+    },
+    {
+      "id": "image-002",
+      "title": "时间线头图",
+      "type": "image",
+      "version": 1,
+      "createdAt": 1755254400000,
+      "canvasData": {
+        "x": 480,
+        "y": 1553,
+        "naturalSize": {
+          "width": 2560,
+          "height": 1440
+        }
+      },
+      "devMetadata": {
+        "imageSrc": "assets/timeline_hero.jpg"
+      }
+    },
+    {
+      "id": "image-003",
+      "title": "人物志头图",
+      "type": "image",
+      "version": 1,
+      "createdAt": 1755254400000,
+      "canvasData": {
+        "x": 960,
+        "y": 1553,
+        "naturalSize": {
+          "width": 2560,
+          "height": 1440
+        }
+      },
+      "devMetadata": {
+        "imageSrc": "assets/figures_hero.jpg"
+      }
+    },
+    {
+      "id": "image-004",
+      "title": "原子弹试验配图",
+      "type": "image",
+      "version": 1,
+      "createdAt": 1755254400000,
+      "canvasData": {
+        "x": 1440,
+        "y": 1553,
+        "naturalSize": {
+          "width": 2560,
+          "height": 1440
+        }
+      },
+      "devMetadata": {
+        "imageSrc": "assets/event_atomic_bomb.jpg"
+      }
+    },
+    {
+      "id": "image-005",
+      "title": "卫星发射配图",
+      "type": "image",
+      "version": 1,
+      "createdAt": 1755254400000,
+      "canvasData": {
+        "x": 1920,
+        "y": 1553,
+        "naturalSize": {
+          "width": 2560,
+          "height": 1440
+        }
+      },
+      "devMetadata": {
+        "imageSrc": "assets/event_satellite.jpg"
+      }
+    }
+  ],
+  "config": {
+    "autoLayout": true,
+    "deviceType": "desktop",
+    "projectName": "两弹一星精神宣传网"
+  }
+}

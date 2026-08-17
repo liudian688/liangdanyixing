@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时间线</title>
+    <style id="theme-vars">
+:root {
+  /* Brand primary scale — deep red */
+  --ldyx-primary-50: #fef2f2;
+  --ldyx-primary-100: #fee2e2;
+  --ldyx-primary-200: #fecaca;
+  --ldyx-primary-300: #fca5a5;
+  --ldyx-primary-400: #f87171;
+  --ldyx-primary-500: #ef4444;
+  --ldyx-primary-600: #dc2626;
+  --ldyx-primary-700: #b91c1c;
+  --ldyx-primary-800: #991b1b;
+  --ldyx-primary-900: #7f1d1d;
+
+  /* Neutral scale — warm ink/paper */
+  --ldyx-neutral-0: #ffffff;
+  --ldyx-neutral-50: #fafaf9;
+  --ldyx-neutral-100: #f5f5f4;
+  --ldyx-neutral-200: #e7e5e4;
+  --ldyx-neutral-300: #d6d3d1;
+  --ldyx-neutral-400: #a8a29e;
+  --ldyx-neutral-500: #78716c;
+  --ldyx-neutral-600: #57534e;
+  --ldyx-neutral-700: #44403c;
+  --ldyx-neutral-800: #292524;
+  --ldyx-neutral-900: #1c1917;
+
+  /* Navy accent for solemnity */
+  --ldyx-navy-50: #f0f4f8;
+  --ldyx-navy-100: #d9e2ec;
+  --ldyx-navy-700: #334e68;
+  --ldyx-navy-800: #243b53;
+  --ldyx-navy-900: #102a43;
+
+  /* Semantic aliases required by head contract */
+  --ldyx-background: #fafaf9;
+  --ldyx-foreground: #1c1917;
+  --ldyx-card: #ffffff;
+  --ldyx-card-foreground: #1c1917;
+  --ldyx-popover: #ffffff;
+  --ldyx-popover-foreground: #1c1917;
+  --ldyx-primary: #9b1c1c;
+  --ldyx-primary-foreground: #ffffff;
+  --ldyx-muted: #f5f5f4;
+  --ldyx-muted-foreground: #78716c;
+  --ldyx-border: #e7e5e4;
+  --ldyx-input: #e7e5e4;
+  --ldyx-ring: #9b1c1c;
+
+  /* Extended semantic tokens */
+  --ldyx-surface: #ffffff;
+  --ldyx-surface-2: #f5f5f4;
+  --ldyx-ink: #1c1917;
+  --ldyx-ink-2: #57534e;
+  --ldyx-ink-3: #78716c;
+  --ldyx-line: #e7e5e4;
+  --ldyx-brand: #9b1c1c;
+  --ldyx-brand-ink: #ffffff;
+  --ldyx-navy: #102a43;
+  --ldyx-gold: #b45309;
+
+  /* Radius scale */
+  --ldyx-radius-sm: 4px;
+  --ldyx-radius-md: 8px;
+  --ldyx-radius-lg: 16px;
+  --ldyx-radius-xl: 24px;
+  --ldyx-radius-pill: 999px;
+
+  /* Shadow scale */
+  --ldyx-shadow-1: 0 1px 2px rgba(28, 25, 23, 0.05), 0 1px 1px rgba(28, 25, 23, 0.03);
+  --ldyx-shadow-2: 0 8px 24px -8px rgba(28, 25, 23, 0.18);
+  --ldyx-shadow-3: 0 24px 60px -20px rgba(28, 25, 23, 0.30);
+
+  /* Typography */
+  --ldyx-font-sans: 'Inter', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --ldyx-font-serif: 'Noto Serif SC', 'Source Han Serif SC', serif;
+}
+
+html.dark {
+  --ldyx-background: #0f0f10;
+  --ldyx-foreground: #f5f5f4;
+  --ldyx-card: #18181b;
+  --ldyx-card-foreground: #f5f5f4;
+  --ldyx-popover: #18181b;
+  --ldyx-popover-foreground: #f5f5f4;
+  --ldyx-primary: #ef4444;
+  --ldyx-primary-foreground: #ffffff;
+  --ldyx-muted: #27272a;
+  --ldyx-muted-foreground: #a8a29e;
+  --ldyx-border: #27272a;
+  --ldyx-input: #27272a;
+  --ldyx-ring: #ef4444;
+  --ldyx-surface: #18181b;
+  --ldyx-surface-2: #27272a;
+  --ldyx-ink: #f5f5f4;
+  --ldyx-ink-2: #d6d3d1;
+  --ldyx-ink-3: #a8a29e;
+  --ldyx-line: #27272a;
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--ldyx-background);
+    --color-foreground: var(--ldyx-foreground);
+    --color-card: var(--ldyx-card);
+    --color-card-foreground: var(--ldyx-card-foreground);
+    --color-popover: var(--ldyx-popover);
+    --color-popover-foreground: var(--ldyx-popover-foreground);
+    --color-primary: var(--ldyx-primary);
+    --color-primary-foreground: var(--ldyx-primary-foreground);
+    --color-muted: var(--ldyx-muted);
+    --color-muted-foreground: var(--ldyx-muted-foreground);
+    --color-border: var(--ldyx-border);
+    --color-input: var(--ldyx-input);
+    --color-ring: var(--ldyx-ring);
+    --radius-sm: var(--ldyx-radius-sm);
+    --radius-md: var(--ldyx-radius-md);
+    --radius-lg: var(--ldyx-radius-lg);
+    --radius-xl: var(--ldyx-radius-xl);
+  }
+  @layer base {
+    body { background: var(--ldyx-background); color: var(--ldyx-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--ldyx-background); }
+      .text-background { color: var(--ldyx-background); }
+      .border-background { border-color: var(--ldyx-background); }
+      .ring-background { --tw-ring-color: var(--ldyx-background); }
+      .bg-foreground { background-color: var(--ldyx-foreground); }
+      .text-foreground { color: var(--ldyx-foreground); }
+      .border-foreground { border-color: var(--ldyx-foreground); }
+      .ring-foreground { --tw-ring-color: var(--ldyx-foreground); }
+      .bg-card { background-color: var(--ldyx-card); }
+      .text-card { color: var(--ldyx-card); }
+      .border-card { border-color: var(--ldyx-card); }
+      .ring-card { --tw-ring-color: var(--ldyx-card); }
+      .bg-card-foreground { background-color: var(--ldyx-card-foreground); }
+      .text-card-foreground { color: var(--ldyx-card-foreground); }
+      .border-card-foreground { border-color: var(--ldyx-card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--ldyx-card-foreground); }
+      .bg-popover { background-color: var(--ldyx-popover); }
+      .text-popover { color: var(--ldyx-popover); }
+      .border-popover { border-color: var(--ldyx-popover); }
+      .ring-popover { --tw-ring-color: var(--ldyx-popover); }
+      .bg-popover-foreground { background-color: var(--ldyx-popover-foreground); }
+      .text-popover-foreground { color: var(--ldyx-popover-foreground); }
+      .border-popover-foreground { border-color: var(--ldyx-popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--ldyx-popover-foreground); }
+      .bg-primary { background-color: var(--ldyx-primary); }
+      .text-primary { color: var(--ldyx-primary); }
+      .border-primary { border-color: var(--ldyx-primary); }
+      .ring-primary { --tw-ring-color: var(--ldyx-primary); }
+      .bg-primary-foreground { background-color: var(--ldyx-primary-foreground); }
+      .text-primary-foreground { color: var(--ldyx-primary-foreground); }
+      .border-primary-foreground { border-color: var(--ldyx-primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--ldyx-primary-foreground); }
+      .bg-muted { background-color: var(--ldyx-muted); }
+      .text-muted { color: var(--ldyx-muted); }
+      .border-muted { border-color: var(--ldyx-muted); }
+      .ring-muted { --tw-ring-color: var(--ldyx-muted); }
+      .bg-muted-foreground { background-color: var(--ldyx-muted-foreground); }
+      .text-muted-foreground { color: var(--ldyx-muted-foreground); }
+      .border-muted-foreground { border-color: var(--ldyx-muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--ldyx-muted-foreground); }
+      .bg-border { background-color: var(--ldyx-border); }
+      .text-border { color: var(--ldyx-border); }
+      .border-border { border-color: var(--ldyx-border); }
+      .ring-border { --tw-ring-color: var(--ldyx-border); }
+      .bg-input { background-color: var(--ldyx-input); }
+      .text-input { color: var(--ldyx-input); }
+      .border-input { border-color: var(--ldyx-input); }
+      .ring-input { --tw-ring-color: var(--ldyx-input); }
+      .bg-ring { background-color: var(--ldyx-ring); }
+      .text-ring { color: var(--ldyx-ring); }
+      .border-ring { border-color: var(--ldyx-ring); }
+      .ring-ring { --tw-ring-color: var(--ldyx-ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+    <style>
+      .hero-text-reveal > * {
+        opacity: 0;
+        transform: translateY(24px);
+        animation: heroReveal .9s cubic-bezier(.22,.61,.36,1) forwards;
+      }
+      .hero-text-reveal > *:nth-child(1) { animation-delay: .25s; }
+      .hero-text-reveal > *:nth-child(2) { animation-delay: .5s; }
+      .hero-text-reveal > *:nth-child(3) { animation-delay: .75s; }
+      .hero-text-reveal > *:nth-child(4) { animation-delay: 1s; }
+      @keyframes heroReveal {
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .timeline-node-card {
+        transition: transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease, border-color .3s ease;
+      }
+      .timeline-node-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--ldyx-shadow-3);
+        border-color: color-mix(in oklab, var(--ldyx-primary) 40%, var(--ldyx-border));
+      }
+    </style>
+    <main>
+      <header id="main-nav" data-dom-id="main-nav" class="sticky top-0 z-50 w-full h-[76px] bg-background/95 backdrop-blur-md border-b border-border shadow-[0_1px_0_rgba(28,25,23,0.04)]">
+        <div class="mx-auto max-w-7xl px-6 h-full flex items-center justify-between">
+          <a href="index.html" class="flex items-center gap-3 group">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-[var(--ldyx-navy-900)] flex items-center justify-center text-white font-bold text-lg shadow-[var(--ldyx-shadow-1)] group-hover:scale-105 transition-transform" style="font-family:var(--ldyx-font-serif)">核</div>
+            <div>
+              <div class="text-lg font-bold tracking-tight text-foreground leading-tight">两弹一星精神宣传网</div>
+              <div class="text-[11px] text-muted-foreground tracking-wider">合肥工业大学 · 核炬薪传宣讲团</div>
+            </div>
+          </a>
+          <nav class="hidden md:flex items-center gap-1" aria-label="主导航">
+            <a href="index.html" class="relative px-5 py-3 text-[15px] font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors rounded-lg">首页</a>
+            <a href="figures.html" class="relative px-5 py-3 text-[15px] font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors rounded-lg">人物志</a>
+            <a href="timeline.html" class="relative px-5 py-3 text-[15px] font-semibold text-primary bg-primary/5 transition-colors rounded-lg" aria-current="page">
+              时间线
+              <span class="absolute bottom-1 left-5 right-5 h-0.5 bg-primary rounded-full"></span>
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      <section id="timeline-hero" class="relative flex items-center justify-center min-h-[42vh] overflow-hidden">
+        <div class="absolute inset-0">
+          <img src="../assets/timeline_hero.jpg" alt="时间线氛围图" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-b from-black/65 via-[rgba(16,42,67,0.55)] to-black/85"></div>
+        </div>
+        <div class="relative z-10 max-w-5xl px-6 text-center hero-text-reveal">
+          <div class="mb-5">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/25 bg-white/5 backdrop-blur-sm text-xs md:text-sm font-medium tracking-[0.25em] text-white/85">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              铭记奋斗岁月 · 传承伟大精神
+            </span>
+          </div>
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-wide mb-6 drop-shadow-2xl" style="font-family: var(--ldyx-font-serif)">时间线</h1>
+          <div class="my-8 flex items-center justify-center gap-6">
+            <span class="w-16 md:w-24 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></span>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span class="w-16 md:w-24 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></span>
+          </div>
+          <p class="text-lg md:text-2xl text-white/92 font-light tracking-wide mb-3">从战略决策到东方红一号</p>
+          <p class="max-w-2xl mx-auto text-sm md:text-base text-white/65 font-light leading-relaxed">
+            10 个关键历史节点，完整呈现两弹一星工程波澜壮阔的奋斗历程，<br class="hidden md:block">
+            每一个里程碑背后，都是无数科研工作者自力更生、以身许国的热血篇章。
+          </p>
+        </div>
+      </section>
+
+      <section id="timeline-path" data-dom-id="timeline-path" class="relative py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-6 relative">
+          <div class="mb-10 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-2" style="font-family: var(--ldyx-font-serif)">两弹一星奋斗历程</h2>
+            <p class="text-sm md:text-base text-muted-foreground">点击节点查看详细史料与影像</p>
+          </div>
+
+          <div class="pointer-events-none absolute inset-y-0 left-[19px] w-px border-l-2 border-dashed border-primary/30 md:hidden"></div>
+          <div class="pointer-events-none absolute inset-y-0 left-1/2 hidden md:block w-px -translate-x-1/2 border-l-2 border-dashed border-primary/30"></div>
+
+          <div class="space-y-4 md:space-y-5">
+            <article class="timeline-node" data-index="0">
+              <div class="hidden md:grid grid-cols-[1fr_56px_1fr] gap-4 items-center">
+                <div class="flex justify-end">
+                  <div class="timeline-node-card w-full bg-card border border-border rounded-[var(--ldyx-radius-lg)] p-5 shadow-[var(--ldyx-shadow-1)] cursor-pointer" onclick="openTimelineModal(0)">
+                    <time class="inline-block px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">1955-1956</time>
+                    <h3 class="text-base md:text-lg font-bold text-foreground leading-tight mb-2" style="font-family:var(--ldyx-font-serif)">党中央作出研制两弹一星战略决策</h3>
+                    <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2">成立国防部航空工业委员会、国防部第五研究院，搭建导弹研发核心队伍。</p>
+                  </div>
+                </div>
+                <div class="relative flex items-center justify-center py-1">
+                  <button class="timeline-dot relative z-10 w-8 h-8 rounded-full bg-primary border-4 border-background shadow-sm flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" aria-label="查看 1955-1956 详情"><span class="text-[10px] font-bold text-primary-foreground">1</span></button>
+                  <span class="absolute right-1/2 top-1/2 w-5 h-px bg-primary/40 -translate-y-1/2"></span>
+                </div>
+                <div></div>
+              </div>
+              <div class="md:hidden flex gap-4 items-start">
+                <div class="relative flex flex-col items-center w-10 flex-shrink-0 pt-1">
+                  <button class="timeline-dot relative z-10 w-8 h-8 rounded-full bg-primary border-4 border-background shadow-sm flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" aria-label="查看 1955-1956 详情"><span class="text-[10px] font-bold text-primary-foreground">1</span></button>
+                </div>
+                <div class="flex-1 timeline-node-card w-full bg-card border border-border rounded-[var(--ldyx-radius-lg)] p-5 shadow-[var(--ldyx-shadow-1)] cursor-pointer" onclick="openTimelineModal(0)">
+                  <time class="inline-block px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">1955-1956</time>
+                  <h3 class="text-base md:text-lg font-bold text-foreground leading-tight mb-2" style="font-family:var(--ldyx-font-serif)">党中央作出研制两弹一星战略决策</h3>
+                  <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2">成立国防部航空工业委员会、国防部第五研究院，搭建导弹研发核心队伍。</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-node" data-index="1">
+              <div class="hidden md:grid grid-cols-[1fr_56px_1fr] gap-4 items-center">
+                <div></div>
+                <div class="relative flex items-center justify-center py-1">
+                  <button class="timeline-dot relative z-10 w-8 h-8 rounded-full bg-primary border-4 border-background shadow-sm flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" aria-label="查看 1959-06 详情"><span class="text-[10px] font-bold text-primary-foreground">2</span></button>
+                  <span class="absolute left-1/2 top-1/2 w-5 h-px bg-primary/40 -translate-y-1/2"></span>
+                </div>
+                <div class="flex justify-start">
+                  <div class="w-full timeline-node-card w-full bg-card border border-border rounded-[var(--ldyx-radius-lg)] p-5 shadow-[var(--ldyx-shadow-1)] cursor-pointer" onclick="openTimelineModal(1)">
+                    <time class="inline-block px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">1959-06</time>
+                    <h3 class="text-base md:text-lg font-bold text-foreground leading-tight mb-2" style="font-family:var(--ldyx-font-serif)">苏联撕毁协定，工程代号"596"</h3>
+                    <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2">苏联撤走全部援华专家，第一颗原子弹工程代号定为"596"。</p>
+                  </div>
+                </div>
+              </div>
+              <div class="md:hidden flex gap-4 items-start">
+                <div class="relative flex flex-col items-center w-10 flex-shrink-0 pt-1">
+                  <button class="timeline-dot relative z-10 w-8 h-8 rounded-full bg-primary border-4 border-background shadow-sm flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" aria-label="查看 1959-06 详情"><span class="text-[10px] font-bold text-primary-foreground">2</span></button>
+                </div>
+                <div class="flex-1 timeline-node-card w-full bg-card border border-border rounded-[var(--ldyx-radius-lg)] p-5 shadow-[var(--ldyx-shadow-1)] cursor-pointer" onclick="openTimelineModal(1)">
+                  <time class="inline-block px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">1959-06</time>
+                  <h3 class="text-base md:text-lg font-bold text-foreground leading-tight mb-2" style="font-family:var(--ldyx-font-serif)">苏联撕毁协定，工程代号"596"</h3>
+                  <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2">苏联撤走全部援华专家，第一颗原子弹工程代号定为"596"。</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-node" data-index="2">
+              <div class="hidden md:grid grid-cols-[1fr_56px_1fr] gap-4 items-center">
+                <div class="flex justify-end">
+                  <div class="w-full timeline-node-card w-full bg-card border border-border rounded-[var(--ldyx-radius-lg)] p-5 shadow-[var(--ldyx-shadow-1)] cursor-pointer" onclick="openTimelineModal(2)">
+                    <time class="inline-block px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">1960-11-05</time>
+                    <h3 class="text-base md:text-lg font-bold text-foreground leading-tight mb-2" style="font-family:var(--ldyx-font-serif)">东风一号发射成功</h3>
+                    <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2">第一枚仿制近程导弹东风一号在酒泉发射成功，迈出导弹事业关键一步。</p>
+                  </div>
+                </div>
+                <div class="relative flex items-center justify-center py-1">
+                  <button class="timeline-dot relative z-10 w-8 h-8 rounded-full bg-primary border-4 border-background shadow-sm flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" aria-label="查看 1960-11-05 详情"><span class="text-[10px] font-bold text-primary-foreground">3</span></button>
+                  <span class="absolute right-1/2 top-1/2 w-5 h-px bg-primary/40 -translate-y-1/2"></span>
+                </div>
+                <div></div>
+              </div>
+              <div class="md:hidden flex gap-4 items-start">
+                <div class="relative flex flex-col items-center w-10 flex-shrink-0 pt-1">
+                  <button class="timeline-dot relative z-10 w-8 h-8 rounded-full bg-primary border-4 border-background shadow-sm flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" aria-label="查看 1960-11-05 详情"><span class="text-[10px] font-bold text-primary-foreground">3</span></button>
+                </div>
+                <div class="flex-1 timeline-node-card w-full bg-card border border-border rounded-[var(--ldyx-radius-lg)] p-5 shadow-[var(--ldyx-shadow-1)] cursor-pointer" onclick="openTimelineModal(2)">
+                  <time class="inline-block px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">1960-11-05</time>
+                  <h3 class="text-base md:text-lg font-bold text-foreground leading-tight mb-2" style="font-family:var(--ldyx-font-serif)">东风一号发射成功</h3>
+                  <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2">第一枚仿制近程导弹东风一号在酒泉发射成功，迈出导弹事业关键一步。</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-node" data-index="3">
+              <div class="hidden md:grid grid-cols-[1fr_56px_1fr] gap-4 items-center">
+                <div></div>
+                <div class="relative flex items-center justify-center py-1">
+                  <button class="timeline-dot relative z-10 w-8 h-8 rounded-full bg-primary border-4 border-background shadow-sm flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" aria-label="查看 1962-11 详情"><span class="text-[10px] font-bold text-primary-foreground">4</span></button>
+                  <span class="absolute left-1/2 top-1/2 w-5 h-px bg-primary/40 -translate-y-1/2"></span>
+                </div>
+                <div class="flex justify-start">
+                  <div class="w-full timeline-node-card w-full bg-card border border-border rounded-[var(--ldyx-radius-lg)] p-5 shadow-[var(--ldyx-shadow-1)] cursor-pointer" onclick="openTimelineModal(3)">
+                    <time class="inline-block px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">1962-11</time>
+                    <h3 class="text-base md:text-lg font-bold text-foreground leading-tight mb-2" style="font-family:var(--ldyx-font-serif)">中央专门委员会成立</h3>
+                    <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2">周恩来任主任，统筹全国资源协同攻关，构建举国体制。</p>
+                  </div>
+                </div>
+              </div>
+              <div class="md:hidden flex gap-4 items-start">
+                <div class="relative flex flex-col items-center w-10 flex-shrink-0 pt-1">
+                  <button class="timeline-dot relative z-10 w-8 h-8 rounded-full bg-primary border-4 border-background shadow-sm flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" aria-label="查看 1962-11 详情"><span class="text-[10px] font-bold text-primary-foreground">4</span></button>
+                </div>
+                <div class="flex-1 timeline-node-card w-full bg-card border border-border rounded-[var(--ldyx-radius-lg)] p-5 shadow-[var(--ldyx-shadow-1)] cursor-pointer" onclick="openTimelineModal(3)">
+                  <time class="inline-block px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">1962-11</time>
+                  <h3 class="text-base md:text-lg font-bold text-foreground leading-tight mb-2" style="font-family:var(--ldyx-font-serif)">中央专门委员会成立</h3>
+                  <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2">周恩来任主任，统筹全国资源协同攻关，构建举国体制。</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-node" data-index="4">
+              <div class="hidden md:grid grid-cols-[1fr_56px_1fr] gap-4 items-center">
+                <div class="flex justify-end">
+                  <div class="w-full timeline-node-card w-full bg-card border border-border rounded-[var(--ldyx-radius-lg)] p-5 shadow-[var(--ldyx-shadow-1)] cursor-pointer" onclick="openTimelineModal(4)">
+                    <time class="inline-block px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">1964-06-29</time>
+                    <h3 class="text-base md:text-lg font-bold text-foreground leading-tight mb-2" style="font-family:var(--ldyx-font-serif)">东风二号自主中近程导弹发射成功</h3>
+                    <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2">我国第一枚完全自主设计的中近程导弹发射成功，摆脱仿制阶段。</p>
+                  </div>
+                </div>
+                <div class="relative flex items-center justify-center py-1">
+                  <button class="timeline-dot relative z-10 w-8 h-8 rounded-full bg-primary border-4 border-background shadow-sm flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" aria-label="查看 1964-06-29 详情"><span class="text-[10px] font-bold text-primary-foreground">5</span></button>
+                  <span class="absolute right-1/2 top-1/2 w-5 h-px bg-primary/40 -translate-y-1/2"></span>
+                </div>
+                <div></div>
+              </div>
+              <div class="md:hidden flex gap-4 items-start">
+                <div class="relative flex flex-col items-center w-10 flex-shrink-0 pt-1">
+                  <button class="timeline-dot relative z-10 w-8 h-8 rounded-full bg-primary border-4 border-background shadow-sm flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" aria-label="查看 1964-06-29 详情"><span class="text-[10px] font-bold text-primary-foreground">5</span></button>
+                </div>
+                <div class="flex-1 timeline-node-card w-full bg-card border border-border rounded-[var(--ldyx-radius-lg)] p-5 shadow-[var(--ldyx-shadow-1)] cursor-pointer" onclick="openTimelineModal(4)">
+                  <time class="inline-block px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">1964-06-29</time>
+                  <h3 class="text-base md:text-lg font-bold text-foreground leading-tight mb-2" style="font-family:var(--ldyx-font-serif)">东风二号自主中近程导弹发射成功</h3>
+                  <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2">我国第一枚完全自主设计的中近程导弹发射成功，摆脱仿制阶段。</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-node" data-index="5">
+              <div class="hidden md:grid grid-cols-[1fr_56px_1fr] gap-4 items-center">
+                <div></div>
+                <div class="relative flex items-center justify-center py-1">
+                  <button class="timeline-dot relative z-10 w-8 h-8 rounded-full bg-primary border-4 border-background shadow-sm flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" aria-label="查看 1964-10-16 详情"><span class="text-[10px] font-bold text-primary-foreground">6</span></button>
+                  <span class="absolute left-1/2 top-1/2 w-5 h-px bg-primary/40 -translate-y-1/2"></span>
+                </div>
+                <div class="flex justify-start">
+                  <div class="w-full timeline-node-card w-full bg-card border border-border rounded-[var(--ldyx-radius-lg)] p-5 shadow-[var(--ldyx-shadow-1)] cursor-pointer" onclick="openTimelineModal(5)">
+                    <div class="flex items-start gap-3">
+                      <div class="flex-1 min-w-0">
+                        <time class="inline-block px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">1964-10-16</time>
+                        <h3 class="text-base md:text-lg font-bold text-foreground leading-tight mb-2" style="font-family:var(--ldyx-font-serif)">中国第一颗原子弹爆炸成功</h3>
+                        <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2">在新疆罗布泊爆炸成功，中国成为第五个掌握原子弹技术的国家。</p>
+                      </div>
+                      <div class="w-20 h-14 rounded overflow-hidden flex-shrink-0 hidden sm:block">
+                        <img src="../assets/event_atomic_bomb.jpg" alt="原子弹爆炸" class="w-full h-full object-cover">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="md:hidden flex gap-4 items-start">
+                <div class="relative flex flex-col items-center w-10 flex-shrink-0 pt-1">
+                  <button class="timeline-dot relative z-10 w-8 h-8 rounded-full bg-primary border-4 border-background shadow-sm flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" aria-label="查看 1964-10-16 详情"><span class="text-[10px] font-bold text-primary-foreground">6</span></button>
+                </div>
+                <div class="flex-1 timeline-node-card w-full bg-card border border-border rounded-[var(--ldyx-radius-lg)] p-5 shadow-[var(--ldyx-shadow-1)] cursor-pointer" onclick="openTimelineModal(5)">
+                  <div class="flex items-start gap-3">
+                    <div class="flex-1 min-w-0">
+                      <time class="inline-block px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">1964-10-16</time>
+                      <h3 class="text-base md:text-lg font-bold text-foreground leading-tight mb-2" style="font-family:var(--ldyx-font-serif)">中国第一颗原子弹爆炸成功</h3>
+                      <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2">在新疆罗布泊爆炸成功，中国成为第五个掌握原子弹技术的国家。</p>
+                    </div>
+                    <div class="w-16 h-12 rounded overflow-hidden flex-shrink-0 hidden xxs:block">
+                      <img src="../assets/event_atomic_bomb.jpg" alt="原子弹爆炸" class="w-full h-full object-cover">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-node" data-index="6">
+              <div class="hidden md:grid grid-cols-[1fr_56px_1fr] gap-4 items-center">
+                <div class="flex justify-end">
+                  <div class="w-full timeline-node-card w-full bg-card border border-border rounded-[var(--ldyx-radius-lg)] p-5 shadow-[var(--ldyx-shadow-1)] cursor-pointer" onclick="openTimelineModal(6)">
+                    <time class="inline-block px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">1966-10-27</time>
+                    <h3 class="text-base md:text-lg font-bold text-foreground leading-tight mb-2" style="font-family:var(--ldyx-font-serif)">两弹结合试验圆满成功</h3>
+                    <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2">我国拥有可远程投放的核打击手段，核武器完成实战化部署。</p>
+                  </div>
+                </div>
+                <div class="relative flex items-center justify-center py-1">
+                  <button class="timeline-dot relative z-10 w-8 h-8 rounded-full bg-primary border-4 border-background shadow-sm flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" aria-label="查看 1966-10-27 详情"><span class="text-[10px] font-bold text-primary-foreground">7</span></button>
+                  <span class="absolute right-1/2 top-1/2 w-5 h-px bg-primary/40 -translate-y-1/2"></span>
+                </div>
+                <div></div>
+              </div>
+              <div class="md:hidden flex gap-4 items-start">
+                <div class="relative flex flex-col items-center w-10 flex-shrink-0 pt-1">
+                  <button class="timeline-dot relative z-10 w-8 h-8 rounded-full bg-primary border-4 border-background shadow-sm flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" aria-label="查看 1966-10-27 详情"><span class="text-[10px] font-bold text-primary-foreground">7</span></button>
+                </div>
+                <div class="flex-1 timeline-node-card w-full bg-card border border-border rounded-[var(--ldyx-radius-lg)] p-5 shadow-[var(--ldyx-shadow-1)] cursor-pointer" onclick="openTimelineModal(6)">
+                  <time class="inline-block px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">1966-10-27</time>
+                  <h3 class="text-base md:text-lg font-bold text-foreground leading-tight mb-2" style="font-family:var(--ldyx-font-serif)">两弹结合试验圆满成功</h3>
+                  <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2">我国拥有可远程投放的核打击手段，核武器完成实战化部署。</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-node" data-index="7">
+              <div class="hidden md:grid grid-cols-[1fr_56px_1fr] gap-4 items-center">
+                <div></div>
+                <div class="relative flex items-center justify-center py-1">
+                  <button class="timeline-dot relative z-10 w-8 h-8 rounded-full bg-primary border-4 border-background shadow-sm flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" aria-label="查看 1967-06-17 详情"><span class="text-[10px] font-bold text-primary-foreground">8</span></button>
+                  <span class="absolute left-1/2 top-1/2 w-5 h-px bg-primary/40 -translate-y-1/2"></span>
+                </div>
+                <div class="flex justify-start">
+                  <div class="w-full timeline-node-card w-full bg-card border border-border rounded-[var(--ldyx-radius-lg)] p-5 shadow-[var(--ldyx-shadow-1)] cursor-pointer" onclick="openTimelineModal(7)">
+                    <time class="inline-block px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">1967-06-17</time>
+                    <h3 class="text-base md:text-lg font-bold text-foreground leading-tight mb-2" style="font-family:var(--ldyx-font-serif)">第一颗氢弹空爆试验成功</h3>
+                    <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2">我国成为第四个掌握氢弹技术的国家，从原子弹到氢弹仅用两年八个月。</p>
+                  </div>
+                </div>
+              </div>
+              <div class="md:hidden flex gap-4 items-start">
+                <div class="relative flex flex-col items-center w-10 flex-shrink-0 pt-1">
+                  <button class="timeline-dot relative z-10 w-8 h-8 rounded-full bg-primary border-4 border-background shadow-sm flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" aria-label="查看 1967-06-17 详情"><span class="text-[10px] font-bold text-primary-foreground">8</span></button>
+                </div>
+                <div class="flex-1 timeline-node-card w-full bg-card border border-border rounded-[var(--ldyx-radius-lg)] p-5 shadow-[var(--ldyx-shadow-1)] cursor-pointer" onclick="openTimelineModal(7)">
+                  <time class="inline-block px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">1967-06-17</time>
+                  <h3 class="text-base md:text-lg font-bold text-foreground leading-tight mb-2" style="font-family:var(--ldyx-font-serif)">第一颗氢弹空爆试验成功</h3>
+                  <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2">我国成为第四个掌握氢弹技术的国家，从原子弹到氢弹仅用两年八个月。</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-node" data-index="8">
+              <div class="hidden md:grid grid-cols-[1fr_56px_1fr] gap-4 items-center">
+                <div class="flex justify-end">
+                  <div class="w-full timeline-node-card w-full bg-card border border-border rounded-[var(--ldyx-radius-lg)] p-5 shadow-[var(--ldyx-shadow-1)] cursor-pointer" onclick="openTimelineModal(8)">
+                    <div class="flex items-start gap-3">
+                      <div class="flex-1 min-w-0">
+                        <time class="inline-block px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">1970-04-24</time>
+                        <h3 class="text-base md:text-lg font-bold text-foreground leading-tight mb-2" style="font-family:var(--ldyx-font-serif)">东方红一号人造卫星发射成功</h3>
+                        <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2">中国成为第五个独立研制并发射卫星的国家，4月24日成为中国航天日。</p>
+                      </div>
+                      <div class="w-20 h-14 rounded overflow-hidden flex-shrink-0 hidden sm:block">
+                        <img src="../assets/event_satellite.jpg" alt="东方红一号" class="w-full h-full object-cover">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="relative flex items-center justify-center py-1">
+                  <button class="timeline-dot relative z-10 w-8 h-8 rounded-full bg-primary border-4 border-background shadow-sm flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" aria-label="查看 1970-04-24 详情"><span class="text-[10px] font-bold text-primary-foreground">9</span></button>
+                  <span class="absolute right-1/2 top-1/2 w-5 h-px bg-primary/40 -translate-y-1/2"></span>
+                </div>
+                <div></div>
+              </div>
+              <div class="md:hidden flex gap-4 items-start">
+                <div class="relative flex flex-col items-center w-10 flex-shrink-0 pt-1">
+                  <button class="timeline-dot relative z-10 w-8 h-8 rounded-full bg-primary border-4 border-background shadow-sm flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" aria-label="查看 1970-04-24 详情"><span class="text-[10px] font-bold text-primary-foreground">9</span></button>
+                </div>
+                <div class="flex-1 timeline-node-card w-full bg-card border border-border rounded-[var(--ldyx-radius-lg)] p-5 shadow-[var(--ldyx-shadow-1)] cursor-pointer" onclick="openTimelineModal(8)">
+                  <div class="flex items-start gap-3">
+                    <div class="flex-1 min-w-0">
+                      <time class="inline-block px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">1970-04-24</time>
+                      <h3 class="text-base md:text-lg font-bold text-foreground leading-tight mb-2" style="font-family:var(--ldyx-font-serif)">东方红一号人造卫星发射成功</h3>
+                      <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2">中国成为第五个独立研制并发射卫星的国家，4月24日成为中国航天日。</p>
+                    </div>
+                    <div class="w-16 h-12 rounded overflow-hidden flex-shrink-0 hidden xxs:block">
+                      <img src="../assets/event_satellite.jpg" alt="东方红一号" class="w-full h-full object-cover">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-node" data-index="9">
+              <div class="hidden md:grid grid-cols-[1fr_56px_1fr] gap-4 items-center">
+                <div></div>
+                <div class="relative flex items-center justify-center py-1">
+                  <button class="timeline-dot relative z-10 w-8 h-8 rounded-full bg-primary border-4 border-background shadow-sm flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" aria-label="查看 1999-09-18 详情"><span class="text-[10px] font-bold text-primary-foreground">10</span></button>
+                  <span class="absolute left-1/2 top-1/2 w-5 h-px bg-primary/40 -translate-y-1/2"></span>
+                </div>
+                <div class="flex justify-start">
+                  <div class="w-full timeline-node-card w-full bg-card border border-border rounded-[var(--ldyx-radius-lg)] p-5 shadow-[var(--ldyx-shadow-1)] cursor-pointer" onclick="openTimelineModal(9)">
+                    <time class="inline-block px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">1999-09-18</time>
+                    <h3 class="text-base md:text-lg font-bold text-foreground leading-tight mb-2" style="font-family:var(--ldyx-font-serif)">23 位科学家获"两弹一星功勋奖章"</h3>
+                    <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2">国家召开表彰大会，正式概括提出两弹一星精神。</p>
+                  </div>
+                </div>
+              </div>
+              <div class="md:hidden flex gap-4 items-start">
+                <div class="relative flex flex-col items-center w-10 flex-shrink-0 pt-1">
+                  <button class="timeline-dot relative z-10 w-8 h-8 rounded-full bg-primary border-4 border-background shadow-sm flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" aria-label="查看 1999-09-18 详情"><span class="text-[10px] font-bold text-primary-foreground">10</span></button>
+                </div>
+                <div class="flex-1 timeline-node-card w-full bg-card border border-border rounded-[var(--ldyx-radius-lg)] p-5 shadow-[var(--ldyx-shadow-1)] cursor-pointer" onclick="openTimelineModal(9)">
+                  <time class="inline-block px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">1999-09-18</time>
+                  <h3 class="text-base md:text-lg font-bold text-foreground leading-tight mb-2" style="font-family:var(--ldyx-font-serif)">23 位科学家获"两弹一星功勋奖章"</h3>
+                  <p class="text-sm text-muted-foreground leading-relaxed line-clamp-2">国家召开表彰大会，正式概括提出两弹一星精神。</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div id="timeline-modal" data-dom-id="timeline-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-[rgba(28,25,23,0.78)] backdrop-blur-md p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content relative w-full max-w-5xl max-h-[92vh] overflow-y-auto bg-card rounded-[20px] shadow-[var(--ldyx-shadow-3)]">
+          <!-- 顶部横幅 -->
+          <div class="relative h-44 md:h-52 overflow-hidden rounded-t-[20px]">
+            <div id="modal-banner" class="absolute inset-0"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-800/85 via-primary/70 to-[var(--ldyx-navy-900)]/85"></div>
+            <button class="modal-close absolute top-5 right-5 z-20 w-11 h-11 rounded-full bg-white/15 hover:bg-white/25 backdrop-blur-sm flex items-center justify-center text-white transition-all hover:scale-105" aria-label="关闭详情" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="relative z-10 h-full flex flex-col justify-end px-8 md:px-12 pb-7">
+              <span id="modal-date" class="inline-block px-3 py-1 rounded-full bg-white/20 text-white text-sm font-semibold mb-3 backdrop-blur-sm w-fit"></span>
+              <h2 id="modal-title" class="text-2xl md:text-4xl font-black text-white tracking-wide" style="font-family: var(--ldyx-font-serif);"></h2>
+            </div>
+          </div>
+
+          <!-- 内容区 -->
+          <div class="p-8 md:p-12">
+            <!-- 影像/图片占位 -->
+            <div id="modal-media" class="aspect-video w-full rounded-[var(--ldyx-radius-lg)] overflow-hidden bg-muted mb-8 border border-border">
+              <img id="modal-image" src="" alt="" class="w-full h-full object-cover">
+            </div>
+
+            <!-- 历史背景 -->
+            <div id="modal-bg-section" class="mb-8">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-1 h-8 rounded-full bg-gradient-to-b from-primary to-[var(--ldyx-navy-900)]"></div>
+                <h3 class="text-xl md:text-2xl font-bold text-foreground" style="font-family:var(--ldyx-font-serif)">历史背景</h3>
+              </div>
+              <div id="modal-background" class="space-y-3 text-[15.5px] md:text-[16px] leading-[2.05] text-foreground/90 indent-8 text-justify"></div>
+            </div>
+
+            <!-- 事件经过 -->
+            <div id="modal-event-section" class="mb-8">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-1 h-8 rounded-full bg-gradient-to-b from-primary to-[var(--ldyx-navy-900)]"></div>
+                <h3 class="text-xl md:text-2xl font-bold text-foreground" style="font-family:var(--ldyx-font-serif)">事件经过</h3>
+              </div>
+              <div id="modal-events" class="space-y-3 text-[15.5px] md:text-[16px] leading-[2.05] text-foreground/90 indent-8 text-justify"></div>
+            </div>
+
+            <!-- 历史意义 -->
+            <div id="modal-sig-section" class="mb-2">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-1 h-8 rounded-full bg-gradient-to-b from-[var(--ldyx-gold)] to-primary"></div>
+                <h3 class="text-xl md:text-2xl font-bold text-foreground" style="font-family:var(--ldyx-font-serif)">历史意义</h3>
+              </div>
+              <div id="modal-significance" class="space-y-3 text-[15.5px] md:text-[16px] leading-[2.05] text-foreground/90 indent-8 text-justify bg-gradient-to-r from-primary/5 via-transparent to-transparent p-5 md:p-6 rounded-[var(--ldyx-radius-md)] border-l-4 border-primary"></div>
+            </div>
+
+            <!-- 底部装饰 -->
+            <div class="mt-10 pt-7 border-t border-border flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="flex items-center gap-3 text-sm text-muted-foreground">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>史料来源：两弹一星事件线总结 · 原文呈现，未作删改</span>
+              </div>
+              <a href="figures.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-semibold text-sm shadow-[var(--ldyx-shadow-1)] hover:shadow-[var(--ldyx-shadow-2)] hover:-translate-y-0.5 transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                了解功勋人物
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="w-full py-12 bg-background border-t border-border">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-[var(--ldyx-navy-900)] flex items-center justify-center text-white font-bold text-lg" style="font-family:var(--ldyx-font-serif)">核</div>
+              <div>
+                <div class="text-base font-bold tracking-tight text-foreground leading-tight">两弹一星精神宣传网</div>
+                <div class="text-[11px] text-muted-foreground tracking-wider">合肥工业大学 · 核炬薪传宣讲团</div>
+              </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
+              <a href="index.html" class="hover:text-primary transition-colors">首页</a>
+              <a href="figures.html" class="hover:text-primary transition-colors">人物志</a>
+              <a href="timeline.html" class="hover:text-primary transition-colors">时间线</a>
+            </div>
+            <p class="text-sm text-muted-foreground">铭记光辉历史 · 赓续红色血脉</p>
+          </div>
+        </div>
+      </footer>
+
+      <script>
+        // === 10 个关键时间节点完整史料（材料原文，未作任何删改）===
+        const timelineData = [
+          {
+            date: '1955-1956',
+            title: '党中央作出研制两弹一星战略决策',
+            image: '../assets/timeline_event_01.jpeg',
+            background: [
+              '20 世纪 50 年代，新中国外部环境严峻，部分有核大国多次对我国实施核讹诈、武力威胁，国家安全面临巨大压力。没有国防尖端力量，就难以真正守护国家主权与和平发展。党中央意识到，只有掌握核与导弹技术，才能打破核垄断，不受他国欺辱。'
+            ],
+            events: [
+              '1955 年 1 月 15 日，毛泽东主持召开中央书记处扩大会议，正式拍板启动我国原子能、原子弹研制工作，开启核事业建设，会议提出"我们要不受人家欺负，就不能没有这个东西"。1955 年 10 月，钱学森冲破重重阻碍回到祖国，为导弹、火箭事业带来关键人才力量。1956 年，国家出台《1956-1967 科学技术发展远景规划》，把原子能列为头号重点任务，同步部署原子弹、导弹两大尖端项目。同年成立国防部航空工业委员会，之后组建国防部第五研究院，作为我国第一个导弹专业研究机构，搭建起导弹研发的核心队伍，原子弹、导弹的科研体系初步建立。大批海外爱国科学家陆续归国，投身国防科研，在物资匮乏、工业基础薄弱的条件下，开启自力更生的攻关之路。',
+              '注：人造卫星的正式立项号召在 1958 年提出，1955-1956 主要完成原子弹、导弹的战略决策，构成两弹一星工程的起点。'
+            ],
+            significance: [
+              '这是新中国国防科技史上具有里程碑意义的战略抉择。在国力薄弱、工业落后的基础上，国家正式吹响向尖端国防科技进军的号角，搭建科研机构、聚拢科研人才，为后续原子弹、导弹、人造卫星的全部研制工作奠定决策基础、组织基础与人才基础，拉开了"两弹一星"伟大事业的序幕。'
+            ]
+          },
+          {
+            date: '1959-06',
+            title: '苏联撕毁协定，撤走全部援华专家',
+            image: '../assets/timeline_event_02.jpeg',
+            background: [
+              '新中国初期，我国核工业、导弹项目曾得到苏联方面的技术援助，两国签订过国防技术合作协定。但随着中苏关系逐步变化，苏联改变对华技术援助政策，不再愿意向我国提供核武器相关技术支持。'
+            ],
+            events: [
+              '1959 年 6 月，苏联单方面撕毁中苏关于国防新技术的协定，拒绝向中国提供原子弹的样品和技术资料。1960 年，苏联政府下令撤走全部在华核工业、导弹领域的援华专家。专家撤离时带走大部分图纸、技术资料，很多在建项目被迫中途停工，不少科研工作直接中断，给刚刚起步的两弹研制带来巨大打击。',
+              '为铭记这一艰难时刻，我国将第一颗原子弹工程的内部代号定为596 工程，寓意"1959 年 6 月"，以此激励科研人员争气图强。没有外来技术依靠，科研工作者只能依靠国内力量，用算盘、手摇计算机开展海量演算，从零开始摸索原子弹、导弹的全套理论与工艺，走上完全自力更生的攻关道路。'
+            ],
+            significance: [
+              '外援的突然中断，让我国国防科研遭遇重大挫折，但也彻底打破对外国技术的幻想。倒逼中国必须独立自主攻克尖端技术，锤炼出一批本土科研骨干，为后续完全自主研制原子弹、导弹磨砺了队伍与意志。'
+            ]
+          },
+          {
+            date: '1960-11-05',
+            title: '第一枚仿制近程导弹（东风一号）发射成功',
+            image: '../assets/timeline_event_03.jpeg',
+            background: [
+              '苏联专家撤走之后，我国导弹事业面临技术资料缺失的困境。科研人员依托仅有的导弹实物，消化吸收现有技术，开展仿制工作。东风一号导弹仿制任务，是我国导弹领域第一次完整的工程实践，为后续自主研发积累现实经验。'
+            ],
+            events: [
+              '1960 年 11 月 5 日，在酒泉导弹试验基地，东风一号近程地地导弹点火发射。导弹按预定弹道飞行，全程工作正常，准确落向预定目标区，试验取得圆满成功。',
+              '东风一号属于仿制型导弹，科研人员吃透导弹的结构、发动机、控制系统、发射流程，完整走完导弹组装、测试、发射、测控全流程。虽然并非完全自主设计，但让中国科研队伍实实在在掌握导弹工程的整套实操经验，锻炼了试验基地、发射、测控配套队伍。'
+            ],
+            significance: [
+              '东风一号发射成功，标志我国导弹事业迈出关键性的第一步。证明我国已经具备导弹仿制、试验发射的工程能力，培养出第一批导弹工程技术人才，为之后自主研制东风二号等国产导弹打下坚实的工程实践基础。'
+            ]
+          },
+          {
+            date: '1962-11',
+            title: '中央成立两弹一星专门委员会',
+            image: '../assets/timeline_event_04.jpeg',
+            background: [
+              '苏联专家撤走后，原子弹、导弹研制任务繁重，涉及科研、工业、冶金、化工等大量部门。当时项目分散在各个机构，资源调配、跨部门协作难度巨大。面对物资紧缺、技术难关多的困境，党中央需要一个高级别的统筹机构，集中全国力量推进尖端武器攻关，落实力争 1964 年实现原子弹爆炸的目标。毛泽东作出批示："很好，照办。要大力协同做好这件工作"。'
+            ],
+            events: [
+              '1962 年 11 月 17 日，中央专门委员会正式组建，由周恩来总理担任主任，成员包含 7 位副总理与 7 位各部委主要负责人，统一领导原子能、导弹以及后续卫星研制工作。',
+              '专委会拥有调动全国资源的权限，统筹 26 个部委、20 多个省市，组织 900 多家工厂、科研院所、高校协同参与攻关会战。周恩来亲自主持专委会会议，研究解决科研生产、物资保障、试验建设等上百个重大难题，落实"全国一盘棋"的大协同模式，协调人才、材料、设备向两弹研制一线倾斜，打通各个环节的堵点，极大加快各项工程推进速度。'
+            ],
+            significance: [
+              '中央专委会是两弹一星工程最高指挥协调机构，构建起举国体制的攻关模式，结束了多部门分散推进的局面。依靠强大的统筹能力，把分散的科研力量、工业产能凝聚在一起，为 1964 年原子弹爆炸、后续导弹、氢弹、人造卫星的成功提供了关键组织保障，也充分体现了两弹一星精神中"大力协同"的内核。'
+            ]
+          },
+          {
+            date: '1964-06-29',
+            title: '东风二号自主中近程导弹发射成功',
+            image: '../assets/timeline_event_05.jpeg',
+            background: [
+              '东风一号属于仿制导弹，我国想要拥有真正属于自己的导弹武器，必须走上自主设计的道路。1962 年东风二号首次试飞失败，导弹升空不久就坠毁，给科研团队带来沉重打击。科研人员没有气馁，全面复盘故障，排查发动机、弹体结构、控制系统等全部设计缺陷，吸取失败教训，重新开展设计试验。'
+            ],
+            events: [
+              '科研队伍总结首飞失败的教训，反复开展地面试验，修正设计漏洞，改进导弹结构与动力系统。1964 年 6 月 29 日，改进后的东风二号导弹在酒泉试验基地点火升空。导弹飞行姿态稳定，沿着预定弹道飞行，精准命中目标区域，试验获得圆满成功。',
+              '东风二号是我国第一枚完全自主设计的中近程地地导弹，不再照搬外国图纸，从总体方案到零部件设计全部由我国科研人员独立完成。这次成功，验证了我国导弹自主设计的整套技术路线，也为之后导弹搭载核弹头的"两弹结合"试验打下坚实的导弹硬件基础。'
+            ],
+            significance: [
+              '东风二号发射成功，标志中国摆脱仿制阶段，真正掌握弹道导弹自主设计、制造与试验的核心技术。证明我国已经具备研制实战化导弹的能力，为后续核弹头与导弹结合，实现核武器武器化铺平了道路。'
+            ]
+          },
+          {
+            date: '1964-10-16',
+            title: '中国第一颗原子弹爆炸成功',
+            image: '../assets/timeline_event_06.jpeg',
+            background: [
+              '20 世纪五六十年代，大国核军备竞赛愈演愈烈，少数核大国多次对新中国实施核讹诈，动辄以核武器进行武力恐吓。如果没有核威慑力量，我国的国家安全就始终悬着一把利剑。',
+              '苏联专家全部撤走之后，外部技术援助彻底断绝，国内工业底子薄弱，精密设备稀缺，科研条件极其艰苦。一大批科研工作者告别城市，隐姓埋名奔赴西北戈壁。没有先进计算机，科研人员就依靠算盘、手摇计算机完成海量繁复的核物理演算；物资供给匮乏，戈壁风沙肆虐，科研人员吃住都在荒漠戈壁，埋头攻关。代号596的原子弹工程，承载着整个国家"为国争气"的期盼，无数科研人员不计名利，日夜攻坚，逐一攻克铀矿开采、核材料提纯、引爆装置设计等一道道世界级技术难关。'
+            ],
+            events: [
+              '新疆罗布泊，这片荒无人烟的戈壁滩成为我国核试验的主战场。试验前期，科研、试验保障人员日夜奋战，完成铁塔架设、装置安装、反复调试检测，每一个环节都反复校验，不敢有丝毫差错。',
+              '1964 年 10 月 16 日下午 15 时，随着起爆指令下达，巨大的耀眼火球瞬间照亮戈壁大地，剧烈的冲击波席卷四周，一朵巨大的蘑菇云缓缓升腾，直冲云霄。我国第一颗原子弹爆炸试验大获成功。',
+              '这颗代号 596 的原子弹，从理论设计、材料加工到装配测试，全部实现独立自主。爆炸消息传回北京，举国上下一片沸腾。爆炸试验结束后，中国政府第一时间向全世界庄严宣告：中国发展核武器，完全出于防御目的；在任何时候、任何情况下，中国都不会首先使用核武器。'
+            ],
+            significance: [
+              '随着一声戈壁巨响，中国正式成为世界上第五个掌握原子弹技术的国家。这一声爆炸击碎了超级大国的核垄断，彻底打破外来的核讹诈，让全世界重新看待新中国。国家的国防安全得到坚实保障，我国的国际话语权、国际地位得到极大提升。同时这次成功积累大量核试验宝贵经验，为后续氢弹研制、两弹结合武器化试验打下扎实的技术与工程基础，也生动诠释了自力更生、艰苦奋斗的两弹一星精神。'
+            ]
+          },
+          {
+            date: '1966-10-27',
+            title: '两弹结合试验（导弹运载核弹头）圆满成功',
+            image: '../assets/timeline_event_07.jpeg',
+            background: [
+              '1964 年原子弹爆炸成功，只是完成了核装置地面爆炸试验。放在铁塔上引爆的原子弹，无法作为实战武器投入使用。想要形成真正的核威慑，就必须实现导弹运载核弹头，也就是把核弹安装在导弹之上，由导弹投送到目标上空完成爆炸，这就是"两弹结合"。',
+              '这项试验风险极高，导弹一旦发生故障，携带的核弹头就有可能坠落在本土境内，造成难以估量的灾难。试验没有国外经验可以参考，全部需要我国科研人员自主摸索。中央专门委员会周密研判，把发射阵地定在酒泉，靶区选在罗布泊无人区，做足多重安全预案，保障试验安全开展。'
+            ],
+            events: [
+              '1966 年 10 月 27 日凌晨，酒泉发射基地，东风二号甲导弹装配真实核弹头，完成层层检测。发射前，基地人员严密核查导弹、核弹头每一处部件，反复确认各项安全保险装置。',
+              '上午 9 时，导弹点火升空，拖着尾焰飞向罗布泊预定靶区。地面测控站点全程跟踪导弹飞行轨迹，导弹按照预定弹道跨越大片国土。飞行十几分钟后，核弹头在罗布泊靶区上空预定高度成功起爆，爆炸产生巨大的火球与蘑菇云，各项监测数据全部达标，两弹结合试验取得圆满成功。',
+              '试验获得成功，代表我国真正拥有了可以远程投放的核打击手段，不再仅有地面爆炸的核装置。消息传出，全国人民为之振奋。'
+            ],
+            significance: [
+              '两弹结合试验的胜利，标志我国核武器真正完成武器化，具备实战核威慑能力。从此，中国拥有导弹与核弹结合的国防重器，极大震慑外部敌对势力，稳固我国国家安全。这次试验也验证导弹、核弹匹配的全套工程技术，为后续战略导弹发展积累关键经验，是两弹一星工程进程中至关重要的一步。'
+            ]
+          },
+          {
+            date: '1967-06-17',
+            title: '第一颗氢弹空爆试验成功',
+            image: '../assets/timeline_event_08.jpeg',
+            background: [
+              '1964年我国第一颗原子弹爆炸成功后，仅实现了核裂变武器的突破，而氢弹作为核聚变武器，威力远超原子弹，是衡量一个国家顶级核国防实力的核心标志。当时世界核大国均对氢弹技术严格封锁，无任何公开资料、技术图纸和专家指导，西方国家笃定中国至少需要十年以上才能攻克氢弹技术。',
+              '在国力薄弱、设备简陋、外部全面封锁的极端困境下，党中央果断启动氢弹专项攻关。以于敏为核心的科研团队挺身而出，原本深耕基础物理的于敏放弃国外深造机会、隐姓埋名，带领团队开启零基础攻坚。当时国内没有超级计算机，科研人员依靠手摇计算机、算盘，日夜推演海量核物理数据，开展著名的"百日攻坚"，在无数次演算、试验、纠错中，独自摸索氢弹核心原理。',
+              '更难得的是，团队跳出国外固有技术框架，自主研发出独特的于敏构型，这是完全属于中国的氢弹核心构型，相比国外主流构型，设计更巧妙、体积更小、安全性与实用性更强，一举打破国外技术垄断，为我国氢弹小型化、武器化奠定了核心基础。1966年12月28日，我国先完成氢弹原理试验，验证了技术可行性，为正式空爆试验筑牢了根基。'
+            ],
+            events: [
+              '1967年6月17日，新疆罗布泊核试验场迎来关键一刻。为保障试验圆满成功，全体参试人员提前数月备战，反复调试设备、推演试验流程、排查安全隐患，飞行员机组更是提前写下遗书，以誓死报国的决心奔赴试验任务。',
+              '当日上午8时20分，空军飞行员徐克江机组驾驶轰六甲战机，搭载我国首颗氢弹抵达罗布泊预定空域。接到投弹指令后，氢弹平稳脱离机身、借助降落伞平稳降落，在指定高度精准起爆。瞬间，戈壁上空亮起刺眼的白光，巨大的火球腾空而起，随后升腾起磅礴壮观的巨型蘑菇云，冲击波席卷整片无人试验区，现场监测设备全程正常工作，各项试验数据全部达标。',
+              '本次空爆试验当量高达330万吨TNT，爆炸威力远超此前的原子弹试验，试验取得圆满成功。从1964年10月原子弹爆炸成功，到1967年6月氢弹空爆定型，我国仅用时两年八个月，远超美国7年、苏联6年、英国4年、法国8年的研发周期，创造了世界核武器发展史上的奇迹。'
+            ],
+            significance: [
+              '此次氢弹空爆试验成功，标志着中国正式成为世界上第四个掌握氢弹技术的国家，实现了从核裂变到核聚变的跨越式突破，我国核威慑能力实现质的飞跃。彻底打破了超级大国的核霸权与技术封锁，彻底终结了国外对中国尖端国防科技的轻视，极大提升了国家国防底气与国际话语权。',
+              '同时，自主研发的于敏构型氢弹技术，让我国氢弹从诞生之初就具备实战化、小型化潜力，为后续核导弹、战略核力量的升级迭代提供了核心技术支撑。无数科研工作者隐姓埋名、自力更生、协同攻坚的奋斗历程，完美诠释了两弹一星精神，为新中国长久的和平发展、国家安全稳定筑起了坚不可摧的战略屏障。'
+            ]
+          },
+          {
+            date: '1970-04-24',
+            title: '东方红一号人造卫星发射成功',
+            image: '../assets/timeline_event_09.webp',
+            background: [
+              '在原子弹、导弹、氢弹相继取得突破之后，"两弹一星"工程的最后一环，就是人造地球卫星。上世纪五六十年代，世界航天快速发展，美苏已经发射多颗人造卫星。1958 年，我国提出人造卫星的研制构想，受限于当时工业与技术条件，项目几经调整。',
+              '有了导弹火箭的技术积累，我国开始研制长征一号运载火箭，用来发射人造卫星。科研人员要同时攻克卫星本体设计、火箭运载、地面测控、信号发射等多重技术难题。没有成熟经验参考，元器件工艺条件有限，科研工作者反复试验，不断解决卫星供电、温控、信号广播等一系列难题。这颗卫星被命名为东方红一号，目标是飞上太空，向全世界播放《东方红》乐曲。'
+            ],
+            events: [
+              '1970 年 4 月 24 日，酒泉卫星发射中心，长征一号运载火箭矗立发射塔架。科研人员完成一轮轮检测调试，做好全部发射准备。',
+              '21 时 35 分，火箭点火升空，烈焰喷涌，托举卫星冲破大气层。经过多级火箭依次分离，21 时 48 分，东方红一号卫星被成功送入预定近地轨道。',
+              '卫星入轨后，循环播放《东方红》的无线电信号。全国各地的地面接收站，还有全世界无数无线电爱好者，都接收到来自中国太空的乐曲。夜空中，人们可以肉眼观测到这颗卫星划过天际。消息传回国内，举国欢腾。',
+              '中国成为继苏联、美国、法国、日本之后，世界上第五个能够独立研制并发射人造地球卫星的国家。至此，原子弹、导弹、人造卫星，"两弹一星"全部核心目标全部实现。'
+            ],
+            significance: [
+              '东方红一号发射成功，标志我国正式跨入航天时代，实现从国防尖端武器到航天技术的伟大跨越。它向世界宣告，中国完全有能力独立自主进军太空领域，极大振奋民族自信心，进一步提升我国的国际地位。',
+              '这次成功，为后续我国运载火箭、人造卫星系列、深空探测事业播下种子，奠定中国航天事业的根基。后来，4 月 24 日被设立为中国航天日，以此纪念东方红一号这一历史性时刻。自力更生、勇于登攀的两弹一星精神，也在航天事业中得到延续。'
+            ]
+          },
+          {
+            date: '1999-09-18',
+            title: '23 位科学家获"两弹一星功勋奖章"',
+            image: '../assets/timeline_event_10.jpeg',
+            background: [
+              '两弹一星各项重大试验完成之后，出于国防保密要求，大批科研工作者长期隐姓埋名，很多人的事迹不为大众所知。历经数十年岁月流转，许多元勋已经离世。新中国迎来成立 50 周年，国家决定公开表彰这批为国奉献的科研脊梁，回望那段艰苦卓绝的攻关岁月，提炼并传承宝贵的精神财富，激励全社会尤其是科技工作者继续奋进，迎接新世纪的到来。'
+            ],
+            events: [
+              '1999 年 9 月 18 日，中共中央、国务院、中央军委在北京人民大会堂隆重召开表彰大会，专门表彰为研制"两弹一星"作出突出贡献的科技专家。',
+              '大会决定授予23 位科学家"两弹一星功勋奖章"。其中 16 位科学家亲临现场接受奖章与证书；邓稼先、郭永怀、钱三强等 7 位已经逝世的科学家，被予以追授功勋奖章。这枚功勋奖章为纯金铸造，奖章图案包含五星、长城、橄榄枝，象征祖国、国防力量与和平的初心。',
+              '在大会讲话中，正式完整概括提出两弹一星精神：热爱祖国、无私奉献，自力更生、艰苦奋斗，大力协同、勇于登攀。',
+              '这 23 位元勋，只是无数建设者的代表。两弹一星的伟大成就，同样离不开成千上万无名的科研人员、工人、解放军指战员，他们扎根戈壁荒原，不计名利，默默付出，共同铸就大国重器。这次大会，让曾经隐入幕后的英雄群体走到公众面前，全国人民得以了解那段波澜壮阔的国防科研历史。'
+            ],
+            significance: [
+              '这次表彰大会，是对两弹一星全体科研建设者最高规格的致敬与肯定。它不仅铭记 23 位功勋元勋的卓越功绩，更是回望整个两弹一星波澜壮阔的奋斗历程。',
+              '"两弹一星精神"正式被总结确立，成为中华民族宝贵的精神财富。它告诉后人，在条件艰苦、外部封锁的环境下，依靠爱国情怀与自主创新，中国人完全可以攀登世界科技高峰。直至今天，这种精神依旧激励我国科研事业、国防事业不断向前发展，成为爱国主义教育的重要精神资源。'
+            ]
+          }
+        ];
+
+        const modal = document.getElementById('timeline-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDate = document.getElementById('modal-date');
+        const modalBanner = document.getElementById('modal-banner');
+        const modalImage = document.getElementById('modal-image');
+        const modalBackground = document.getElementById('modal-background');
+        const modalEvents = document.getElementById('modal-events');
+        const modalSignificance = document.getElementById('modal-significance');
+
+        function renderParagraphs(container, paragraphs) {
+          container.innerHTML = paragraphs.map(p => `<p>${p}</p>`).join('');
+        }
+
+        function openTimelineModal(index) {
+          const data = timelineData[index];
+          if (!data) return;
+
+          modalTitle.textContent = data.title;
+          modalDate.textContent = data.date;
+
+          // 设置横幅背景图
+          modalBanner.style.backgroundImage = `url(${data.image})`;
+          modalBanner.style.backgroundSize = 'cover';
+          modalBanner.style.backgroundPosition = 'center';
+
+          // 设置主图
+          modalImage.setAttribute('src', data.image);
+          modalImage.setAttribute('alt', data.title);
+
+          // 渲染三段内容
+          renderParagraphs(modalBackground, data.background);
+          renderParagraphs(modalEvents, data.events);
+          renderParagraphs(modalSignificance, data.significance);
+
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+          setTimeout(() => modal.querySelector('.modal-content').scrollTop = 0, 50);
+        }
+
+        function closeTimelineModal() {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('.timeline-node').forEach((node) => {
+          const index = parseInt(node.getAttribute('data-index'), 10);
+          const dot = node.querySelector('.timeline-dot');
+          if (dot) {
+            dot.addEventListener('click', () => openTimelineModal(index));
+          }
+        });
+
+        modal.addEventListener('click', (event) => {
+          if (event.target === modal || event.target.closest('.modal-close')) {
+            closeTimelineModal();
+          }
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+            closeTimelineModal();
+          }
+        });
+      </script>
+    </main>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

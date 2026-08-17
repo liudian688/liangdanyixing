@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>两弹一星精神宣传网 · 启动中</title>
+<meta http-equiv="refresh" content="0; url=./pages/index.html">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(1200px 600px at 50% 10%, #1e3a5f 0%, #0b1d33 60%, #0a0f1d 100%);
+    color: #fff; font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  }
+  .box {
+    text-align: center; padding: 40px 60px; border-radius: 20px;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+  }
+  .logo {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 64px; height: 64px; border-radius: 14px; font-size: 28px; font-weight: bold;
+    background: linear-gradient(135deg, #9b1c1c, #102a43); margin-bottom: 20px;
+  }
+  h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; letter-spacing: 2px; }
+  .sub { color: rgba(255,255,255,0.65); font-size: 14px; margin-bottom: 24px; letter-spacing: 1px; }
+  a { color: #fca5a5; text-decoration: none; font-size: 14px; }
+  a:hover { text-decoration: underline; }
+  .spinner {
+    display: inline-block; width: 16px; height: 16px;
+    border: 2px solid rgba(255,255,255,0.15); border-top-color: #9b1c1c; border-radius: 50%;
+    animation: spin 0.9s linear infinite; margin-right: 8px; vertical-align: middle;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+  <div class="box">
+    <div class="logo">核</div>
+    <h1>两弹一星精神宣传网</h1>
+    <div class="sub">合肥工业大学 · 核炬薪传宣讲团</div>
+    <div><span class="spinner"></span>正在跳转至首页…</div>
+    <div style="margin-top:22px;">
+      如果浏览器没有自动跳转，请点击
+      <a href="./pages/index.html">这里手动打开</a>。
+    </div>
+  </div>
+</body>
+</html>

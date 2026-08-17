@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人物志 | 两弹一星精神宣传网</title>
+    <style id="theme-vars">
+:root {
+  --ldyx-primary-50: #fef2f2;
+  --ldyx-primary-100: #fee2e2;
+  --ldyx-primary-200: #fecaca;
+  --ldyx-primary-300: #fca5a5;
+  --ldyx-primary-400: #f87171;
+  --ldyx-primary-500: #ef4444;
+  --ldyx-primary-600: #dc2626;
+  --ldyx-primary-700: #b91c1c;
+  --ldyx-primary-800: #991b1b;
+  --ldyx-primary-900: #7f1d1d;
+  --ldyx-neutral-0: #ffffff;
+  --ldyx-neutral-50: #fafaf9;
+  --ldyx-neutral-100: #f5f5f4;
+  --ldyx-neutral-200: #e7e5e4;
+  --ldyx-neutral-300: #d6d3d1;
+  --ldyx-neutral-400: #a8a29e;
+  --ldyx-neutral-500: #78716c;
+  --ldyx-neutral-600: #57534e;
+  --ldyx-neutral-700: #44403c;
+  --ldyx-neutral-800: #292524;
+  --ldyx-neutral-900: #1c1917;
+  --ldyx-navy-50: #f0f4f8;
+  --ldyx-navy-100: #d9e2ec;
+  --ldyx-navy-700: #334e68;
+  --ldyx-navy-800: #243b53;
+  --ldyx-navy-900: #102a43;
+  --ldyx-background: #fafaf9;
+  --ldyx-foreground: #1c1917;
+  --ldyx-card: #ffffff;
+  --ldyx-card-foreground: #1c1917;
+  --ldyx-popover: #ffffff;
+  --ldyx-popover-foreground: #1c1917;
+  --ldyx-primary: #9b1c1c;
+  --ldyx-primary-foreground: #ffffff;
+  --ldyx-muted: #f5f5f4;
+  --ldyx-muted-foreground: #78716c;
+  --ldyx-border: #e7e5e4;
+  --ldyx-input: #e7e5e4;
+  --ldyx-ring: #9b1c1c;
+  --ldyx-surface: #ffffff;
+  --ldyx-surface-2: #f5f5f4;
+  --ldyx-ink: #1c1917;
+  --ldyx-ink-2: #57534e;
+  --ldyx-ink-3: #78716c;
+  --ldyx-line: #e7e5e4;
+  --ldyx-brand: #9b1c1c;
+  --ldyx-brand-ink: #ffffff;
+  --ldyx-navy: #102a43;
+  --ldyx-gold: #b45309;
+  --ldyx-radius-sm: 4px;
+  --ldyx-radius-md: 8px;
+  --ldyx-radius-lg: 16px;
+  --ldyx-radius-xl: 24px;
+  --ldyx-radius-pill: 999px;
+  --ldyx-shadow-1: 0 1px 2px rgba(28, 25, 23, 0.05), 0 1px 1px rgba(28, 25, 23, 0.03);
+  --ldyx-shadow-2: 0 8px 24px -8px rgba(28, 25, 23, 0.18);
+  --ldyx-shadow-3: 0 24px 60px -20px rgba(28, 25, 23, 0.30);
+  --ldyx-font-sans: 'Inter', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --ldyx-font-serif: 'Noto Serif SC', 'Source Han Serif SC', serif;
+}
+
+html.dark {
+  --ldyx-background: #0f0f10;
+  --ldyx-foreground: #f5f5f4;
+  --ldyx-card: #18181b;
+  --ldyx-card-foreground: #f5f5f4;
+  --ldyx-popover: #18181b;
+  --ldyx-popover-foreground: #f5f5f4;
+  --ldyx-primary: #ef4444;
+  --ldyx-primary-foreground: #ffffff;
+  --ldyx-muted: #27272a;
+  --ldyx-muted-foreground: #a8a29e;
+  --ldyx-border: #27272a;
+  --ldyx-input: #27272a;
+  --ldyx-ring: #ef4444;
+  --ldyx-surface: #18181b;
+  --ldyx-surface-2: #27272a;
+  --ldyx-ink: #f5f5f4;
+  --ldyx-ink-2: #d6d3d1;
+  --ldyx-ink-3: #a8a29e;
+  --ldyx-line: #27272a;
+}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--ldyx-background);
+    --color-foreground: var(--ldyx-foreground);
+    --color-card: var(--ldyx-card);
+    --color-card-foreground: var(--ldyx-card-foreground);
+    --color-popover: var(--ldyx-popover);
+    --color-popover-foreground: var(--ldyx-popover-foreground);
+    --color-primary: var(--ldyx-primary);
+    --color-primary-foreground: var(--ldyx-primary-foreground);
+    --color-muted: var(--ldyx-muted);
+    --color-muted-foreground: var(--ldyx-muted-foreground);
+    --color-border: var(--ldyx-border);
+    --color-input: var(--ldyx-input);
+    --color-ring: var(--ldyx-ring);
+    --radius-sm: var(--ldyx-radius-sm);
+    --radius-md: var(--ldyx-radius-md);
+    --radius-lg: var(--ldyx-radius-lg);
+    --radius-xl: var(--ldyx-radius-xl);
+  }
+  @layer base {
+    body { background: var(--ldyx-background); color: var(--ldyx-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--ldyx-background); }
+      .text-background { color: var(--ldyx-background); }
+      .border-background { border-color: var(--ldyx-background); }
+      .ring-background { --tw-ring-color: var(--ldyx-background); }
+      .bg-foreground { background-color: var(--ldyx-foreground); }
+      .text-foreground { color: var(--ldyx-foreground); }
+      .border-foreground { border-color: var(--ldyx-foreground); }
+      .ring-foreground { --tw-ring-color: var(--ldyx-foreground); }
+      .bg-card { background-color: var(--ldyx-card); }
+      .text-card { color: var(--ldyx-card); }
+      .border-card { border-color: var(--ldyx-card); }
+      .ring-card { --tw-ring-color: var(--ldyx-card); }
+      .bg-card-foreground { background-color: var(--ldyx-card-foreground); }
+      .text-card-foreground { color: var(--ldyx-card-foreground); }
+      .border-card-foreground { border-color: var(--ldyx-card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--ldyx-card-foreground); }
+      .bg-popover { background-color: var(--ldyx-popover); }
+      .text-popover { color: var(--ldyx-popover); }
+      .border-popover { border-color: var(--ldyx-popover); }
+      .ring-popover { --tw-ring-color: var(--ldyx-popover); }
+      .bg-popover-foreground { background-color: var(--ldyx-popover-foreground); }
+      .text-popover-foreground { color: var(--ldyx-popover-foreground); }
+      .border-popover-foreground { border-color: var(--ldyx-popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--ldyx-popover-foreground); }
+      .bg-primary { background-color: var(--ldyx-primary); }
+      .text-primary { color: var(--ldyx-primary); }
+      .border-primary { border-color: var(--ldyx-primary); }
+      .ring-primary { --tw-ring-color: var(--ldyx-primary); }
+      .bg-primary-foreground { background-color: var(--ldyx-primary-foreground); }
+      .text-primary-foreground { color: var(--ldyx-primary-foreground); }
+      .border-primary-foreground { border-color: var(--ldyx-primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--ldyx-primary-foreground); }
+      .bg-muted { background-color: var(--ldyx-muted); }
+      .text-muted { color: var(--ldyx-muted); }
+      .border-muted { border-color: var(--ldyx-muted); }
+      .ring-muted { --tw-ring-color: var(--ldyx-muted); }
+      .bg-muted-foreground { background-color: var(--ldyx-muted-foreground); }
+      .text-muted-foreground { color: var(--ldyx-muted-foreground); }
+      .border-muted-foreground { border-color: var(--ldyx-muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--ldyx-muted-foreground); }
+      .bg-border { background-color: var(--ldyx-border); }
+      .text-border { color: var(--ldyx-border); }
+      .border-border { border-color: var(--ldyx-border); }
+      .ring-border { --tw-ring-color: var(--ldyx-border); }
+      .bg-input { background-color: var(--ldyx-input); }
+      .text-input { color: var(--ldyx-input); }
+      .border-input { border-color: var(--ldyx-input); }
+      .ring-input { --tw-ring-color: var(--ldyx-input); }
+      .bg-ring { background-color: var(--ldyx-ring); }
+      .text-ring { color: var(--ldyx-ring); }
+      .border-ring { border-color: var(--ldyx-ring); }
+      .ring-ring { --tw-ring-color: var(--ldyx-ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+
+      .figure-card {
+        transition: transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease, border-color .3s ease;
+        cursor: pointer;
+      }
+      .figure-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--ldyx-shadow-3);
+        border-color: color-mix(in oklab, var(--ldyx-primary) 40%, var(--ldyx-border));
+      }
+      .figure-avatar {
+        overflow: hidden;
+        width: 88px;
+        height: 88px;
+        border-radius: 999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--ldyx-font-serif);
+        font-size: 2.1rem;
+        font-weight: 700;
+        color: var(--ldyx-neutral-0);
+        background: linear-gradient(135deg, var(--ldyx-primary-800) 0%, var(--ldyx-primary-600) 50%, var(--ldyx-navy-900) 100%);
+        border: 3px solid color-mix(in oklab, var(--ldyx-neutral-0) 30%, transparent);
+        box-shadow: 0 4px 18px -6px rgba(155, 28, 28, 0.45), inset 0 0 0 1px rgba(0,0,0,0.08);
+        flex-shrink: 0;
+        position: relative;
+      }
+      .figure-avatar::after {
+        content: "";
+        position: absolute;
+        inset: -3px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--ldyx-primary), var(--ldyx-gold));
+        opacity: 0;
+        z-index: -1;
+        transition: opacity .3s ease;
+      }
+      .figure-card:hover .figure-avatar::after { opacity: 1; }
+
+      .section-divider {
+        display: flex; align-items: center; justify-content: center; gap: 1rem;
+        color: var(--ldyx-primary);
+      }
+      .section-divider::before,
+      .section-divider::after {
+        content: "";
+        height: 1px;
+        width: 60px;
+        background: linear-gradient(90deg, transparent, var(--ldyx-primary), transparent);
+      }
+
+      .tag-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.3rem 0.8rem;
+        border-radius: var(--ldyx-radius-pill);
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+      }
+
+      .hero-text-reveal > * {
+        opacity: 0;
+        transform: translateY(24px);
+        animation: heroReveal .9s cubic-bezier(.22,.61,.36,1) forwards;
+      }
+      .hero-text-reveal > *:nth-child(1) { animation-delay: .25s; }
+      .hero-text-reveal > *:nth-child(2) { animation-delay: .5s; }
+      .hero-text-reveal > *:nth-child(3) { animation-delay: .75s; }
+      @keyframes heroReveal {
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+    <main>
+      <!-- ===== 横向导航栏 ===== -->
+      <header id="main-nav" data-dom-id="main-nav" class="sticky top-0 z-50 w-full h-[76px] bg-background/95 backdrop-blur-md border-b border-border shadow-[0_1px_0_rgba(28,25,23,0.04)]">
+        <div class="mx-auto max-w-7xl px-6 h-full flex items-center justify-between">
+          <a href="index.html" class="flex items-center gap-3 group">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-[var(--ldyx-navy-900)] flex items-center justify-center text-white font-bold text-lg shadow-[var(--ldyx-shadow-1)] group-hover:scale-105 transition-transform" style="font-family:var(--ldyx-font-serif)">核</div>
+            <div>
+              <div class="text-lg font-bold tracking-tight text-foreground leading-tight">两弹一星精神宣传网</div>
+              <div class="text-[11px] text-muted-foreground tracking-wider">合肥工业大学 · 核炬薪传宣讲团</div>
+            </div>
+          </a>
+          <nav class="hidden md:flex items-center gap-1" aria-label="主导航">
+            <a href="index.html" class="relative px-5 py-3 text-[15px] font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors rounded-lg">首页</a>
+            <a href="figures.html" class="relative px-5 py-3 text-[15px] font-semibold text-primary bg-primary/5 transition-colors rounded-lg" aria-current="page">
+              人物志
+              <span class="absolute bottom-1 left-5 right-5 h-0.5 bg-primary rounded-full"></span>
+            </a>
+            <a href="timeline.html" class="relative px-5 py-3 text-[15px] font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors rounded-lg">时间线</a>
+          </nav>
+        </div>
+      </header>
+
+      <!-- ===== Hero 区 ===== -->
+      <section id="figures-hero" class="relative flex items-center justify-center min-h-[42vh] overflow-hidden">
+        <div class="absolute inset-0">
+          <img src="../assets/figures_hero.jpg" alt="人物志氛围图" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-b from-black/65 via-[rgba(16,42,67,0.55)] to-black/85"></div>
+        </div>
+        <div class="relative z-10 max-w-5xl px-6 text-center hero-text-reveal">
+          <div class="mb-5">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/25 bg-white/5 backdrop-blur-sm text-xs md:text-sm font-medium tracking-[0.25em] text-white/85">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              铭记功勋脊梁 · 传承报国精神
+            </span>
+          </div>
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-wide mb-6 drop-shadow-2xl" style="font-family: var(--ldyx-font-serif)">人物志</h1>
+          <div class="my-8 flex items-center justify-center gap-6">
+            <span class="w-16 md:w-24 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></span>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <span class="w-16 md:w-24 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></span>
+          </div>
+          <p class="text-lg md:text-2xl text-white/92 font-light tracking-wide mb-3">干惊天动地事 · 做隐姓埋名人</p>
+          <p class="max-w-2xl mx-auto text-sm md:text-base text-white/65 font-light leading-relaxed">
+            23 位两弹一星功勋奖章获得者，以及无数默默奉献的巾帼科研工作者，<br class="hidden md:block">
+            以毕生心血构筑民族战略屏障，用热血忠诚书写爱国报国的壮丽史诗。
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== 两弹一星元勋 Section ===== -->
+      <section id="figures-meritorious" class="relative py-20 bg-gradient-to-b from-background via-muted/30 to-background overflow-hidden">
+        <div class="absolute top-20 -left-24 w-96 h-96 rounded-full bg-primary/5 blur-3xl"></div>
+        <div class="absolute bottom-20 -right-24 w-96 h-96 rounded-full bg-[var(--ldyx-navy-900)]/5 blur-3xl"></div>
+
+        <div class="relative mx-auto max-w-7xl px-6">
+          <div class="mb-16 text-center">
+            <div class="section-divider mb-5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <p class="text-xs md:text-sm font-medium tracking-[0.35em] uppercase text-primary mb-3">MERITORIOUS MEDAL · 功勋奖章</p>
+            <h2 class="mb-4 font-[family-name:var(--ldyx-font-serif)] text-4xl md:text-5xl font-bold text-foreground">两弹一星元勋</h2>
+            <div class="flex items-center justify-center gap-3 mb-4">
+              <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                23 位功勋科学家
+              </span>
+            </div>
+            <p class="mx-auto max-w-2xl text-muted-foreground text-base md:text-lg leading-relaxed">1999 年 9 月 18 日，国家授予为研制"两弹一星"作出突出贡献的 23 位科学家"两弹一星功勋奖章"</p>
+          </div>
+
+          <div id="meritorious-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- 人物卡片由 JS 动态注入 -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 巾帼科研工作者 Section ===== -->
+      <section id="figures-women" class="relative py-20 bg-gradient-to-b from-[var(--ldyx-navy-900)] via-[var(--ldyx-navy-800)] to-[var(--ldyx-navy-900)] text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 25% 25%, rgba(255,255,255,0.12) 1px, transparent 1px); background-size: 32px 32px;"></div>
+        <div class="absolute top-1/4 right-1/4 w-80 h-80 rounded-full bg-primary/10 blur-3xl"></div>
+
+        <div class="relative mx-auto max-w-7xl px-6">
+          <div class="mb-16 text-center">
+            <div class="section-divider mb-5" style="color:#fca5a5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M5 10H3a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2"/><path d="M19 10h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2"/><path d="m9 21.5 3-8 3 8"/><path d="M8 7h8l-1.5 5h-5z"/></svg>
+            </div>
+            <p class="text-xs md:text-sm font-medium tracking-[0.35em] uppercase text-primary-300 mb-3">WOMEN SCIENTISTS · 巾帼功勋</p>
+            <h2 class="mb-4 font-[family-name:var(--ldyx-font-serif)] text-4xl md:text-5xl font-bold text-white">杰出女科学家</h2>
+            <p class="mx-auto max-w-2xl text-white/65 text-base md:text-lg leading-relaxed">在两弹一星伟大事业中，同样闪耀着一批巾帼科研工作者的卓越身影，她们以严谨坚韧、无私奉献撑起核工业与航天事业的半边天</p>
+          </div>
+
+          <div id="women-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- 女科学家卡片由 JS 动态注入 -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 人物详情模态框 ===== -->
+      <div id="figure-modal" data-dom-id="figure-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-[rgba(28,25,23,0.78)] backdrop-blur-md p-4" role="dialog" aria-modal="true" aria-labelledby="figure-modal-title">
+        <div class="modal-content relative w-full max-w-5xl max-h-[92vh] overflow-y-auto bg-card rounded-[20px] shadow-[var(--ldyx-shadow-3)]">
+          <!-- 顶部装饰横幅 -->
+          <div class="relative h-48 md:h-56 overflow-hidden rounded-t-[20px]">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-800 via-primary to-[var(--ldyx-navy-900)]"></div>
+            <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.18) 1px, transparent 1px), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.12) 1px, transparent 1px); background-size: 28px 28px, 36px 36px;"></div>
+            <button class="modal-close absolute top-5 right-5 z-20 w-11 h-11 rounded-full bg-white/15 hover:bg-white/25 backdrop-blur-sm flex items-center justify-center text-white transition-all hover:scale-105" aria-label="关闭详情" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="relative z-10 h-full flex items-end px-8 md:px-12 pb-8">
+              <div class="flex items-end gap-6">
+                <div id="modal-avatar" class="figure-avatar !w-24 !h-24 !text-4xl !border-4 shadow-2xl"></div>
+                <div class="pb-2">
+                  <div id="modal-years" class="text-sm md:text-base text-white/80 font-medium tracking-wide mb-1.5"></div>
+                  <h2 id="figure-modal-title" class="text-3xl md:text-4xl font-black text-white tracking-wide" style="font-family:var(--ldyx-font-serif)"></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 内容区 -->
+          <div class="p-8 md:p-12">
+            <div id="modal-tags" class="flex flex-wrap gap-2.5 mb-7"></div>
+
+            <div class="space-y-5 text-[15.5px] md:text-[16px] leading-[2.05] text-foreground/90" id="modal-biography">
+              <!-- 生平介绍由 JS 注入 -->
+            </div>
+
+            <!-- 底部装饰 -->
+            <div class="mt-10 pt-7 border-t border-border flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="flex items-center gap-3 text-sm text-muted-foreground">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                <span>两弹一星精神 · 热爱祖国 · 无私奉献 · 自力更生 · 艰苦奋斗 · 大力协同 · 勇于登攀</span>
+              </div>
+              <a href="timeline.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-semibold text-sm shadow-[var(--ldyx-shadow-1)] hover:shadow-[var(--ldyx-shadow-2)] hover:-translate-y-0.5 transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                查看奋斗时间线
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 页脚 ===== -->
+      <footer class="w-full py-12 bg-background border-t border-border">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-[var(--ldyx-navy-900)] flex items-center justify-center text-white font-bold text-lg" style="font-family:var(--ldyx-font-serif)">核</div>
+              <div>
+                <div class="text-base font-bold tracking-tight text-foreground leading-tight">两弹一星精神宣传网</div>
+                <div class="text-[11px] text-muted-foreground tracking-wider">合肥工业大学 · 核炬薪传宣讲团</div>
+              </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
+              <a href="index.html" class="hover:text-primary transition-colors">首页</a>
+              <a href="figures.html" class="hover:text-primary transition-colors">人物志</a>
+              <a href="timeline.html" class="hover:text-primary transition-colors">时间线</a>
+            </div>
+            <p class="text-sm text-muted-foreground">铭记光辉历史 · 赓续红色血脉</p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      // === 23 位两弹一星元勋完整数据（材料原文，不做任何删改）===
+      const meritoriousFigures = [
+        {
+          id: 'm01', surname: '于', category: '两弹一星元勋',
+          portrait: '../assets/portrait_01.jpg',
+          name: '于敏', years: '1926 — 2019',
+          tags: ['核物理学家', '中国科学院院士', '"两弹一星"功勋奖章获得者', '被誉为"中国氢弹之父"'],
+          hometown: '河北宁河人，中共党员',
+          bio: [
+            '于敏（1926—2019），河北宁河人，中共党员，核物理学家，中国科学院院士，"两弹一星"功勋奖章获得者，被誉为"中国氢弹之父"。',
+            '于敏是我国氢弹理论体系唯一自主路线的开创者，一生未出国留学，完全依靠本土科研功底攻克热核武器核心难题。1961年接受国家绝密任务，隐姓埋名二十八载，全面主持氢弹理论攻关。当时国外严格封锁氢弹技术资料，美苏研发周期长达7至10年，他带领团队依靠计算尺与简易计算机，日夜推演海量热核反应数据，突破热核材料自持燃烧、引爆构型等一系列世界级瓶颈，独创完全区别于国外的氢弹“于敏构型”。',
+            '1967年我国第一颗氢弹空爆试验圆满成功，仅距原子弹爆炸两年八个月，创造全球核武器研发奇迹，核心理论全部出自于敏团队。氢弹攻关完成后，他持续深耕小型化核武器、中子弹、惯性约束核聚变研究，完善我国多层次核威慑体系。晚年依旧深耕战略核武器理论，持续为国防核力量升级提供顶层方案。',
+            '他放弃基础物理前沿研究，主动切断国际学术交流，数十年埋没功名扎根涉密科研一线，始终淡泊名利，拒绝一切媒体宣传与荣誉追捧。于敏以纯粹家国担当，走出一条完全自主的氢弹研发道路，彻底打破西方核技术垄断，为国家筑牢战略核盾牌，用一生践行为国铸重器的崇高使命。'
+          ]
+        },
+        {
+          id: 'm02', surname: '王', category: '两弹一星元勋',
+          portrait: '../assets/portrait_02.jpg',
+          name: '王大珩', years: '1915 — 2011',
+          tags: ['应用光学、激光技术专家', '中国科学院院士、中国工程院院士', '"两弹一星"功勋奖章获得者', '中国光学事业奠基人'],
+          hometown: '江苏吴县人，中共党员',
+          bio: [
+            '王大珩（1915—2011），江苏吴县人，中共党员，应用光学、激光技术专家，中国科学院院士、中国工程院院士，"两弹一星"功勋奖章获得者，中国光学事业奠基人。',
+            '两弹一星工程启动后，我国缺乏高精度光学观测、测量、瞄准设备，核爆试验、导弹制导、卫星遥感全部受制于人。王大珩临危受命，牵头搭建国防光学工程体系，主持研制原子弹爆炸高速摄影仪、核爆光谱测量设备、导弹高精度光学瞄准系统、人造卫星遥感光学载荷等关键装备，填补国内国防光学领域全部空白。',
+            '戈壁核试验现场，他带队长期驻扎野外，克服风沙、温差、设备短缺等难题，多次优化光学探测设备精度，完整记录历次原子弹、氢弹爆炸全过程数据，为核武器性能评估、爆轰机理研究提供不可替代的光学实测支撑。同时，他主导研发我国第一炉光学玻璃、第一台激光器，建立完整光学材料与精密仪器产业链，保障导弹、卫星全流程光学配套自主可控。',
+            '两弹一星事业收官后，他联合王淦昌等科学家联名上书中央，推动“863计划”出台，布局全国高技术长远发展。一生坚守自力更生科研路线，从零建立国防光学工业体系，为核弹、导弹、人造卫星提供核心观测与制导技术支撑，以精密光学技术守护大国重器，彰显老一辈科学家协同报国、勇攀高峰的伟大品格。'
+          ]
+        },
+        {
+          id: 'm03', surname: '王', category: '两弹一星元勋',
+          portrait: '../assets/portrait_03.jpg',
+          name: '王希季', years: '1921 — ',
+          tags: ['卫星与火箭返回技术专家', '中国科学院院士', '"两弹一星"功勋奖章获得者'],
+          hometown: '云南昆明人，白族，中共党员',
+          bio: [
+            '王希季（1921— ），云南昆明人，白族，中共党员，卫星与火箭返回技术专家，中国科学院院士，"两弹一星"功勋奖章获得者。',
+            '王希季是我国探空火箭、返回式卫星事业开拓者，全程参与导弹、运载火箭、人造卫星全链条研发。早期牵头研制我国首枚探空火箭，突破液体燃料发动机、箭体结构、高空探测等关键技术，为运载火箭积累核心工程经验。东风系列战略导弹研发阶段，他负责火箭总体方案论证、高空环境模拟试验，解决火箭飞行稳定性、轻量化结构等工程难题，夯实导弹工程化基础。',
+            '人造卫星工程启动后，他担任返回式卫星总设计师，攻克卫星姿态控制、防热回收、再入大气层、精准落点控制等一系列世界级技术难关。1975年我国首颗返回式卫星成功发射并安全回收，使我国成为全球第三个掌握卫星返回技术的国家，为后续遥感测绘、国土勘探、航天育种提供核心平台，同时为载人航天回收技术奠定理论与工程基础。',
+            '他深耕航天工程七十余年，先后主持12型火箭、多代返回式卫星研制，全程兼顾导弹武器与空间工程两大领域，打通从导弹运载到空间返回的完整技术链路。数十年扎根航天试验一线，不计个人名利，始终服从国家国防与航天调度，以扎实工程技术支撑“一星”伟业，自力更生走出中国特色返回式卫星发展道路。'
+          ]
+        },
+        {
+          id: 'm04', surname: '朱', category: '两弹一星元勋',
+          portrait: '../assets/portrait_04.jpg',
+          name: '朱光亚', years: '1924 — 2011',
+          tags: ['核物理学家', '中国科学院院士', '"两弹一星"功勋奖章获得者', '我国核武器科研组织核心领导者'],
+          hometown: '湖北武汉人，中共党员',
+          bio: [
+            '朱光亚（1924—2011），湖北武汉人，中共党员，核物理学家，中国科学院院士，"两弹一星"功勋奖章获得者，我国核武器科研组织核心领导者。',
+            '1950年他放弃美国密歇根大学优越科研条件毅然归国，牵头组建青年核物理科研队伍，系统梳理核反应、中子物理基础理论，为核武器研制储备核心人才与理论体系。苏联专家全部撤走、技术资料断绝后，他统筹全国核科研力量，协调中科院、高校、军工院所协同攻关，统一规划原子弹理论、实验、生产三大板块研发进度，是两弹工程重要统筹指挥者。',
+            '原子弹攻关阶段，他组织全国科研力量协同完成链式反应、爆轰耦合等核心计算，全程参与第一颗原子弹理论方案审核、试验方案制定；原子弹成功后，迅速统筹资源转向氢弹技术预研，配合于敏、邓稼先团队推进热核原理验证，保障两年八个月氢弹快速突破。同时，他牵头规划核反应堆、核燃料配套工程，完善完整核工业配套链条。',
+            '晚年出任中国工程院首任院长，持续推动国防科技自主创新与人才培养。一生甘于幕后统筹协调，将全国分散科研力量凝聚为统一攻坚合力，以严谨统筹能力保障两弹工程有序推进，大力协同、为国统筹，为我国自主核力量建设提供全局性组织支撑。'
+          ]
+        },
+        {
+          id: 'm05', surname: '任', category: '两弹一星元勋',
+          portrait: '../assets/portrait_05.jpg',
+          name: '任新民', years: '1915 — 2017',
+          tags: ['液体火箭发动机专家', '中国科学院院士', '"两弹一星"功勋奖章获得者', '我国运载火箭、战略导弹发动机奠基人'],
+          hometown: '安徽宁国人，中共党员',
+          bio: [
+            '任新民（1915—2017），安徽宁国人，中共党员，液体火箭发动机专家，中国科学院院士，"两弹一星"功勋奖章获得者，我国运载火箭、战略导弹发动机奠基人。',
+            '液体火箭发动机是导弹、人造卫星的动力核心，任新民从零开启国内液体燃料发动机自主研发。东风战略导弹攻关期间，他主持发动机总体设计、地面热试车、高空模拟试验，攻克燃料燃烧不稳定、推力控制、高温结构强度等卡脖子难题，成功研制多代液体发动机，保障中远程核导弹具备可靠运载能力，让核弹拥有远程投送载体。',
+            '人造卫星工程阶段，他担任长征一号运载火箭总设计师，统筹火箭三级动力系统研制，匹配东方红一号卫星发射需求，1970年圆满完成首颗人造卫星发射任务。后续持续主持长征系列运载火箭迭代升级，拓展大型运载火箭技术体系，兼顾战略武器与空间航天双重需求。',
+            '他年过花甲仍常年奔波于戈壁发射场，亲自盯守每一次发动机热试车，反复优化动力系统可靠性。在国外全面封锁发动机技术、材料、工艺的背景下，依靠国内工业基础自主突破全套动力技术，搭建完整液体火箭发动机产业链，为核弹远程投放、人造卫星上天提供核心动力支撑，一生深耕动力报国，默默筑牢航天与导弹事业根基。'
+          ]
+        },
+        {
+          id: 'm06', surname: '孙', category: '两弹一星元勋',
+          portrait: '../assets/portrait_06.jpg',
+          name: '孙家栋', years: '1929 — ',
+          tags: ['航天工程总体专家', '中国科学院院士', '"两弹一星"功勋奖章获得者', '人造卫星、深空探测工程领军者'],
+          hometown: '辽宁复县人，中共党员',
+          bio: [
+            '孙家栋（1929— ），辽宁复县人，中共党员，航天工程总体专家，中国科学院院士，"两弹一星"功勋奖章获得者，人造卫星、深空探测工程领军者。',
+            '孙家栋早年投身战略导弹研制，担任东风系列导弹总体设计师，解决弹体结构、控制系统、发动机匹配多项关键工程问题，大幅提升我国近中远程导弹可靠性与打击精度，夯实战略核导弹运载基础。1967年受命担任我国第一颗人造卫星“东方红一号”总体总设计师，全面统筹卫星本体、运载火箭、地面测控全系统研制。',
+            '当时工业基础薄弱、元器件短缺，他简化卫星总体方案，协调全国上百家单位协同配套，攻克卫星姿态稳定、无线电信号传输、星上能源等核心难题。1970年东方红一号成功升空，乐曲响彻太空，宣告我国跻身世界航天大国。后续主持多颗返回式遥感卫星、通信卫星总体设计，打通卫星设计、制造、发射、测控完整工程体系。',
+            '他一生主持30余颗卫星研制，兼顾核导弹运载与人造卫星两大两弹一星核心领域，多次临危受命解决航天重大故障，始终坚守“国家需要就是方向”的信念，长期扎根发射试验一线，以全局工程思维撑起中国航天起步之路，是集导弹、卫星工程于一身的功勋科学家。'
+          ]
+        },
+        {
+          id: 'm07', surname: '吴', category: '两弹一星元勋',
+          portrait: '../assets/portrait_07.jpg',
+          name: '吴自良', years: '1909 — 2001',
+          tags: ['材料物理学家', '中国科学院院士', '"两弹一星"功勋奖章获得者', '铀同位素分离核心材料攻关带头人'],
+          hometown: '浙江浦江人，中共党员',
+          bio: [
+            '吴自良（1909—2001），浙江浦江人，中共党员，材料物理学家，中国科学院院士，"两弹一星"功勋奖章获得者，铀同位素分离核心材料攻关带头人。',
+            '高浓铀分离膜是生产原子弹核心核燃料铀-235的关键特种材料，国外实施严密技术封锁，苏联撤走专家后，分离膜配方、制备工艺全部断供，直接卡住原子弹研制命脉。吴自良临危受命，牵头分离膜专用特种合金材料攻关，带领团队从零开展合金配比、轧制、微孔成型全流程研究。',
+            '实验室条件简陋，缺乏精密冶炼与轧制设备，他带领科研人员反复上千次配比试验，克服高温合金加工、微米级微孔控制等多重技术难关，成功研制出合格铀分离专用多孔合金膜，实现分离材料全国产化，配套兰州504浓缩铀工厂规模化生产，保障1964年高丰度核燃料顺利产出，为第一颗原子弹爆炸扫清最关键材料障碍。',
+            '除核燃料配套材料外，他同步开展导弹耐高温结构合金、卫星特种金属材料研究，完善国防特种金属材料体系。数十年深耕小众基础材料领域，甘于幕后攻坚基础瓶颈，以精密材料科学突破打破国外垄断，补齐两弹一星工程最核心原料短板，诠释基础材料科研者无私奉献、甘当铺路石的崇高精神。'
+          ]
+        },
+        {
+          id: 'm08', surname: '陈', category: '两弹一星元勋',
+          portrait: '../assets/portrait_08.jpg',
+          name: '陈芳允', years: '1916 — 2000',
+          tags: ['无线电电子学、测控专家', '中国科学院院士', '"两弹一星"功勋奖章获得者', '核爆测试、卫星测控技术奠基人'],
+          hometown: '浙江黄岩人，中共党员',
+          bio: [
+            '陈芳允（1916—2000），浙江黄岩人，中共党员，无线电电子学、测控专家，中国科学院院士，"两弹一星"功勋奖章获得者，核爆测试、卫星测控技术奠基人。',
+            '两弹试验阶段，我国缺乏核爆炸远距离探测、无线电记录设备，无法精准获取爆轰关键数据。陈芳允牵头研制原子弹、氢弹专用无线电遥测、光谱记录、核辐射探测全套电子设备，扎根戈壁试验现场调试仪器，完整记录历次核爆辐射、冲击波、能量释放核心参数，为核武器性能优化提供精准实测依据。',
+            '人造卫星工程启动后，他主持地面测控系统总体方案设计，建立我国首套卫星无线电跟踪、遥测、遥控一体化测控网络，解决远距离卫星信号捕获、数据传输难题，保障东方红一号卫星全程在轨监测与数据回收。同时，他率先提出双星定位导航系统构想，为我国北斗导航事业埋下技术伏笔。',
+            '晚年联合王淦昌等科学家提交高技术发展建议，助力“863计划”落地。长期兼顾核弹试验测控与人造卫星地面系统两大核心方向，在电子设备完全自主研制的前提下搭建全国测控网络，以无线电技术打通核弹、卫星试验观测链路，默默支撑每一次大国重器试验圆满成功。'
+          ]
+        },
+        {
+          id: 'm09', surname: '陈', category: '两弹一星元勋',
+          portrait: '../assets/portrait_09.jpg',
+          name: '陈能宽', years: '1923 — 2016',
+          tags: ['金属、爆轰物理学家', '中国科学院院士', '"两弹一星"功勋奖章获得者', '核武器爆轰试验核心负责人'],
+          hometown: '湖南慈利人，中共党员',
+          bio: [
+            '陈能宽（1923—2016），湖南慈利人，中共党员，金属、爆轰物理学家，中国科学院院士，"两弹一星"功勋奖章获得者，核武器爆轰试验核心负责人。',
+            '爆轰物理是原子弹起爆、氢弹聚变触发的核心关键技术，此前国内无任何相关研究基础。1960年陈能宽放弃金属物理前沿研究，服从国家调度转向爆轰攻关，从零搭建国内首个爆轰物理实验室。当时缺少炸药、精密起爆器件、高速观测设备，他带领团队手工配制试验炸药，依靠简易设备开展上千次小型爆轰试验。',
+            '青海221基地建设完成后，他长期驻守高原，全面主持原子弹爆轰模拟试验，攻克炸药同步起爆、冲击波汇聚、金属内爆压缩等世界级难题，验证原子弹核心内爆方案可行性，为邓稼先理论设计提供全部爆轰试验支撑。原子弹成功后，立刻投入氢弹热爆轰机理研究，优化热核材料起爆构型，助力两年八个月氢弹快速试验成功。',
+            '他常年与烈性炸药、强冲击波为伴，长期暴露在危险试验环境，不计人身安危完成数千次涉密爆轰试验，隐姓埋名二十余年。以金属与爆轰交叉学科突破，打通核武器从理论设计到实体起爆的关键环节，在艰苦高原试验一线践行自力更生、以身许国的报国信念。'
+          ]
+        },
+        {
+          id: 'm10', surname: '杨', category: '两弹一星元勋',
+          portrait: '../assets/portrait_10.jpg',
+          name: '杨嘉墀', years: '1919 — 2006',
+          tags: ['航天自动控制、检测技术专家', '中国科学院院士', '"两弹一星"功勋奖章获得者', '卫星自动化控制系统开创者'],
+          hometown: '江苏吴江人，中共党员',
+          bio: [
+            '杨嘉墀（1919—2006），江苏吴江人，中共党员，航天自动控制、检测技术专家，中国科学院院士，"两弹一星"功勋奖章获得者，卫星自动化控制系统开创者。',
+            '早期投身导弹自动控制设备研制，攻克弹上姿态传感、自动调节、环境适应性等技术，提升东风系列导弹飞行控制精度与稳定性，保障核导弹精准可控投放。人造卫星工程启动后，担任东方红一号卫星副总设计师，牵头星上自动检测、姿态控制、数据存储系统研制，解决太空高低温、真空环境下电子设备稳定运行难题。',
+            '他建立我国首套航天自动检测理论体系，自主研发卫星专用微型传感、控制元器件，实现星上控制设备全部国产化。首颗返回式卫星研制阶段，主导卫星再入姿态自动控制系统，保障卫星返回阶段稳定减速、精准落点，支撑我国卫星回收技术突破。',
+            '两弹一星工程完成后，持续推动自动化、微电子技术国防转化，深耕航天控制学科人才培养。长期兼顾导弹控制与人造卫星星上系统研发，以自动化技术实现导弹、卫星自主可控，在精密航天控制领域默默攻坚数十年，大力协同各科研单位完成一星配套工程，诠释严谨求实、无私奉献的科学家品格。'
+          ]
+        },
+        {
+          id: 'm11', surname: '钱', category: '两弹一星元勋',
+          portrait: '../assets/portrait_11.jpg',
+          name: '钱学森', years: '1911 — 2009',
+          tags: ['空气动力学、航天工程专家', '中国科学院、工程院院士', '"两弹一星"功勋奖章获得者', '"中国航天之父""中国导弹之父"'],
+          hometown: '浙江杭州人，中共党员',
+          bio: [
+            '钱学森（1911—2009），浙江杭州人，中共党员，空气动力学、航天工程专家，中国科学院、工程院院士，"两弹一星"功勋奖章获得者，"中国航天之父""中国导弹之父"。',
+            '钱学森是两弹一星工程顶层总设计师，1955年冲破美国五年软禁封锁归国，全面规划我国导弹、火箭、人造卫星长远发展路线，搭建完整航天科研体系，牵头组建航天科研院所，招揽、培养大批导弹、力学、航天专业人才。东风近中远程战略导弹研发阶段，他主持总体方案论证，解决空气动力学、弹体结构、制导匹配核心难题，奠定我国战略核导弹运载基础。',
+            '人造卫星工程启动后，提出“两弹结合”“一星规划”顶层思路，统筹火箭、卫星、测控全系统协同研发，指导长征一号火箭与东方红一号卫星配套攻关，1970年促成我国首颗人造卫星成功发射。同时举荐郭永怀等力学专家参与核武器力学攻关，打通核弹、导弹跨领域协同通道。',
+            '他创立工程控制论，将力学、控制理论全面应用于国防重器，一生放弃美国顶尖教职与优厚待遇，归国从零开创航天事业，统筹两弹一星全局战略布局，为我国拥有核威慑、太空探索能力奠定顶层框架，以毕生心血构筑大国航天与导弹根基，是自力更生、爱国报国的时代标杆。'
+          ]
+        },
+        {
+          id: 'm12', surname: '屠', category: '两弹一星元勋',
+          portrait: '../assets/portrait_12.jpg',
+          name: '屠守锷', years: '1917 — 2012',
+          tags: ['液体洲际导弹总体、结构强度专家', '中国科学院院士', '"两弹一星"功勋奖章获得者', '洲际战略导弹总设计师'],
+          hometown: '浙江吴兴人，中共党员',
+          bio: [
+            '屠守锷（1917—2012），浙江吴兴人，中共党员，液体洲际导弹总体、结构强度专家，中国科学院院士，"两弹一星"功勋奖章获得者，洲际战略导弹总设计师。',
+            '屠守锷长期主持远程、洲际液体战略导弹总体研制，是我国洲际核导弹工程奠基人。早期参与中近程导弹结构优化，解决高速飞行弹体振动、气动变形难题；洲际导弹立项后担任总设计师，统筹总体布局、结构强度、动力匹配、再入防热全系统设计。',
+            '国外严密封锁洲际导弹全套工程技术，他带领团队自主完成上万次气动仿真、结构强度地面试验，攻克弹头再入大气层高温烧蚀、大推力火箭整体稳定性等世界级技术难关，成功研制我国第一代洲际战略导弹，实现核弹跨远程精准投送，完善我国多层次核威慑体系。',
+            '长征二号运载火箭以洲际导弹技术为基础改造而来，他主导火箭总体优化，支撑多颗返回式遥感卫星发射任务，打通战略武器与空间航天技术转化通道。常年扎根戈壁发射场，亲历每一轮导弹热试车与飞行试验，年过七旬仍坚守试验一线，从零搭建洲际导弹完整工程体系，以大国重器守护国土安全。'
+          ]
+        },
+        {
+          id: 'm13', surname: '周', category: '两弹一星元勋',
+          portrait: '../assets/portrait_13.jpg',
+          name: '周光召', years: '1929 — 2022',
+          tags: ['理论核物理学家', '中国科学院院士', '"两弹一星"功勋奖章获得者', '核武器理论核心骨干'],
+          hometown: '湖南长沙人，中共党员',
+          bio: [
+            '周光召（1929—2022），湖南长沙人，中共党员，理论核物理学家，中国科学院院士，"两弹一星"功勋奖章获得者，核武器理论核心骨干。',
+            '苏联专家撤走时，带走全部原子弹理论计算核心数据，原有理论模型存在重大偏差，核武器研发陷入理论瓶颈。周光召临危受命，牵头修正核爆链式反应、中子输运全套理论数据，依靠纸笔与手摇计算机重新推演海量方程组，纠正国外原有模型多处关键错误，建立适配我国核材料的全新理论计算体系。',
+            '他全程参与原子弹理论方案论证，配合邓稼先团队完成整套核装置临界、爆轰耦合数值计算，大幅提升理论设计精准度，降低试验失败风险。原子弹试验成功后，迅速参与氢弹热核反应理论预研，完善热核材料燃烧、能量释放基础模型，为于敏、邓稼先团队氢弹构型设计提供扎实理论支撑。',
+            '后续深耕高能物理、粒子物理基础研究，出任中国科学院院长，统筹全国基础科学与国防科研协同发展。青年时期便舍弃基础物理前沿研究，投身涉密核武器理论计算，以顶尖理论功底补齐两弹研制数据短板，在理论源头保障核弹自主研发，是青年科研工作者以身许国的典范。'
+          ]
+        },
+        {
+          id: 'm14', surname: '黄', category: '两弹一星元勋',
+          portrait: '../assets/portrait_14.jpg',
+          name: '黄纬禄', years: '1916 — 2011',
+          tags: ['导弹控制系统专家', '中国科学院院士', '"两弹一星"功勋奖章获得者', '固体潜射导弹、巨浪导弹总设计师'],
+          hometown: '安徽芜湖人，中共党员',
+          bio: [
+            '黄纬禄（1916—2011），安徽芜湖人，中共党员，导弹控制系统专家，中国科学院院士，"两弹一星"功勋奖章获得者，固体潜射导弹、巨浪导弹总设计师。',
+            '我国早期导弹控制系统全部依赖国外资料，苏联专家撤走后制导技术完全断供。黄纬禄牵头自主研发导弹惯性制导、姿态控制系统，攻克高精度陀螺仪、自适应控制、抗干扰算法等核心难题，大幅提升陆基战略导弹打击精度与环境适应性。',
+            '水下核威慑体系建设启动后，他担任巨浪一号潜射导弹总设计师，直面水下发射水动力、出水冲击、潜艇空间限制等全新空白领域，首创水下冷发射总体方案，历经数十次水下模拟试验，1982年巨浪一号水下发射试验圆满成功，使我国拥有海基核反击能力，建成三位一体核威慑格局。',
+            '他独创“有问题共同找、有困难共同扛”协同攻关模式，简化复杂制导设备结构，提升导弹可靠性与维护便捷性，兼顾陆基、海基两类战略导弹控制技术研发。数十年隐姓埋名深耕制导领域，填补水下核导弹技术空白，以精密控制技术筑牢我国二次核反击安全屏障。'
+          ]
+        },
+        {
+          id: 'm15', surname: '程', category: '两弹一星元勋',
+          portrait: '../assets/portrait_15.jpg',
+          name: '程开甲', years: '1918 — 2018',
+          tags: ['核武器试验技术专家', '中国科学院院士', '"两弹一星"功勋奖章获得者', '我国核试验事业创始人'],
+          hometown: '江苏吴江人，中共党员',
+          bio: [
+            '程开甲（1918—2018），江苏吴江人，中共党员，核武器试验技术专家，中国科学院院士，"两弹一星"功勋奖章获得者，我国核试验事业创始人。',
+            '1960年程开甲放弃英国皇家化学研究所优越科研条件归国，接受绝密任务奔赴罗布泊马兰核试验基地，扎根戈壁二十余年，全面主持历次原子弹、氢弹、增强型核武器、地下核试验总体技术设计，是我国核试验体系总负责人。',
+            '当时无任何国外核试验经验可借鉴，他自主建立核爆炸测试、辐射监测、冲击波观测、效应评估全套理论与试验规范，规划罗布泊试验场区布局，设计地下核试验坑道、密封与探测系统。1964年第一颗原子弹爆炸时，他在距离爆心最近的观测点完整记录全部试验数据；先后主持30余次各类核试验，全程评估核武器杀伤、辐射、工程效应，为核武器迭代升级提供完整试验依据。',
+            '他长期身处强核辐射、极端荒漠环境，远离城市与家人，隐姓埋名二十余年，一生扎根戈壁试验一线，创立完整独立自主核试验科学体系，让我国核试验从无到有、规范成熟，以数十年荒漠坚守筑牢国家核试验根基，诠释“干惊天动地事，做隐姓埋名人”的赤诚。'
+          ]
+        },
+        {
+          id: 'm16', surname: '彭', category: '两弹一星元勋',
+          portrait: '../assets/portrait_16.jpg',
+          name: '彭桓武', years: '1915 — 2007',
+          tags: ['理论核物理学家', '中国科学院院士', '"两弹一星"功勋奖章获得者', '核武器理论三大支柱核心领导者'],
+          hometown: '吉林长春人，中共党员',
+          bio: [
+            '彭桓武（1915—2007），吉林长春人，中共党员，理论核物理学家，中国科学院院士，"两弹一星"功勋奖章获得者，核武器理论三大支柱核心领导者。',
+            '彭桓武是我国核武器理论研究开创者，早年在英国取得物理学顶尖成就，1947年毅然归国，牵头组建国内首个原子核理论科研团队。两弹工程启动后，与王淦昌、郭永怀组成核武器研发三大核心力量，专职负责原子弹、氢弹基础理论总统筹。',
+            '苏联专家撤离后，他带领团队从零推导核链式反应、中子输运、爆轰耦合基础方程组，搭建完整原子弹理论框架，指导邓稼先青年团队开展数值计算，解决大量基础理论底层难题。原子弹研制成功后，率先开展氢弹热核反应理论预研，梳理热核聚变关键物理机制，为于敏、邓稼先氢弹构型突破奠定理论根基。',
+            '他统筹全国核理论科研资源，协调中科院、九院理论部协同攻关，不拘一格选拔青年科研人才，为两弹事业培养大批核物理骨干。一生淡泊名利，主动放弃国际学术荣誉，常年扎根青海221基地理论攻关一线，从底层理论源头支撑两弹自主研发，是自力更生理论报国的科学泰斗。'
+          ]
+        },
+        {
+          id: 'm17', surname: '王', category: '两弹一星元勋',
+          portrait: '../assets/portrait_17.jpg',
+          name: '王淦昌', years: '1907 — 1998',
+          tags: ['核物理学家', '中国核科学开创人之一', '中国科学院院士', '曾任中国原子能科学研究院院长', '"两弹一星"功勋奖章获得者'],
+          hometown: '江苏常熟人，中共党员、九三学社社员',
+          bio: [
+            '王淦昌（1907—1998），江苏常熟人，中共党员、九三学社社员，核物理学家，中国核科学开创人之一，中国科学院院士，曾任中国原子能科学研究院院长，"两弹一星"功勋奖章获得者。',
+            '王淦昌是我国核武器研制核心实验领域领军专家，一句“我愿以身许国”诠释老一辈科学家报国信仰。他早年在国际粒子物理领域取得突破性成果，多次具备冲击诺贝尔奖的科研实力，接到研制核武器绝密任务后，主动化名“王京”，隐姓埋名十七年扎根青海221基地。',
+            '1960年苏联撤走全部援华专家，带走全套图纸设备，国内核研发陷入绝境，业内公认王淦昌是突破实验瓶颈的关键。高原高寒、物资匮乏、设备简陋的条件下，他全面主持核武器核心物理实验，牵头攻克核参数测量、同步爆轰、中子源测试等关键技术，为原子弹理论方案提供精准完整实验数据支撑。',
+            '在其系列实验保障下，1964年首颗原子弹爆炸成功；随后即刻投入氢弹配套实验攻关，助力我国仅2年8个月完成氢弹试验，创下全球研发纪录。十七年间隔绝国际学术交流，舍弃个人学术前途投身涉密科研。晚年联合多位院士上书中央，推动“863计划”落地，布局国家战略高技术长远发展。',
+            '他以半生隐姓埋名筑牢国家核安全屏障，舍弃国际学术荣光换取民族战略底气，用毕生科研实践践行热爱祖国、自力更生、无私奉献的两弹一星精神，是支撑两弹伟业的功勋脊梁。'
+          ]
+        },
+        {
+          id: 'm18', surname: '邓', category: '两弹一星元勋',
+          portrait: '../assets/portrait_18.jpg',
+          name: '邓稼先', years: '1924 — 1986',
+          tags: ['核物理学家', '中国科学院院士', '我国核武器研制事业开拓者与主要奠基人'],
+          hometown: '安徽怀宁人，中共党员',
+          bio: [
+            '邓稼先（1924—1986），安徽怀宁人，中共党员，核物理学家，中国科学院院士，我国核武器研制事业开拓者与主要奠基人。',
+            '邓稼先26岁取得美国普渡大学博士学位，人称“娃娃博士”，取得学位仅九日便放弃海外优厚科研条件归国，深耕原子核基础理论。1958年受命牵头核武器理论研制核心工作，自此隐姓埋名二十八载扎根西北戈壁。为铭记苏联撕毁协议、撤走专家的技术封锁困境，原子弹工程代号定为“596”。',
+            '彼时国内无大型运算设备，他带领理论团队依靠手工算盘演算海量核数据，整套核心数据九轮校验耗时一年以上；三年困难时期，将个人粮票全部补贴加班科研人员。作为原子弹理论总负责人，我国首套完整原子弹理论方案由其最终审定签字；核爆结束后，不顾致命强辐射风险，第一时间深入试验场采集关键样本。',
+            '原子弹成功后，迅速组织氢弹攻关，与于敏共同形成自主知识产权“邓—于方案”，走出区别于美苏的独立路线，实现两年八个月两弹连续试验成功，效率远超发达国家。长期核辐射损伤致使其身患重病，临终前仍嘱托后辈紧盯国防尖端科技。',
+            '他从零构建完整自主核武器理论体系，彻底打破国外核技术垄断，将全部生命奉献国家核国防，深刻诠释“干惊天动地事，做隐姓埋名人”的家国担当。'
+          ]
+        },
+        {
+          id: 'm19', surname: '赵', category: '两弹一星元勋',
+          portrait: '../assets/portrait_19.jpg',
+          name: '赵九章', years: '1907 — 1968',
+          tags: ['地球物理、空间物理学家', '中国科学院院士', '追授"两弹一星"功勋奖章', '中国人造卫星事业奠基人'],
+          hometown: '浙江吴兴人，中共党员',
+          bio: [
+            '赵九章（1907—1968），浙江吴兴人，中共党员，地球物理、空间物理学家，中国科学院院士，追授"两弹一星"功勋奖章，中国人造卫星事业奠基人。',
+            '赵九章是我国人造卫星工程最早倡导者、组织者，率先向党中央提出开展人造卫星研制的完整建议，牵头组建我国首个空间物理、卫星总体科研团队，系统梳理卫星轨道、空间环境、星载探测全套理论体系，为东方红一号工程提供顶层规划与科学依据。',
+            '两弹一星工程协同推进阶段，他统筹空间环境观测研究，分析高空辐射、磁场对导弹、卫星飞行的影响，建立空间环境预报体系，保障东风系列导弹、探空火箭飞行试验安全；同时主持研制高空探测火箭载荷，收集高层大气实测数据，填补我国空间物理观测空白。',
+            '他全面规划卫星科研人才培养，开设空间物理、卫星工程专业，为后续东方红一号、返回式卫星储备核心技术人才。在无任何卫星研制经验、国外严密封锁资料的背景下，从零搭建空间科学与卫星工程基础框架，是“一星”事业开山领路人。一生深耕地球与空间物理，为我国进军太空领域奠定完整科学根基，以远见卓识开启中国航天探索之路。'
+          ]
+        },
+        {
+          id: 'm20', surname: '姚', category: '两弹一星元勋',
+          portrait: '../assets/portrait_20.jpg',
+          name: '姚桐斌', years: '1922 — 1968',
+          tags: ['导弹航天材料与工艺专家', '追授"两弹一星"功勋奖章', '我国导弹材料研究所创建者'],
+          hometown: '江苏无锡人，中共党员',
+          bio: [
+            '姚桐斌（1922—1968），江苏无锡人，中共党员，导弹航天材料与工艺专家，追授"两弹一星"功勋奖章，我国导弹材料研究所创建者。',
+            '导弹耐高温结构材料、特种焊接工艺、防护涂层是战略导弹可靠飞行的核心保障，国内此前完全空白。1957年姚桐斌冲破英国管控归国，牵头组建国内首个导弹材料工艺研究所，全面主持导弹结构合金、高温涂层、特种焊接、防热材料研发工作。',
+            '他梳理导弹全流程材料配套需求，带领团队攻克高温合金轧制、真空焊接、烧蚀防热涂层等多项卡脖子工艺难题，研制适配导弹高速飞行、极端高低温环境的全套特种材料与加工工艺，配套东风系列各型导弹批量生产，解决弹体强度、耐高温、抗腐蚀核心工程瓶颈。',
+            '同时建立导弹材料性能检测、失效分析完整规范，为每一次导弹飞行试验提供材料安全保障。1968年不幸遇害牺牲，正值两弹一星攻坚关键阶段，他数十年深耕小众材料工艺领域，默默解决导弹工程底层材料短板，以扎实材料工艺技术支撑我国战略导弹自主化生产，是隐于幕后、为国献身的材料功勋。'
+          ]
+        },
+        {
+          id: 'm21', surname: '钱', category: '两弹一星元勋',
+          portrait: '../assets/portrait_21.jpg',
+          name: '钱骥', years: '1917 — 1983',
+          tags: ['卫星总体工程专家', '追授"两弹一星"功勋奖章', '东方红一号卫星总体技术负责人'],
+          hometown: '江苏金坛人，中共党员',
+          bio: [
+            '钱骥（1917—1983），江苏金坛人，中共党员，卫星总体工程专家，追授"两弹一星"功勋奖章，东方红一号卫星总体技术负责人。',
+            '钱骥是我国第一颗人造卫星总体技术牵头人，赵九章的核心科研助手，全程参与卫星早期方案论证、总体结构设计。在工业基础薄弱、元器件短缺的条件下，简化卫星总体设计方案，确定东方红一号分系统布局、重量控制、外形结构，明确卫星播放乐曲、遥感探测核心功能。',
+            '他统筹全国数十家单位开展卫星零部件配套，协调光学、电子、结构、能源各领域专家协同攻关，解决卫星轻量化、星上小型元器件、太空供电等关键工程难题，完成卫星全部地面力学、热环境模拟试验，保障1970年东方红一号顺利发射入轨。',
+            '同时牵头探空火箭有效载荷研制，利用高空火箭开展空间环境预试验，积累卫星在轨环境数据，为后续返回式卫星、遥感卫星研发积累工程经验。一生深耕卫星总体工程，长期服从调度隐姓埋名开展一星配套攻关，从零完成我国首颗人造卫星全套工程设计，是东方红一号升空不可或缺的核心工程专家。'
+          ]
+        },
+        {
+          id: 'm22', surname: '钱', category: '两弹一星元勋',
+          portrait: '../assets/portrait_22.jpg',
+          name: '钱三强', years: '1913 — 1992',
+          tags: ['核物理学家', '中国科学院院士', '"两弹一星"功勋奖章获得者', '中国原子能事业奠基人'],
+          hometown: '浙江绍兴人，中共党员',
+          bio: [
+            '钱三强（1913—1992），浙江绍兴人，中共党员，核物理学家，中国科学院院士，"两弹一星"功勋奖章获得者，中国原子能事业奠基人。',
+            '钱三强早年在法国实验室发现铀三分裂、四分裂现象，享誉国际核物理界，1948年毅然归国，牵头搭建我国完整原子能科研体系，创建中科院原子能研究所，全国寻访、吸纳核物理、放射化学、工程技术人才，为两弹一星储备全部核心科研队伍，被誉为两弹事业“总伯乐”。',
+            '苏联援华合作时期，他统筹中苏核科研交流，学习反应堆、核燃料基础工艺；1960年专家撤走后，完整承接原子弹自主研发统筹工作，规划核燃料生产、核物理实验、核武器理论三大板块协同推进，布局兰州504厂、青海221基地两大核心工程配套。',
+            '他主持铀核裂变基础理论、反应堆预研，打通从铀矿开采、提纯到高浓铀生产完整产业链顶层规划，协调全国冶金、化工、军工院所配套核工业发展，为邓稼先、王淦昌、彭桓武等专家搭建科研平台。一生以搭建核工业体系、培育人才为核心使命，是我国原子能事业拓荒领路人，为两弹一星工程奠定全局产业与人才根基。'
+          ]
+        },
+        {
+          id: 'm23', surname: '郭', category: '两弹一星元勋',
+          portrait: '../assets/portrait_23.jpg',
+          name: '郭永怀', years: '1909 — 1968',
+          tags: ['力学家、应用数学家', '中国科学院院士', '中国近代力学事业奠基人', '"两弹一星"功勋奖章获得者', '核武器事业先行者'],
+          hometown: '山东荣成人，中共党员',
+          bio: [
+            '郭永怀（1909—1968），山东荣成人，中共党员，力学家、应用数学家，中国科学院院士，中国近代力学事业奠基人，"两弹一星"功勋奖章获得者，核武器事业先行者。',
+            '郭永怀海外求学十六年，任美国康奈尔大学终身教授，与钱学森共同提出“上临界马赫数”理论，创立国际通用PLK数学方法，跨声速空气动力学成果享誉全球。新中国成立后坚定归国报国，为突破美方人才管制，主动焚毁全部未刊学术手稿，1956年终于回到祖国。',
+            '1960年经钱学森举荐投身两弹攻关，与王淦昌、彭桓武组成核武器研发三大支柱，专职负责核武器结构强度、爆炸力学、环境模拟试验等国内空白领域研究。年过五十长期驻守青海221基地，克服高原缺氧严寒，全程主持各阶段爆炸力学试验，攻克核弹壳体安全、运载飞行力学多项卡脖子技术，同步将空气动力学成果应用于核导弹研发。',
+            '1968年12月，携带热核导弹关键绝密试验数据返程汇报途中遭遇空难，危急时刻以身躯护住科研手稿，完整保留核心试验资料。牺牲二十日后，我国首枚热核导弹试验圆满成功。1968年国家追授其革命烈士称号，小行星212796永久命名为“郭永怀星”。',
+            '他填补我国核武器力学研究空白，打通核弹从理论设计到实装试验全流程技术链条，最终以生命守护两弹一星核心科研成果，用热血铸就力学报国不朽丰碑。'
+          ]
+        }
+      ];
+
+      // === 7 位杰出女科学家完整数据（材料原文，不做任何删改）===
+      const womenFigures = [
+        {
+          id: 'w01', surname: '王', category: '杰出女科学家',
+          portrait: '../assets/portrait_24.jpeg',
+          name: '王承书', years: '1912 — 1994',
+          tags: ['理论与工程物理学家', '中国科学院院士', '我国铀同位素分离理论奠基人', '原子弹核心核燃料研发首席科学家', '被誉为"中国的居里夫人"'],
+          hometown: '祖籍湖北武昌，生于上海，中共党员',
+          bio: [
+            '王承书（1912—1994），祖籍湖北武昌，生于上海，中共党员，理论与工程物理学家，中国科学院院士，我国铀同位素分离理论奠基人，原子弹核心核燃料研发首席科学家，被誉为"中国的居里夫人"。',
+            '王承书早年留学美国密歇根大学，与导师创立气体动力学里程碑式 WCU 方程，学术水平得到国际物理学界高度认可，具备冲击诺贝尔奖的学术潜力。1956 年归国后，她三次主动调整研究方向，服从国家国防科研调度，全身心服务两弹一星事业。1961 年接受最高等级涉密任务，投身高浓缩铀技术攻关，此后隐姓埋名三十余年驻守兰州 504 浓缩铀生产基地。',
+            '国外长期垄断高丰度铀分离全套技术，苏联专家撤离后，相关计算方法、生产设备全部断供，高浓铀成为制约原子弹研制的核心瓶颈。在国内计算机算力极度有限的条件下，她牵头搭建完整自主铀同位素分离理论体系，创新“9 批启动 5 批取”生产方案，缩短核心物料生产周期 113 天，攻克上千台扩散机组联动运行偏移世界级难题；主导国产气体扩散机全套参数设计，摆脱国外设备依赖。1964 年，团队成功产出丰度 90% 以上合格高浓铀 - 235，为我国首颗原子弹提供唯一核心裂变原料，使我国成为全球第五个自主掌握铀浓缩核心技术的国家。',
+            '科研之余，她创办国内首套铀同位素分离专业培训班，编写行业首部专业教材，培育第一代核燃料技术骨干。一生淡泊名利，近百项涉密科研成果均不署个人姓名，长期缴纳大额特殊党费，毕生积蓄捐建边疆希望小学，生前遗嘱将遗体、藏书、存款全部无偿移交国家。',
+            '王承书自主打通核燃料完整产业链，补齐“两弹一星”工程最关键原料短板，以女性科研工作者严谨求实、无私奉献的品格，为我国独立完整核工业体系建设作出不可替代的历史性贡献。'
+          ]
+        },
+        {
+          id: 'w02', surname: '李', category: '杰出女科学家',
+          portrait: '../assets/portrait_25.jpg',
+          name: '李林', years: '1923 — 2003',
+          tags: ['金属物理学家、核物理学家', '核武器结构材料核心专家', '中国科学院院士', '李四光之女', '我国核装置特种金属材料研发带头人'],
+          hometown: '湖北黄冈人，中共党员',
+          bio: [
+            '李林（1923—2003），湖北黄冈人，中共党员，金属物理学家、核物理学家，核武器结构材料核心专家，中国科学院院士，李四光之女，我国核装置特种金属材料研发带头人。',
+            '李林早年留学英国剑桥大学，主攻高温合金、金属辐照损伤领域，学成后毅然归国投身原子能配套材料攻关。两弹研制阶段，核弹壳体、反应堆核心构件长期面临强中子辐照、高温高压双重考验，国外严密封锁耐辐照合金配方与测试技术，成为核武器小型化关键卡点。她牵头组建国内首个金属辐照实验室，自主开展各类合金中子辐照老化试验，系统测定不同金属在核辐射下形变、开裂、腐蚀规律，筛选适配原子弹、氢弹、核反应堆的特种钢材与合金材料。',
+            '苏联专家撤走后，所有材料试验标准全部断供，她带领团队从零搭建辐照损伤评价体系，上千次高温、辐照对比试验，攻克核弹内爆装置金属部件长期稳定性难题，为 221 基地核武器实体结构设计提供全套材料性能数据支撑，保障爆轰装置长期安全可靠。同时，她为兰州 504 浓缩铀扩散机组配套特种耐腐蚀金属材料提供核心技术方案，打通核燃料生产设备材料短板。',
+            '科研之外，她为九院核武器研究院输送大批材料专业青年骨干，开设金属辐照专业课程，填补国内交叉学科人才空白。数十年隐姓埋名深耕冷门材料基础研究，不追逐媒体曝光，以金属材料科学筑牢核武器实体制造根基，是支撑“两弹”工程不可或缺的巾帼材料专家。'
+          ]
+        },
+        {
+          id: 'w03', surname: '吴', category: '杰出女科学家',
+          portrait: '../assets/portrait_26.jpg',
+          name: '吴健雄', years: '1912 — 1997',
+          tags: ['美籍华裔核物理学家', '美国国家科学院院士', '首位获得沃尔夫物理学奖的女性物理学家'],
+          hometown: '江苏太仓人',
+          bio: [
+            '吴健雄（1912—1997），江苏太仓人，美籍华裔核物理学家，美国国家科学院院士，首位获得沃尔夫物理学奖的女性物理学家，为我国两弹一星事业提供关键理论支撑与学术助力。',
+            '吴健雄是全球顶尖实验核物理权威，通过著名的钴60低温实验精确证实弱相互作用中宇称不守恒定律，直接支撑杨振宁、李政道斩获诺贝尔奖，在β衰变、核反应、弱相互作用领域取得划时代成果。虽长期旅居海外，但始终心系祖国核工业发展，持续为国内核科研人员提供前沿文献、实验思路与技术参考，填补我国早期核物理理论认知短板。',
+            '“两弹”研制攻坚阶段，国内核衰变、中子物理相关实验理论资料极度匮乏，她多次通过学术交流渠道向国内传递国际前沿核物理实验方法，为王淦昌、何泽慧等国内核科学家开展基础核试验提供重要理论借鉴。她深耕原子核内部反应机理研究，其关于核裂变、放射性测量的全套实验理论，成为我国原子弹基础理论计算、核辐射检测体系搭建的重要参考依据，间接助力我国核武器基础理论体系自主构建。',
+            '同时，她长期心系祖国科研人才培养，多次邀约国内青年学者赴外交流学习，为我国核物理领域储备后备科研力量。晚年始终期盼祖国核科技不断突破，多次公开表达对中国“两弹一星”伟大成就的自豪与认可。',
+            '吴健雄以顶尖实验物理成就奠定全球女性科学家的标杆地位，跨越国界心系祖国国防科研，用前沿学术成果为两弹一星基础研究铺路，彰显中华儿女胸怀家国、勇攀物理高峰的崇高品格。'
+          ]
+        },
+        {
+          id: 'w04', surname: '何', category: '杰出女科学家',
+          portrait: '../assets/portrait_27.jpg',
+          name: '何泽慧', years: '1914 — 2011',
+          tags: ['核物理学家', '中国科学院院士', '我国原子核裂变研究奠基人之一'],
+          hometown: '江苏苏州人，中共党员',
+          bio: [
+            '何泽慧（1914—2011），江苏苏州人，中共党员，核物理学家，中国科学院院士，我国原子核裂变研究奠基人之一，为"两弹一星"工程筑牢核裂变基础理论根基。',
+            '何泽慧早年远赴德国深造，1946年与丈夫钱三强共同发现铀核三分裂、四分裂现象，轰动国际核物理界，填补人类对核裂变形式认知的空白，为原子弹核反应机理研究提供核心理论依据。1948年她放弃欧洲优越科研条件，跟随钱三强毅然归国，投身国内原子能事业拓荒。',
+            '两弹工程启动前期，国内缺乏完整核裂变实验数据与放射化学研究体系，何泽慧牵头搭建国内首个核裂变实验平台，系统开展铀、钚等核材料裂变规律、中子计数、放射性探测研究，完整积累大量自主实测核数据，为兰州504厂铀同位素分离、青海221基地核武器理论设计提供底层实验支撑。苏联专家全部撤走、技术封锁加剧后，她带领团队自主研发放射探测仪器，攻克微量核物质检测难题，补齐我国核原料生产环节的检测技术短板。',
+            '她长期扎根涉密核科研一线，隐姓埋名开展基础裂变研究，不追求个人功名，深耕冷门基础核物理数十年。除基础研究外，她大力培养放射化学、核探测专业人才，为两弹一星事业输送大批技术骨干。',
+            '何泽慧深耕核裂变基础领域，从零建立自主核实验检测体系，从源头支撑原子弹核心核反应理论研发，以女性科研工作者严谨坚韧、淡泊奉献的一生，为我国完整独立核工业体系建设作出不可磨灭的基础性贡献。'
+          ]
+        },
+        {
+          id: 'w05', surname: '陆', category: '杰出女科学家',
+          portrait: '../assets/portrait_28.jpg',
+          name: '陆士嘉', years: '1911 — 1986',
+          tags: ['流体力学、空气动力学专家', '力学泰斗', '北京航空航天大学创建人之一', '我国高速飞行器气动设计开创者'],
+          hometown: '浙江萧山人，中共党员',
+          bio: [
+            '陆士嘉（1911—1986），浙江萧山人，中共党员，流体力学、空气动力学专家，力学泰斗，北京航空航天大学创建人之一，我国高速飞行器气动设计开创者。',
+            '陆士嘉是世界力学大师普朗特唯一女弟子，1947 年放弃德国优越科研岗位归国，深耕跨声速、高速流场、气动热理论，完美承接郭永怀开创的跨声速力学体系，专门服务核弹、导弹高速飞行配套研发。两弹结合工程推进阶段，核弹头再入大气层会产生上万度高温冲击波，气动外形失稳、烧蚀失效是核导弹远程投送致命难题，国内无任何高速弹头气动研究基础。',
+            '她主持高速弹头流场仿真、激波干扰、气动热传导全套理论推导，建立适配核弹头的跨声速计算模型，优化弹头锥角、防热外形结构，大幅降低再入阶段烧蚀损耗，提升远程核导弹飞行稳定性与打击精度。同时，她将流体力学理论应用于爆炸冲击波模拟，配合青海 221 基地爆轰试验团队，完善原子弹空中爆炸冲击波传播测算方法，优化核爆杀伤效应评估体系。',
+            '她毕生深耕国防力学基础研究，一手搭建北航空气动力学完整学科，为导弹、核弹气动研发持续输送专业人才。在男性主导的力学领域独辟蹊径，以扎实流体力学理论打通核弹、导弹高速投放关键技术链路，默默支撑两弹结合重大工程落地，彰显女性力学专家勇攀高峰的科研风骨。'
+          ]
+        },
+        {
+          id: 'w06', surname: '林', category: '杰出女科学家',
+          portrait: '../assets/portrait_29.jpg',
+          name: '林兰英', years: '1918 — 2003',
+          tags: ['半导体材料专家', '中国科学院院士', '我国第一根硅单晶研制者', '导弹卫星电子元器件核心奠基人'],
+          hometown: '福建莆田人，中共党员',
+          bio: [
+            '林兰英（1918—2003），福建莆田人，中共党员，半导体材料专家，中国科学院院士，我国第一根硅单晶研制者，导弹卫星电子元器件核心奠基人，为"两弹一星"配套电子器件提供核心原材料。',
+            '“两弹一星”工程中，导弹制导、卫星测控、核爆遥测仪器全部依赖高纯半导体芯片，西方全面封锁硅单晶、砷化镓单晶全套制备技术，元器件完全断供。林兰英冲破美国层层管制、扣押阻挠毅然归国，1958 年在简陋实验室拉制出中国第一根高纯硅单晶，打破国外垄断，从零建立国产半导体材料完整产业链。',
+            '东风系列战略导弹、东方红一号卫星配套微型晶体管、集成电路均以她研制的硅单晶为基础原料。她带领团队持续攻克超高纯度单晶提纯、无位错晶体生长难题，大幅提升军工电子元器件耐高温、抗辐射性能，保障戈壁野外、太空真空极端环境下测控设备稳定运行。核试验专用高速记录仪器、导弹惯性制导芯片全部依托国产单晶实现自主化，彻底摆脱进口依赖。',
+            '晚年持续布局半导体新材料前沿，培养大批微电子科研人才，支撑后续航天、核军工电子迭代升级。数十年扎根材料一线，以小小单晶撑起导弹、卫星电子系统根基，是“一星”工程与核导弹配套领域里程碑式巾帼科学家。'
+          ]
+        },
+        {
+          id: 'w07', surname: '夏', category: '杰出女科学家',
+          portrait: '../assets/portrait_30.jpg',
+          name: '夏培肃', years: '1923 — 2014',
+          tags: ['计算机专家', '中国科学院院士', '我国第一台自行研制通用电子计算机制定者', '两弹理论海量演算核心支撑者'],
+          hometown: '四川江津人，中共党员',
+          bio: [
+            '夏培肃（1923—2014），四川江津人，中共党员，计算机专家，中国科学院院士，我国第一台自行研制通用电子计算机制定者，两弹理论海量演算核心支撑者。',
+            '两弹攻关初期无大型计算机，仅靠算盘演算效率极低，海量中子输运、爆轰耦合方程组计算周期长达一年以上，严重拖慢原子弹理论设计进度。夏培肃牵头自主研发国产电子计算机，1960 年研制成功我国首台 107 型通用电子计算机，专门对接九院核武器理论计算需求。',
+            '她针对核物理复杂方程组优化底层运算程序，简化多维度迭代算法，大幅缩短原子弹、氢弹理论数据验算周期；后续升级适配 109 丙机，持续为邓稼先、周光召理论团队提供稳定算力支撑。苏联专家撤走后，所有核计算程序、算法模型全部丢失，她带领团队从零编写全套核物理专用计算程序，自主搭建核武器数值模拟体系，保障“两弹”理论设计不间断推进。',
+            '同时，她开设国内首个计算机专业，培养大量军工计算人才，支撑核试验数据处理、卫星轨道测算全流程算力需求。一生深耕国产自主算力建设，以计算机技术破解两弹研制最大算力瓶颈，是幕后支撑核理论突破的巾帼计算泰斗。'
+          ]
+        }
+      ];
+
+      // === 渲染卡片 ===
+      function createFigureCard(figure, index, darkMode = false) {
+        const tagColorClass = darkMode
+          ? 'bg-white/10 text-white/90 border border-white/15'
+          : 'bg-primary/10 text-primary border border-primary/15';
+
+        return `
+          <article class="figure-card flex flex-col items-center ${darkMode ? 'bg-white/[0.04] border-white/10 text-white' : 'bg-card border-border'} rounded-2xl p-7 border relative overflow-hidden group" data-id="${figure.id}" data-index="${index}">
+            ${darkMode ? '<div class="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-transparent pointer-events-none"></div>' : ''}
+            <div class="relative">
+              <div class="figure-avatar mb-6 overflow-hidden bg-background">
+                <img src="${figure.portrait}" alt="${figure.name}头像" class="w-full h-full object-cover" onerror="this.style.display='none';this.parentNode.innerText='${figure.surname}';">
+              </div>
+            </div>
+            <div class="w-full text-center relative z-10 flex flex-col flex-1">
+              <h3 class="text-xl md:text-2xl font-bold ${darkMode ? 'text-white' : 'text-foreground'} mb-1.5" style="font-family:var(--ldyx-font-serif)">${figure.name}</h3>
+              <p class="text-xs md:text-sm ${darkMode ? 'text-white/60' : 'text-muted-foreground'} mb-3.5 tracking-wide">${figure.years}</p>
+              <div class="flex flex-wrap justify-center gap-1.5 mb-5 px-2">
+                ${figure.tags.slice(0, 2).map(tag => `<span class="tag-chip ${tagColorClass}">${tag}</span>`).join('')}
+              </div>
+              <p class="${darkMode ? 'text-white/70' : 'text-muted-foreground'} text-[14.5px] leading-[1.95] text-left mb-4">${figure.bio[0]}</p>
+              <div class="pt-3 border-t ${darkMode ? 'border-white/10' : 'border-border'} flex items-center justify-between mt-auto min-h-[44px]">
+                <span class="text-[11px] ${darkMode ? 'text-white/45' : 'text-muted-foreground'} tracking-wider truncate max-w-[60%]">${figure.hometown.split('，')[0]}</span>
+                <span class="inline-flex items-center gap-1 text-sm font-semibold ${darkMode ? 'text-primary-300 hover:text-primary-200' : 'text-primary hover:text-primary-700'} transition-colors">
+                  阅读生平
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </span>
+              </div>
+            </div>
+          </article>
+        `;
+      }
+
+      // 渲染元勋卡片
+      const mGrid = document.getElementById('meritorious-grid');
+      mGrid.innerHTML = meritoriousFigures.map((f, i) => createFigureCard(f, i, false)).join('');
+
+      // 渲染女科学家卡片
+      const wGrid = document.getElementById('women-grid');
+      wGrid.innerHTML = womenFigures.map((f, i) => createFigureCard(f, i, true)).join('');
+
+      // === 模态框逻辑 ===
+      const modal = document.getElementById('figure-modal');
+      const modalTitle = document.getElementById('figure-modal-title');
+      const modalYears = document.getElementById('modal-years');
+      const modalAvatar = document.getElementById('modal-avatar');
+      const modalTags = document.getElementById('modal-tags');
+      const modalBio = document.getElementById('modal-biography');
+
+      function findFigureById(id) {
+        return meritoriousFigures.find(f => f.id === id) || womenFigures.find(f => f.id === id);
+      }
+
+      function openFigureModal(id) {
+        const figure = findFigureById(id);
+        if (!figure) return;
+
+        
+        const img = document.createElement('img');
+                img.src = figure.portrait;
+                img.alt = figure.name + '头像';
+                img.className = 'w-full h-full object-cover';
+                img.onerror = () => { img.style.display = 'none'; modalAvatar.innerText = figure.surname; };
+                modalAvatar.innerText = '';
+                modalAvatar.appendChild(img);
+        modalYears.textContent = figure.years + '  ·  ' + figure.hometown;
+        modalTitle.textContent = figure.name;
+
+        modalTags.innerHTML = figure.tags.map(tag =>
+          `<span class="tag-chip bg-primary/10 text-primary border border-primary/15">${tag}</span>`
+        ).join('');
+
+        modalBio.innerHTML = figure.bio.map(para =>
+          `<p class="indent-8 text-justify first-letter:font-bold first-letter:text-lg first-letter:font-serif">${para}</p>`
+        ).join('');
+
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => modal.querySelector('.modal-content').scrollTop = 0, 50);
+      }
+
+      function closeFigureModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+
+      // 绑定卡片点击
+      document.querySelectorAll('.figure-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const id = card.getAttribute('data-id');
+          openFigureModal(id);
+        });
+      });
+
+      // 关闭按钮
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal || event.target.closest('.modal-close')) {
+          closeFigureModal();
+        }
+      });
+
+      // ESC 键关闭
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+          closeFigureModal();
+        }
+      });
+    </script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+{
+  "success": true,
+  "outcome": "passed",
+  "repairable": true,
+  "terminalViolations": [],
+  "terminalBlockingSummary": null,
+  "skillProvenance": {
+    "name": "solo-design",
+    "version": "2026.08.06.19.15.08",
+    "version_source": "skill-release-manifest.json",
+    "runtime_skill_dir": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+    "recorded_at": null,
+    "expected_version": "2026.08.06.19.15.08",
+    "status": "manifest_fallback",
+    "read_status": "ok",
+    "reason": "runtime-orchestration-summary.json missing skillProvenance; used skill-release-manifest.json"
+  },
+  "operatingMode": "free-explore",
+  "renderBlockingErrorCount": 0,
+  "softWarningCount": 3,
+  "renderBlockingErrors": [],
+  "errorSignatures": [],
+  "softWarnings": [
+    "[orchestration-summary] runtime-orchestration-summary.json is missing skillProvenance.name/version/version_source. Version provenance will be reported as observed_unknown by external evaluators.",
+    "[html-quality] colors_and_type.css: free-explore radius tokens must stay within the restrained 2/4/8/12/16px scale; oversized or forbidden radius tokens found (--ldyx-radius-xl: 24px). Do not use 20px+ radii unless the user explicitly requested large rounded shapes.",
+    "[html-quality] colors_and_type.css: ordinary/static shadow tokens must keep every shadow alpha <= 0.05; deeper shadows are allowed only for floating-layer tokens such as modal/popover/dropdown/drawer/overlay (--ldyx-shadow-2: 0 8px 24px -8px rgba(28, 25, 23, 0.18), --ldyx-shadow-3: 0 24px 60px -20px rgba(28, 25, 23, 0.30))."
+  ],
+  "repairPlanHints": [],
+  "repairActionTable": [],
+  "errorCount": 0,
+  "warningCount": 3,
+  "errors": [],
+  "warnings": [
+    "[orchestration-summary] runtime-orchestration-summary.json is missing skillProvenance.name/version/version_source. Version provenance will be reported as observed_unknown by external evaluators.",
+    "[html-quality] colors_and_type.css: free-explore radius tokens must stay within the restrained 2/4/8/12/16px scale; oversized or forbidden radius tokens found (--ldyx-radius-xl: 24px). Do not use 20px+ radii unless the user explicitly requested large rounded shapes.",
+    "[html-quality] colors_and_type.css: ordinary/static shadow tokens must keep every shadow alpha <= 0.05; deeper shadows are allowed only for floating-layer tokens such as modal/popover/dropdown/drawer/overlay (--ldyx-shadow-2: 0 8px 24px -8px rgba(28, 25, 23, 0.18), --ldyx-shadow-3: 0 24px 60px -20px rgba(28, 25, 23, 0.30))."
+  ],
+  "validationRunDisciplineStatus": {
+    "declared": true,
+    "restoreMode": false,
+    "maxFullValidationRuns": 2,
+    "validationHistoryCount": 0,
+    "repairLedgerCount": 0,
+    "softWarningsTriggerRepair": false,
+    "terminalState": null,
+    "nextAction": null,
+    "violations": [],
+    "success": true
+  },
+  "terminalState": null,
+  "nextCheck": {
+    "type": "finish-readiness",
+    "command": "node \"c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs\" \"d:\\Project\\liangdanyixing\\liangdan-yixing-site\" --check=all",
+    "fullValidationAllowed": false,
+    "reason": "workspace validation passed; run complete finish readiness before final delivery"
+  },
+  "repairBatch": [],
+  "repairContextPacket": {
+    "schema_version": "1.0",
+    "purpose": "small-context repair packet; read this before full validation-report.json",
+    "success": true,
+    "terminalState": null,
+    "skillProvenance": {
+      "name": "solo-design",
+      "version": "2026.08.06.19.15.08",
+      "version_source": "skill-release-manifest.json",
+      "runtime_skill_dir": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+      "recorded_at": null,
+      "expected_version": "2026.08.06.19.15.08",
+      "status": "manifest_fallback",
+      "read_status": "ok",
+      "reason": "runtime-orchestration-summary.json missing skillProvenance; used skill-release-manifest.json"
+    },
+    "renderBlockingErrorCount": 0,
+    "softWarningCount": 3,
+    "renderBlockingErrors": [],
+    "repairActionTable": [],
+    "nextCheck": {
+      "type": "finish-readiness",
+      "command": "node \"c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs\" \"d:\\Project\\liangdanyixing\\liangdan-yixing-site\" --check=all",
+      "fullValidationAllowed": false,
+      "reason": "workspace validation passed; run complete finish readiness before final delivery"
+    },
+    "forbidden": [
+      "do not read validator source",
+      "do not rerun full validation when nextCheck.fullValidationAllowed=false",
+      "do not start preview/browser unless user explicitly asks",
+      "do not hand-edit repair ledger fields"
+    ]
+  },
+  "projectFileHashes": {
+    ".design": "b1b6b292d2da60d1d1dc64d83d05a32ca9b8c51b7f35aa9cf829ebfca5b823d3",
+    "colors_and_type.css": "30467e20e29e16a8526bcae82c35184c9e63bf304f82322caa48a172bee210ab",
+    "runtime-orchestration-summary.json": "bcaf1572d8cba064d4ac5bffe466b38755eb2e6529c165f6a582a21f56f4f3b8",
+    "pages/figures.html": "6821b2c2e67c8e5d7f8ed12bc330d1315ff698284d4933ff9062663bf46ac475",
+    "pages/index.html": "49ab14ef3fee3063958904ebb2e4ee450b1a90c444c12d1eab04e07c0dab9c50",
+    "pages/timeline.html": "08b7a90e20abb075c199874446bfbb975b045a6f0dc0203c0b675f58780177e3",
+    "assets/event_atomic_bomb.jpg": "4478fbb3fb498c8bf59fcbec42153626f635cd67ab930e19de7d415b5a2f2a73",
+    "assets/event_satellite.jpg": "918b8e93d1a45d65049b02a88be9c5e0e2479c5762dbf07d3c7c9267ed1034f0",
+    "assets/figures_hero.jpg": "29f98d380a86b7fc1f187cd684602620c3d60abcaf7e8148786c6bc1be8ec425",
+    "assets/hero_poster.jpg": "e2f3a60bee4f6d976649a8d086c7859489d094e373aa2a6dd21f209e5c2f4c3f",
+    "assets/timeline_hero.jpg": "53c44701af547979d23f88065770099835fb8e47eb28b24476f25b23c02d7dbc"
+  },
+  "designDir": "d:\\Project\\liangdanyixing\\liangdan-yixing-site",
+  "expectedPages": 3,
+  "requireInteractions": null,
+  "checkedAt": "2026-08-15T12:03:49.373Z"
+}

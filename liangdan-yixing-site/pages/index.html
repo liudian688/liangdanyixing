@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>两弹一星精神宣传网 | 合肥工业大学核炬薪传宣讲团</title>
+    <style id="theme-vars">
+:root {
+  --ldyx-primary-50: #fef2f2;
+  --ldyx-primary-100: #fee2e2;
+  --ldyx-primary-200: #fecaca;
+  --ldyx-primary-300: #fca5a5;
+  --ldyx-primary-400: #f87171;
+  --ldyx-primary-500: #ef4444;
+  --ldyx-primary-600: #dc2626;
+  --ldyx-primary-700: #b91c1c;
+  --ldyx-primary-800: #991b1b;
+  --ldyx-primary-900: #7f1d1d;
+  --ldyx-neutral-0: #ffffff;
+  --ldyx-neutral-50: #fafaf9;
+  --ldyx-neutral-100: #f5f5f4;
+  --ldyx-neutral-200: #e7e5e4;
+  --ldyx-neutral-300: #d6d3d1;
+  --ldyx-neutral-400: #a8a29e;
+  --ldyx-neutral-500: #78716c;
+  --ldyx-neutral-600: #57534e;
+  --ldyx-neutral-700: #44403c;
+  --ldyx-neutral-800: #292524;
+  --ldyx-neutral-900: #1c1917;
+  --ldyx-navy-50: #f0f4f8;
+  --ldyx-navy-100: #d9e2ec;
+  --ldyx-navy-700: #334e68;
+  --ldyx-navy-800: #243b53;
+  --ldyx-navy-900: #102a43;
+  --ldyx-background: #fafaf9;
+  --ldyx-foreground: #1c1917;
+  --ldyx-card: #ffffff;
+  --ldyx-card-foreground: #1c1917;
+  --ldyx-popover: #ffffff;
+  --ldyx-popover-foreground: #1c1917;
+  --ldyx-primary: #9b1c1c;
+  --ldyx-primary-foreground: #ffffff;
+  --ldyx-muted: #f5f5f4;
+  --ldyx-muted-foreground: #78716c;
+  --ldyx-border: #e7e5e4;
+  --ldyx-input: #e7e5e4;
+  --ldyx-ring: #9b1c1c;
+  --ldyx-surface: #ffffff;
+  --ldyx-surface-2: #f5f5f4;
+  --ldyx-ink: #1c1917;
+  --ldyx-ink-2: #57534e;
+  --ldyx-ink-3: #78716c;
+  --ldyx-line: #e7e5e4;
+  --ldyx-brand: #9b1c1c;
+  --ldyx-brand-ink: #ffffff;
+  --ldyx-navy: #102a43;
+  --ldyx-gold: #b45309;
+  --ldyx-radius-sm: 4px;
+  --ldyx-radius-md: 8px;
+  --ldyx-radius-lg: 16px;
+  --ldyx-radius-xl: 24px;
+  --ldyx-radius-pill: 999px;
+  --ldyx-shadow-1: 0 1px 2px rgba(28, 25, 23, 0.05), 0 1px 1px rgba(28, 25, 23, 0.03);
+  --ldyx-shadow-2: 0 8px 24px -8px rgba(28, 25, 23, 0.18);
+  --ldyx-shadow-3: 0 24px 60px -20px rgba(28, 25, 23, 0.30);
+  --ldyx-font-sans: 'Inter', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --ldyx-font-serif: 'Noto Serif SC', 'Source Han Serif SC', serif;
+}
+html.dark {
+  --ldyx-background: #0f0f10;
+  --ldyx-foreground: #f5f5f4;
+  --ldyx-card: #18181b;
+  --ldyx-card-foreground: #f5f5f4;
+  --ldyx-popover: #18181b;
+  --ldyx-popover-foreground: #f5f5f4;
+  --ldyx-primary: #ef4444;
+  --ldyx-primary-foreground: #ffffff;
+  --ldyx-muted: #27272a;
+  --ldyx-muted-foreground: #a8a29e;
+  --ldyx-border: #27272a;
+  --ldyx-input: #27272a;
+  --ldyx-ring: #ef4444;
+  --ldyx-surface: #18181b;
+  --ldyx-surface-2: #27272a;
+  --ldyx-ink: #f5f5f4;
+  --ldyx-ink-2: #d6d3d1;
+  --ldyx-ink-3: #a8a29e;
+  --ldyx-line: #27272a;
+}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--ldyx-background);
+    --color-foreground: var(--ldyx-foreground);
+    --color-card: var(--ldyx-card);
+    --color-card-foreground: var(--ldyx-card-foreground);
+    --color-popover: var(--ldyx-popover);
+    --color-popover-foreground: var(--ldyx-popover-foreground);
+    --color-primary: var(--ldyx-primary);
+    --color-primary-foreground: var(--ldyx-primary-foreground);
+    --color-muted: var(--ldyx-muted);
+    --color-muted-foreground: var(--ldyx-muted-foreground);
+    --color-border: var(--ldyx-border);
+    --color-input: var(--ldyx-input);
+    --color-ring: var(--ldyx-ring);
+    --radius-sm: var(--ldyx-radius-sm);
+    --radius-md: var(--ldyx-radius-md);
+    --radius-lg: var(--ldyx-radius-lg);
+    --radius-xl: var(--ldyx-radius-xl);
+  }
+  @layer base {
+    body { background: var(--ldyx-background); color: var(--ldyx-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--ldyx-background); }
+      .text-background { color: var(--ldyx-background); }
+      .border-background { border-color: var(--ldyx-background); }
+      .ring-background { --tw-ring-color: var(--ldyx-background); }
+      .bg-foreground { background-color: var(--ldyx-foreground); }
+      .text-foreground { color: var(--ldyx-foreground); }
+      .border-foreground { border-color: var(--ldyx-foreground); }
+      .ring-foreground { --tw-ring-color: var(--ldyx-foreground); }
+      .bg-card { background-color: var(--ldyx-card); }
+      .text-card { color: var(--ldyx-card); }
+      .border-card { border-color: var(--ldyx-card); }
+      .ring-card { --tw-ring-color: var(--ldyx-card); }
+      .bg-card-foreground { background-color: var(--ldyx-card-foreground); }
+      .text-card-foreground { color: var(--ldyx-card-foreground); }
+      .border-card-foreground { border-color: var(--ldyx-card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--ldyx-card-foreground); }
+      .bg-popover { background-color: var(--ldyx-popover); }
+      .text-popover { color: var(--ldyx-popover); }
+      .border-popover { border-color: var(--ldyx-popover); }
+      .ring-popover { --tw-ring-color: var(--ldyx-popover); }
+      .bg-popover-foreground { background-color: var(--ldyx-popover-foreground); }
+      .text-popover-foreground { color: var(--ldyx-popover-foreground); }
+      .border-popover-foreground { border-color: var(--ldyx-popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--ldyx-popover-foreground); }
+      .bg-primary { background-color: var(--ldyx-primary); }
+      .text-primary { color: var(--ldyx-primary); }
+      .border-primary { border-color: var(--ldyx-primary); }
+      .ring-primary { --tw-ring-color: var(--ldyx-primary); }
+      .bg-primary-foreground { background-color: var(--ldyx-primary-foreground); }
+      .text-primary-foreground { color: var(--ldyx-primary-foreground); }
+      .border-primary-foreground { border-color: var(--ldyx-primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--ldyx-primary-foreground); }
+      .bg-muted { background-color: var(--ldyx-muted); }
+      .text-muted { color: var(--ldyx-muted); }
+      .border-muted { border-color: var(--ldyx-muted); }
+      .ring-muted { --tw-ring-color: var(--ldyx-muted); }
+      .bg-muted-foreground { background-color: var(--ldyx-muted-foreground); }
+      .text-muted-foreground { color: var(--ldyx-muted-foreground); }
+      .border-muted-foreground { border-color: var(--ldyx-muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--ldyx-muted-foreground); }
+      .bg-border { background-color: var(--ldyx-border); }
+      .text-border { color: var(--ldyx-border); }
+      .border-border { border-color: var(--ldyx-border); }
+      .ring-border { --tw-ring-color: var(--ldyx-border); }
+      .bg-input { background-color: var(--ldyx-input); }
+      .text-input { color: var(--ldyx-input); }
+      .border-input { border-color: var(--ldyx-input); }
+      .ring-input { --tw-ring-color: var(--ldyx-input); }
+      .bg-ring { background-color: var(--ldyx-ring); }
+      .text-ring { color: var(--ldyx-ring); }
+      .border-ring { border-color: var(--ldyx-ring); }
+      .ring-ring { --tw-ring-color: var(--ldyx-ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] { display: inline-flex; align-items: center; justify-content: center; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; background-color: currentColor; }
+
+      #main-nav {
+        transition: transform .5s cubic-bezier(.22,.61,.36,1), opacity .5s ease, box-shadow .3s ease;
+        transform: translateY(-100%);
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+      #main-nav.nav-visible {
+        transform: translateY(0);
+        opacity: 1;
+        box-shadow: 0 4px 20px -6px rgba(28, 25, 23, 0.12);
+      }
+
+      .hero-text-reveal > * {
+        opacity: 0;
+        transform: translateY(24px);
+        animation: heroReveal .9s cubic-bezier(.22,.61,.36,1) forwards;
+      }
+      .hero-text-reveal > *:nth-child(1) { animation-delay: .25s; }
+      .hero-text-reveal > *:nth-child(2) { animation-delay: .5s; }
+      .hero-text-reveal > *:nth-child(3) { animation-delay: .75s; }
+      .hero-text-reveal > *:nth-child(4) { animation-delay: 1s; }
+
+      @keyframes heroReveal {
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .hero-poster::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse at top, rgba(155,28,28,0.18) 0%, transparent 55%),
+          radial-gradient(ellipse at bottom right, rgba(16,42,67,0.35) 0%, transparent 60%);
+        pointer-events: none;
+      }
+
+      .spirit-word {
+        display: inline-block;
+        padding: 0.35rem 1rem;
+        margin: 0.25rem;
+        border: 1px solid rgba(255,255,255,0.22);
+        border-radius: var(--ldyx-radius-pill);
+        background: rgba(255,255,255,0.06);
+        backdrop-filter: blur(6px);
+        font-family: var(--ldyx-font-serif);
+        letter-spacing: 0.18em;
+        font-weight: 500;
+        color: white;
+      }
+
+      .news-card {
+        transition: transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease;
+      }
+      .news-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--ldyx-shadow-3);
+      }
+
+      .section-divider {
+        display: flex; align-items: center; justify-content: center; gap: 1rem;
+        color: var(--ldyx-primary);
+      }
+      .section-divider::before,
+      .section-divider::after {
+        content: "";
+        height: 1px;
+        width: 60px;
+        background: linear-gradient(90deg, transparent, var(--ldyx-primary), transparent);
+      }
+
+      .tag-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.25rem 0.7rem;
+        border-radius: var(--ldyx-radius-pill);
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+      }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+    <main>
+        <!-- ===== 全屏海报区 ===== -->
+        <section id="hero" class="hero-poster relative h-screen min-h-[640px] w-full overflow-hidden">
+            <img src="../assets/hero_poster.jpg" alt="两弹一星历史场景海报" class="absolute inset-0 w-full h-full object-cover scale-[1.02]" />
+            <div class="absolute inset-0 bg-gradient-to-b from-black/55 via-[rgba(16,42,67,0.55)] to-black/80"></div>
+
+            <!-- 装饰角标 -->
+            <div class="absolute top-8 left-8 z-10 text-white/80">
+              <div class="flex items-center gap-2 text-xs tracking-[0.3em] uppercase">
+                <span class="w-8 h-px bg-primary/80"></span>
+                <span>HFUT · He Fei University of Technology</span>
+              </div>
+            </div>
+            <div class="absolute top-8 right-8 z-10 text-white/80 text-right">
+              <div class="font-[family-name:var(--ldyx-font-serif)] text-4xl font-black text-primary/90 leading-none" style="text-shadow: 0 2px 12px rgba(0,0,0,0.4)">核炬薪传</div>
+              <div class="text-[11px] tracking-[0.25em] mt-1 opacity-75">两弹一星精神宣讲团</div>
+            </div>
+
+            <div class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center hero-text-reveal">
+                <div class="mb-6">
+                  <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/25 bg-white/5 backdrop-blur-sm text-xs md:text-sm font-medium tracking-[0.25em] text-white/85">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                    合肥工业大学两弹一星志愿宣讲团
+                  </span>
+                </div>
+
+                <h1 class="font-[family-name:var(--ldyx-font-serif)] text-5xl md:text-7xl lg:text-8xl font-black tracking-[0.08em] text-white drop-shadow-2xl leading-[1.05]">
+                  两弹一星精神
+                </h1>
+
+                <div class="my-10 flex items-center gap-6">
+                  <span class="w-16 md:w-24 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></span>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <span class="w-16 md:w-24 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></span>
+                </div>
+
+                <div class="mb-8 max-w-3xl">
+                  <div class="text-white/92 text-lg md:text-2xl font-light leading-relaxed tracking-[0.12em] mb-6">
+                    热爱祖国 · 无私奉献 &nbsp;·&nbsp; 自力更生 · 艰苦奋斗
+                  </div>
+                  <div class="flex flex-wrap justify-center">
+                    <span class="spirit-word">大力协同</span>
+                    <span class="spirit-word">勇于登攀</span>
+                  </div>
+                </div>
+
+                <p class="max-w-2xl text-sm md:text-base text-white/65 font-light leading-relaxed tracking-wide">
+                  铭记光辉历史，赓续红色血脉。走近"两弹一星"背后的奋斗故事，<br class="hidden md:block">
+                  走近那群干惊天动地事、做隐姓埋名人的民族脊梁。
+                </p>
+            </div>
+
+            <!-- 滚动提示 -->
+            <div class="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-white/70">
+                <div class="flex flex-col items-center gap-3">
+                    <span class="text-[11px] tracking-[0.35em] opacity-75">SCROLL · 向下滚动</span>
+                    <div class="relative w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-1.5">
+                      <span class="w-1 h-2.5 rounded-full bg-white/70 animate-[bounce_1.8s_infinite]"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 横向导航栏（滚动出现） ===== -->
+        <nav id="main-nav" data-dom-id="main-nav" class="z-50 w-full h-[76px] bg-background/95 backdrop-blur-md border-b border-border" aria-label="主导航">
+            <div class="mx-auto max-w-7xl px-6 h-full flex items-center justify-between">
+                <a href="index.html" class="flex items-center gap-3 group">
+                  <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-[var(--ldyx-navy-900)] flex items-center justify-center text-white font-bold text-lg shadow-[var(--ldyx-shadow-1)] group-hover:scale-105 transition-transform" style="font-family:var(--ldyx-font-serif)">核</div>
+                  <div>
+                    <div class="text-lg font-bold tracking-tight text-foreground leading-tight">两弹一星精神宣传网</div>
+                    <div class="text-[11px] text-muted-foreground tracking-wider">合肥工业大学 · 核炬薪传宣讲团</div>
+                  </div>
+                </a>
+                <ul class="hidden md:flex items-center gap-1">
+                    <li>
+                        <a href="index.html" class="relative px-5 py-3 text-[15px] font-semibold text-primary transition-colors rounded-lg hover:bg-primary/5" aria-current="page">
+                          首页
+                          <span class="absolute bottom-1 left-5 right-5 h-0.5 bg-primary rounded-full"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="figures.html" class="relative px-5 py-3 text-[15px] font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors rounded-lg">人物志</a>
+                    </li>
+                    <li>
+                        <a href="timeline.html" class="relative px-5 py-3 text-[15px] font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors rounded-lg">时间线</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- ===== 团队介绍 Section ===== -->
+        <section id="team-intro" class="relative py-24 bg-gradient-to-b from-background via-muted/40 to-background overflow-hidden">
+          <div class="absolute top-1/4 -left-20 w-72 h-72 rounded-full bg-primary/5 blur-3xl"></div>
+          <div class="absolute bottom-1/4 -right-20 w-80 h-80 rounded-full bg-[var(--ldyx-navy-900)]/5 blur-3xl"></div>
+
+          <div class="relative mx-auto max-w-7xl px-6">
+            <div class="mb-14 text-center">
+              <div class="section-divider mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <p class="text-sm font-medium tracking-[0.3em] uppercase text-primary mb-3">OUR TEAM · 关于我们</p>
+              <h2 class="mb-4 font-[family-name:var(--ldyx-font-serif)] text-4xl md:text-5xl font-bold text-foreground">“核炬薪传”宣讲实践团</h2>
+              <p class="mx-auto max-w-2xl text-muted-foreground text-base md:text-lg leading-relaxed">立足红色科研文化传播，以青年之声讲好先辈报国故事</p>
+            </div>
+
+            <div class="grid md:grid-cols-5 gap-6">
+              <div class="md:col-span-2 rounded-2xl border border-border bg-card p-8 shadow-[var(--ldyx-shadow-2)] relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-gradient-to-br from-primary/15 to-transparent"></div>
+                <div class="relative">
+                  <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-700 flex items-center justify-center text-white mb-6 shadow-[var(--ldyx-shadow-2)]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  </div>
+                  <h3 class="font-[family-name:var(--ldyx-font-serif)] text-2xl font-bold text-foreground mb-4">团队简介</h3>
+                  <p class="text-[15px] leading-[2] text-muted-foreground">
+                    合肥工业大学<span class="font-semibold text-primary">"核炬薪传"宣讲团</span>是开展"两弹一星"精神主题科普的社会实践团队。团队立足红色科研文化传播，以青年之声讲好先辈报国故事，致力于传承"两弹一星"红色科研精神，点亮青少年的科学理想与爱国情怀。
+                  </p>
+                </div>
+              </div>
+
+              <div class="md:col-span-3 grid sm:grid-cols-2 gap-6">
+                <div class="rounded-2xl border border-border bg-card p-7 shadow-[var(--ldyx-shadow-1)] hover:shadow-[var(--ldyx-shadow-2)] transition-shadow">
+                  <div class="w-12 h-12 rounded-xl bg-[var(--ldyx-navy-900)]/10 flex items-center justify-center mb-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ldyx-navy-900)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                  </div>
+                  <h4 class="font-bold text-lg text-foreground mb-3" style="font-family:var(--ldyx-font-serif)">暑期研学调研</h4>
+                  <p class="text-sm leading-[1.9] text-muted-foreground">在 2026 年暑期实践中，团队先后前往<span class="font-semibold text-foreground">合肥二二一纪念馆、安庆邓稼先生平纪念馆</span>开展研学调研，深度挖掘核事业元勋的奋斗历史与报国事迹，录制主题宣传短片，并从中汲取精神力量。</p>
+                </div>
+
+                <div class="rounded-2xl border border-border bg-card p-7 shadow-[var(--ldyx-shadow-1)] hover:shadow-[var(--ldyx-shadow-2)] transition-shadow">
+                  <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ldyx-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2v4l-4-4H9a1.994 1.994 0 0 1-1.414-.586m0 0L11 14h4a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2v4l.586-.586z"/></svg>
+                  </div>
+                  <h4 class="font-bold text-lg text-foreground mb-3" style="font-family:var(--ldyx-font-serif)">社区科普志愿服务</h4>
+                  <p class="text-sm leading-[1.9] text-muted-foreground">宣讲团走进合肥市<span class="font-semibold text-foreground">翡翠湖、金星、海恒、海心、肥光</span>等社区，开展多场"两弹一星"主题科普志愿服务。</p>
+                </div>
+
+                <div class="rounded-2xl border border-border bg-card p-7 shadow-[var(--ldyx-shadow-1)] hover:shadow-[var(--ldyx-shadow-2)] transition-shadow sm:col-span-2 relative overflow-hidden">
+                  <div class="absolute top-0 right-0 w-32 h-32 rounded-full bg-gradient-to-bl from-[var(--ldyx-gold)]/15 to-transparent"></div>
+                  <div class="relative">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[var(--ldyx-gold)]/20 to-primary/15 flex items-center justify-center mb-5">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ldyx-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="12 6 13.5 10.5 18 12 13.5 13.5 12 18 10.5 13.5 6 12 10.5 10.5 12 6"/></svg>
+                    </div>
+                    <h4 class="font-bold text-lg text-foreground mb-3" style="font-family:var(--ldyx-font-serif)">创新宣讲形式 · 厚植爱国情怀</h4>
+                    <p class="text-sm leading-[1.9] text-muted-foreground mb-4">团队创新宣讲形式，将<span class="font-semibold text-foreground">科普讲解与评书演绎</span>相结合，同时开设<span class="font-semibold text-primary">火箭模型拼装、主题绘画、水火箭制作发射</span>等趣味实操课堂，把厚重的红色历史转化为青少年听得懂、愿意参与的科普活动，让少年儿童在互动实践中感悟科学魅力、厚植爱国情怀。</p>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="tag-chip bg-primary/8 text-primary">#评书演绎</span>
+                      <span class="tag-chip bg-[var(--ldyx-navy-900)]/8 text-[var(--ldyx-navy-900)]">#火箭拼装</span>
+                      <span class="tag-chip bg-[var(--ldyx-gold)]/10 text-[var(--ldyx-gold)]">#主题绘画</span>
+                      <span class="tag-chip bg-primary/8 text-primary">#水火箭发射</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-10 p-7 rounded-2xl border border-primary/15 bg-gradient-to-r from-primary/[0.06] via-transparent to-[var(--ldyx-navy-900)]/[0.06]">
+              <p class="text-center text-[15px] md:text-base leading-[2] text-foreground/85 font-medium">
+                我们以<span class="text-primary font-bold">研学夯实底蕴</span>，以<span class="text-[var(--ldyx-navy-900)] font-bold">科普传递信仰</span>。队员在寻访先辈事迹的过程中筑牢理想信念，在基层志愿服务中明晰青年责任，<br class="hidden md:block">
+                践行<span class="font-bold">"强国有我"</span>的时代使命，努力做"两弹一星"精神的<span class="font-bold text-primary">学习者、记录者与传播者</span>。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 精神核心 Section ===== -->
+        <section class="relative py-24 bg-[var(--ldyx-navy-900)] text-white overflow-hidden">
+          <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 25% 25%, rgba(255,255,255,0.12) 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+          <div class="relative mx-auto max-w-7xl px-6">
+            <div class="mb-16 text-center">
+              <p class="text-xs md:text-sm font-medium tracking-[0.35em] uppercase text-primary-400 mb-4">THE SPIRIT · 精神内核</p>
+              <h2 class="font-[family-name:var(--ldyx-font-serif)] text-4xl md:text-5xl font-bold text-white mb-6">两弹一星精神</h2>
+              <p class="mx-auto max-w-2xl text-white/65 text-base leading-relaxed">1999 年 9 月 18 日，中共中央、国务院、中央军委正式完整概括提出</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              <div class="group relative rounded-2xl p-8 bg-white/[0.04] border border-white/10 backdrop-blur-sm hover:bg-white/[0.08] hover:border-primary/40 transition-all">
+                <div class="absolute top-6 right-6 text-6xl font-black text-white/[0.04] font-serif">01</div>
+                <div class="relative">
+                  <div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fca5a5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>
+                  </div>
+                  <h3 class="font-[family-name:var(--ldyx-font-serif)] text-2xl font-bold text-white mb-2">热爱祖国</h3>
+                  <p class="text-xl font-light text-primary-300 mb-4 tracking-widest">无私奉献</p>
+                  <p class="text-sm leading-[1.9] text-white/60">以家国使命为最高信仰，舍弃个人功名，隐姓埋名扎根国防科研最前线，数十年如一日默默奉献。</p>
+                </div>
+              </div>
+
+              <div class="group relative rounded-2xl p-8 bg-white/[0.04] border border-white/10 backdrop-blur-sm hover:bg-white/[0.08] hover:border-primary/40 transition-all">
+                <div class="absolute top-6 right-6 text-6xl font-black text-white/[0.04] font-serif">02</div>
+                <div class="relative">
+                  <div class="w-12 h-12 rounded-xl bg-[var(--ldyx-gold)]/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                  </div>
+                  <h3 class="font-[family-name:var(--ldyx-font-serif)] text-2xl font-bold text-white mb-2">自力更生</h3>
+                  <p class="text-xl font-light text-primary-300 mb-4 tracking-widest">艰苦奋斗</p>
+                  <p class="text-sm leading-[1.9] text-white/60">在国外全面技术封锁下，依靠算盘与手摇计算机从零突破核心技术，戈壁荒漠中以血肉之躯铸就大国重器。</p>
+                </div>
+              </div>
+
+              <div class="group relative rounded-2xl p-8 bg-white/[0.04] border border-white/10 backdrop-blur-sm hover:bg-white/[0.08] hover:border-primary/40 transition-all">
+                <div class="absolute top-6 right-6 text-6xl font-black text-white/[0.04] font-serif">03</div>
+                <div class="relative">
+                  <div class="w-12 h-12 rounded-xl bg-[#4ade80]/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                  </div>
+                  <h3 class="font-[family-name:var(--ldyx-font-serif)] text-2xl font-bold text-white mb-2">大力协同</h3>
+                  <p class="text-xl font-light text-primary-300 mb-4 tracking-widest">举国体制</p>
+                  <p class="text-sm leading-[1.9] text-white/60">中央专委会统筹 26 个部委、20 多个省市、900 多家单位协同攻关，全国一盘棋凝聚攻坚克难的磅礴合力。</p>
+                </div>
+              </div>
+
+              <div class="group relative rounded-2xl p-8 bg-white/[0.04] border border-white/10 backdrop-blur-sm hover:bg-white/[0.08] hover:border-primary/40 transition-all">
+                <div class="absolute top-6 right-6 text-6xl font-black text-white/[0.04] font-serif">04</div>
+                <div class="relative">
+                  <div class="w-12 h-12 rounded-xl bg-[#60a5fa]/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="18 15 12 9 6 15"/><polyline points="18 9 12 3 6 9"/></svg>
+                  </div>
+                  <h3 class="font-[family-name:var(--ldyx-font-serif)] text-2xl font-bold text-white mb-2">勇于登攀</h3>
+                  <p class="text-xl font-light text-primary-300 mb-4 tracking-widest">敢为人先</p>
+                  <p class="text-sm leading-[1.9] text-white/60">独创"于敏构型"走出完全自主路线，两年八个月从原子弹跨越到氢弹，创造世界核武器研发史奇迹。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 推送消息 / 新闻 Section ===== -->
+        <section id="news-feed" class="bg-background py-24">
+            <div class="mx-auto max-w-7xl px-6">
+                <div class="mb-14 text-center">
+                    <div class="section-divider mb-5">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m2 13a2 2 0 0 1-2-2V7m2 13a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                    </div>
+                    <p class="text-xs md:text-sm font-medium tracking-[0.3em] uppercase text-primary mb-3">NEWS & STORIES · 精神传承</p>
+                    <h2 class="mb-3 font-[family-name:var(--ldyx-font-serif)] text-4xl md:text-5xl font-bold text-foreground">要闻 · 人物 · 精神</h2>
+                    <p class="mx-auto max-w-2xl text-muted-foreground text-base leading-relaxed">铭记光辉历史，赓续红色血脉，走近"两弹一星"背后的奋斗故事与先辈脊梁。</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <article class="news-card rounded-2xl border border-border bg-card shadow-[var(--ldyx-shadow-2)] overflow-hidden group">
+                        <div class="relative h-52 overflow-hidden bg-[var(--ldyx-navy-900)]">
+                          <div class="absolute inset-0 bg-gradient-to-br from-primary/30 via-[var(--ldyx-navy-900)]/70 to-[var(--ldyx-navy-900)] flex items-center justify-center p-8">
+                            <div class="text-center text-white">
+                              <div class="font-[family-name:var(--ldyx-font-serif)] text-5xl font-black mb-2">23</div>
+                              <div class="text-xs tracking-[0.25em] text-white/80">两弹一星功勋奖章</div>
+                            </div>
+                          </div>
+                          <span class="absolute top-4 left-4 tag-chip bg-white/90 text-primary shadow-[var(--ldyx-shadow-1)]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            新闻
+                          </span>
+                        </div>
+                        <div class="p-7">
+                            <h3 class="mb-3 font-[family-name:var(--ldyx-font-serif)] text-xl font-bold leading-snug text-card-foreground group-hover:text-primary transition-colors">23位科学家荣获"两弹一星功勋奖章"</h3>
+                            <p class="mb-5 text-[15px] leading-relaxed text-muted-foreground">1999年9月18日，中共中央、国务院、中央军委在北京人民大会堂隆重召开表彰大会，授予于敏、王大珩、王希季、朱光亚、任新民、孙家栋、吴自良、陈芳允、陈能宽、杨嘉墀、钱学森、屠守锷、周光召、黄纬禄、程开甲、彭桓武、王淦昌、邓稼先、赵九章、姚桐斌、钱骥、钱三强、郭永怀等 23 位杰出科学家"两弹一星功勋奖章"，以表彰他们在核武器、导弹与卫星事业中的卓越贡献。</p>
+                            <div class="flex items-center justify-between pt-4 border-t border-border">
+                              <time datetime="1999-09-18" class="inline-flex items-center gap-1.5 text-sm text-muted-foreground">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                1999-09-18
+                              </time>
+                              <a href="timeline.html" class="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:gap-2 transition-all">
+                                查看详情
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                              </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="news-card rounded-2xl border border-border bg-card shadow-[var(--ldyx-shadow-2)] overflow-hidden group">
+                        <div class="relative h-52 overflow-hidden">
+                          <img src="../assets/figures_hero.jpg" alt="邓稼先" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                          <span class="absolute top-4 left-4 tag-chip bg-[var(--ldyx-navy-900)]/90 text-white shadow-[var(--ldyx-shadow-1)]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            人物故事
+                          </span>
+                          <h3 class="absolute bottom-5 left-6 right-6 font-[family-name:var(--ldyx-font-serif)] text-2xl font-bold text-white drop-shadow">邓稼先</h3>
+                        </div>
+                        <div class="p-7">
+                            <p class="mb-2 text-sm font-semibold text-primary tracking-wider">干惊天动地事，做隐姓埋名人</p>
+                            <p class="mb-5 text-[15px] leading-relaxed text-muted-foreground">邓稼先 26 岁取得美国普渡大学博士学位，人称"娃娃博士"，取得学位仅九日便放弃海外优厚科研条件归国。1958 年受命牵头核武器理论研制核心工作，自此隐姓埋名二十八载扎根西北戈壁。领导完成我国首套完整原子弹理论方案，又与于敏形成"邓—于方案"，实现两年八个月从原子弹到氢弹的跨越。长期核辐射损伤致使其身患重病，临终前仍嘱托后辈紧盯国防尖端科技。</p>
+                            <div class="flex items-center justify-between pt-4 border-t border-border">
+                              <time datetime="1924-06-25" class="inline-flex items-center gap-1.5 text-sm text-muted-foreground">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                1924-06-25 · 1986
+                              </time>
+                              <a href="figures.html" class="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:gap-2 transition-all">
+                                走进人物志
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                              </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="news-card rounded-2xl border border-border bg-card shadow-[var(--ldyx-shadow-2)] overflow-hidden group">
+                        <div class="relative h-52 overflow-hidden">
+                          <img src="../assets/event_satellite.jpg" alt="东方红一号" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                          <span class="absolute top-4 left-4 tag-chip bg-[var(--ldyx-gold)]/90 text-white shadow-[var(--ldyx-shadow-1)]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            精神丰碑
+                          </span>
+                          <h3 class="absolute bottom-5 left-6 right-6 font-[family-name:var(--ldyx-font-serif)] text-2xl font-bold text-white drop-shadow">"东方红一号"成功发射</h3>
+                        </div>
+                        <div class="p-7">
+                            <p class="mb-2 text-sm font-semibold text-[var(--ldyx-navy-900)] tracking-wider">1970 年 4 月 24 日 · 中国航天日</p>
+                            <p class="mb-5 text-[15px] leading-relaxed text-muted-foreground">1970 年 4 月 24 日 21 时 35 分，长征一号运载火箭在酒泉卫星发射中心点火，21 时 48 分东方红一号卫星被成功送入预定近地轨道。从原子弹、导弹到氢弹，再到人造卫星，"两弹一星"伟大工程的最后一环圆满收官。中国成为继苏、美、法、日之后第五个独立研制并发射卫星的国家，《东方红》乐曲响彻寰宇。</p>
+                            <div class="flex items-center justify-between pt-4 border-t border-border">
+                              <time datetime="1970-04-24" class="inline-flex items-center gap-1.5 text-sm text-muted-foreground">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                1970-04-24
+                              </time>
+                              <a href="timeline.html" class="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:gap-2 transition-all">
+                                查看时间线
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                              </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="news-card rounded-2xl border border-border bg-card shadow-[var(--ldyx-shadow-2)] overflow-hidden group">
+                        <div class="relative h-52 overflow-hidden bg-gradient-to-br from-primary-700 via-primary to-[var(--ldyx-gold)]/70">
+                          <div class="absolute inset-0 flex items-center justify-center p-8">
+                            <div class="text-center text-white">
+                              <div class="font-[family-name:var(--ldyx-font-serif)] text-3xl font-black mb-3 leading-tight">"五年归国路<br>十年两弹成"</div>
+                              <div class="text-xs tracking-[0.25em] text-white/85">—— 钱学森的一生写照</div>
+                            </div>
+                          </div>
+                          <span class="absolute top-4 left-4 tag-chip bg-white/90 text-[var(--ldyx-navy-900)] shadow-[var(--ldyx-shadow-1)]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            人物故事
+                          </span>
+                        </div>
+                        <div class="p-7">
+                            <h3 class="mb-3 font-[family-name:var(--ldyx-font-serif)] text-xl font-bold leading-snug text-card-foreground group-hover:text-primary transition-colors">钱学森：五年归国路，十年两弹成</h3>
+                            <p class="mb-5 text-[15px] leading-relaxed text-muted-foreground">钱学森是两弹一星工程顶层总设计师，1955 年冲破美国五年软禁封锁归国，全面规划我国导弹、火箭、人造卫星长远发展路线，搭建完整航天科研体系。创立工程控制论，将力学、控制理论全面应用于国防重器，一生放弃美国顶尖教职与优厚待遇，归国从零开创航天事业，为我国拥有核威慑、太空探索能力奠定顶层框架。</p>
+                            <div class="flex items-center justify-between pt-4 border-t border-border">
+                              <time datetime="1911-12-11" class="inline-flex items-center gap-1.5 text-sm text-muted-foreground">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                1911-12-11 · 2009
+                              </time>
+                              <a href="figures.html" class="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:gap-2 transition-all">
+                                阅读完整故事
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                              </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="news-card rounded-2xl border border-border bg-card shadow-[var(--ldyx-shadow-2)] overflow-hidden group">
+                        <div class="relative h-52 overflow-hidden">
+                          <img src="../assets/event_atomic_bomb.jpg" alt="原子弹爆炸" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                          <span class="absolute top-4 left-4 tag-chip bg-primary/90 text-white shadow-[var(--ldyx-shadow-1)]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                            历史事件
+                          </span>
+                          <h3 class="absolute bottom-5 left-6 right-6 font-[family-name:var(--ldyx-font-serif)] text-2xl font-bold text-white drop-shadow">戈壁一声惊雷</h3>
+                        </div>
+                        <div class="p-7">
+                            <p class="mb-2 text-sm font-semibold text-primary tracking-wider">1964 年 10 月 16 日 · 中国第一颗原子弹爆炸成功</p>
+                            <p class="mb-5 text-[15px] leading-relaxed text-muted-foreground">1964 年 10 月 16 日下午 15 时，新疆罗布泊戈壁滩，随着起爆指令下达，巨大的耀眼火球瞬间照亮戈壁大地，剧烈的冲击波席卷四周，一朵巨大的蘑菇云缓缓升腾。代号"596"的我国第一颗原子弹爆炸试验大获成功。中国成为世界上第五个掌握原子弹技术的国家，彻底打破超级大国的核垄断与核讹诈。</p>
+                            <div class="flex items-center justify-between pt-4 border-t border-border">
+                              <time datetime="1964-10-16" class="inline-flex items-center gap-1.5 text-sm text-muted-foreground">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                1964-10-16
+                              </time>
+                              <a href="timeline.html" class="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:gap-2 transition-all">
+                                查看时间线
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                              </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="news-card rounded-2xl border border-border bg-card shadow-[var(--ldyx-shadow-2)] overflow-hidden group">
+                        <div class="relative h-52 overflow-hidden bg-gradient-to-br from-[var(--ldyx-navy-900)] via-[var(--ldyx-navy-800)] to-primary/70">
+                          <div class="absolute inset-0 flex items-center justify-center p-6">
+                            <div class="text-center text-white">
+                              <div class="font-[family-name:var(--ldyx-font-serif)] text-4xl font-black mb-2 leading-none" style="text-shadow: 0 2px 20px rgba(0,0,0,0.3)">2年8个月</div>
+                              <div class="text-sm tracking-[0.2em] text-white/85 mb-3">从原子弹到氢弹的奇迹</div>
+                              <div class="flex justify-center gap-2 text-[10px]">
+                                <span class="px-2 py-1 rounded-full bg-white/15">美国 7年</span>
+                                <span class="px-2 py-1 rounded-full bg-white/15">苏联 6年</span>
+                                <span class="px-2 py-1 rounded-full bg-primary/40 font-bold">中国 2年8月</span>
+                              </div>
+                            </div>
+                          </div>
+                          <span class="absolute top-4 left-4 tag-chip bg-[var(--ldyx-gold)]/90 text-white shadow-[var(--ldyx-shadow-1)]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            世界奇迹
+                          </span>
+                        </div>
+                        <div class="p-7">
+                            <h3 class="mb-3 font-[family-name:var(--ldyx-font-serif)] text-xl font-bold leading-snug text-card-foreground group-hover:text-primary transition-colors">于敏构型：独创氢弹自主路线</h3>
+                            <p class="mb-5 text-[15px] leading-relaxed text-muted-foreground">于敏一生未出国留学，完全依靠本土科研功底攻克热核武器核心难题。1961 年接受绝密任务，隐姓埋名二十八载，日夜推演海量热核反应数据，独创完全区别于国外的氢弹"于敏构型"。1967 年 6 月 17 日我国第一颗氢弹空爆试验圆满成功，仅距原子弹爆炸两年八个月，创造全球核武器研发奇迹。</p>
+                            <div class="flex items-center justify-between pt-4 border-t border-border">
+                              <time datetime="1967-06-17" class="inline-flex items-center gap-1.5 text-sm text-muted-foreground">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                1967-06-17
+                              </time>
+                              <a href="figures.html" class="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:gap-2 transition-all">
+                                了解于敏
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                              </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- 快速入口 -->
+                <div class="mt-16 grid md:grid-cols-2 gap-6">
+                  <a href="figures.html" class="group relative rounded-2xl overflow-hidden p-10 border border-border bg-gradient-to-br from-card via-card to-muted shadow-[var(--ldyx-shadow-2)] hover:shadow-[var(--ldyx-shadow-3)] transition-all">
+                    <div class="absolute top-0 right-0 w-48 h-48 rounded-full bg-primary/5 blur-2xl group-hover:bg-primary/10 transition-colors"></div>
+                    <div class="relative flex items-center gap-6">
+                      <div class="w-20 h-20 flex-shrink-0 rounded-2xl bg-gradient-to-br from-primary to-primary-700 flex items-center justify-center shadow-[var(--ldyx-shadow-2)] group-hover:scale-110 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                      </div>
+                      <div class="flex-1">
+                        <h3 class="font-[family-name:var(--ldyx-font-serif)] text-2xl font-bold text-foreground mb-2">人物志</h3>
+                        <p class="text-sm text-muted-foreground leading-relaxed">走近 23 位两弹一星功勋奖章获得者，以及在核事业中做出杰出贡献的巾帼女科学家们的奋斗人生。</p>
+                        <div class="mt-4 inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
+                          走进人物志
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="timeline.html" class="group relative rounded-2xl overflow-hidden p-10 border border-border bg-gradient-to-br from-card via-card to-muted shadow-[var(--ldyx-shadow-2)] hover:shadow-[var(--ldyx-shadow-3)] transition-all">
+                    <div class="absolute top-0 right-0 w-48 h-48 rounded-full bg-[var(--ldyx-navy-900)]/5 blur-2xl group-hover:bg-[var(--ldyx-navy-900)]/10 transition-colors"></div>
+                    <div class="relative flex items-center gap-6">
+                      <div class="w-20 h-20 flex-shrink-0 rounded-2xl bg-gradient-to-br from-[var(--ldyx-navy-900)] to-[var(--ldyx-navy-700)] flex items-center justify-center shadow-[var(--ldyx-shadow-2)] group-hover:scale-110 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      </div>
+                      <div class="flex-1">
+                        <h3 class="font-[family-name:var(--ldyx-font-serif)] text-2xl font-bold text-foreground mb-2">时间线</h3>
+                        <p class="text-sm text-muted-foreground leading-relaxed">从 1955 年战略决策，到 1999 年功勋表彰大会，十个关键节点全景再现两弹一星波澜壮阔的奋斗征程。</p>
+                        <div class="mt-4 inline-flex items-center gap-2 text-[var(--ldyx-navy-900)] font-semibold text-sm group-hover:gap-3 transition-all">
+                          查看时间线
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="w-full border-t border-border bg-[var(--ldyx-navy-900)] text-white py-14">
+            <div class="mx-auto max-w-7xl px-6">
+                <div class="grid md:grid-cols-3 gap-10 mb-10">
+                    <div>
+                        <div class="flex items-center gap-3 mb-5">
+                          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-primary to-primary-600 flex items-center justify-center text-white font-bold text-xl shadow-[var(--ldyx-shadow-2)]" style="font-family:var(--ldyx-font-serif)">核</div>
+                          <div>
+                            <div class="text-lg font-bold tracking-tight leading-tight">两弹一星精神宣传网</div>
+                            <div class="text-[11px] text-white/50 tracking-wider mt-1">合肥工业大学 · 核炬薪传宣讲团</div>
+                          </div>
+                        </div>
+                        <p class="text-sm leading-[1.9] text-white/60">传承红色基因，弘扬两弹一星精神。以青年之声讲好先辈报国故事，点亮青少年的科学理想与爱国情怀。</p>
+                    </div>
+
+                    <div>
+                        <h5 class="text-sm font-bold tracking-wider text-white/80 mb-5 uppercase">站点导航</h5>
+                        <ul class="space-y-3 text-sm">
+                          <li><a href="index.html" class="text-white/70 hover:text-primary-400 transition-colors">首页</a></li>
+                          <li><a href="figures.html" class="text-white/70 hover:text-primary-400 transition-colors">人物志</a></li>
+                          <li><a href="timeline.html" class="text-white/70 hover:text-primary-400 transition-colors">时间线</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5 class="text-sm font-bold tracking-wider text-white/80 mb-5 uppercase">两弹一星精神</h5>
+                        <p class="text-sm leading-[2] text-white/60">
+                          热爱祖国 · 无私奉献<br>
+                          自力更生 · 艰苦奋斗<br>
+                          大力协同 · 勇于登攀
+                        </p>
+                    </div>
+                </div>
+
+                <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-3">
+                    <p class="text-xs text-white/45 tracking-wide">© 2026 合肥工业大学"核炬薪传"两弹一星志愿宣讲团 · All Rights Reserved</p>
+                    <p class="text-xs text-white/35 tracking-wide">HFUT · 强国有我 · 传承红色科研精神</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script>
+      // 滚动触发导航栏显示
+      const nav = document.getElementById('main-nav');
+      const hero = document.getElementById('hero');
+      const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            nav.classList.remove('nav-visible');
+          } else {
+            nav.classList.add('nav-visible');
+          }
+        });
+      }, {
+        threshold: 0.2,
+        rootMargin: '-60px 0px 0px 0px'
+      });
+      navObserver.observe(hero);
+
+      // 海报视差效果
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        const heroImg = document.querySelector('#hero img:first-of-type');
+        if (heroImg && scrollY < window.innerHeight) {
+          heroImg.style.transform = `scale(${1.02 + scrollY * 0.0004}) translateY(${scrollY * 0.18}px)`;
+        }
+      }, { passive: true });
+
+      lucide.createIcons();
+    </script>
+</body>
+</html>

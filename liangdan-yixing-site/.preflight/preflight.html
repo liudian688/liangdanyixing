@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preflight</title>
+    <style id="theme-vars">
+:root {
+  /* Brand primary scale — deep red */
+  --ldyx-primary-50: #fef2f2;
+  --ldyx-primary-100: #fee2e2;
+  --ldyx-primary-200: #fecaca;
+  --ldyx-primary-300: #fca5a5;
+  --ldyx-primary-400: #f87171;
+  --ldyx-primary-500: #ef4444;
+  --ldyx-primary-600: #dc2626;
+  --ldyx-primary-700: #b91c1c;
+  --ldyx-primary-800: #991b1b;
+  --ldyx-primary-900: #7f1d1d;
+
+  /* Neutral scale — warm ink/paper */
+  --ldyx-neutral-0: #ffffff;
+  --ldyx-neutral-50: #fafaf9;
+  --ldyx-neutral-100: #f5f5f4;
+  --ldyx-neutral-200: #e7e5e4;
+  --ldyx-neutral-300: #d6d3d1;
+  --ldyx-neutral-400: #a8a29e;
+  --ldyx-neutral-500: #78716c;
+  --ldyx-neutral-600: #57534e;
+  --ldyx-neutral-700: #44403c;
+  --ldyx-neutral-800: #292524;
+  --ldyx-neutral-900: #1c1917;
+
+  /* Navy accent for solemnity */
+  --ldyx-navy-50: #f0f4f8;
+  --ldyx-navy-100: #d9e2ec;
+  --ldyx-navy-700: #334e68;
+  --ldyx-navy-800: #243b53;
+  --ldyx-navy-900: #102a43;
+
+  /* Semantic aliases required by head contract */
+  --ldyx-background: #fafaf9;
+  --ldyx-foreground: #1c1917;
+  --ldyx-card: #ffffff;
+  --ldyx-card-foreground: #1c1917;
+  --ldyx-popover: #ffffff;
+  --ldyx-popover-foreground: #1c1917;
+  --ldyx-primary: #9b1c1c;
+  --ldyx-primary-foreground: #ffffff;
+  --ldyx-muted: #f5f5f4;
+  --ldyx-muted-foreground: #78716c;
+  --ldyx-border: #e7e5e4;
+  --ldyx-input: #e7e5e4;
+  --ldyx-ring: #9b1c1c;
+
+  /* Extended semantic tokens */
+  --ldyx-surface: #ffffff;
+  --ldyx-surface-2: #f5f5f4;
+  --ldyx-ink: #1c1917;
+  --ldyx-ink-2: #57534e;
+  --ldyx-ink-3: #78716c;
+  --ldyx-line: #e7e5e4;
+  --ldyx-brand: #9b1c1c;
+  --ldyx-brand-ink: #ffffff;
+  --ldyx-navy: #102a43;
+  --ldyx-gold: #b45309;
+
+  /* Radius scale */
+  --ldyx-radius-sm: 4px;
+  --ldyx-radius-md: 8px;
+  --ldyx-radius-lg: 16px;
+  --ldyx-radius-xl: 24px;
+  --ldyx-radius-pill: 999px;
+
+  /* Shadow scale */
+  --ldyx-shadow-1: 0 1px 2px rgba(28, 25, 23, 0.05), 0 1px 1px rgba(28, 25, 23, 0.03);
+  --ldyx-shadow-2: 0 8px 24px -8px rgba(28, 25, 23, 0.18);
+  --ldyx-shadow-3: 0 24px 60px -20px rgba(28, 25, 23, 0.30);
+
+  /* Typography */
+  --ldyx-font-sans: 'Inter', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --ldyx-font-serif: 'Noto Serif SC', 'Source Han Serif SC', serif;
+}
+
+html.dark {
+  --ldyx-background: #0f0f10;
+  --ldyx-foreground: #f5f5f4;
+  --ldyx-card: #18181b;
+  --ldyx-card-foreground: #f5f5f4;
+  --ldyx-popover: #18181b;
+  --ldyx-popover-foreground: #f5f5f4;
+  --ldyx-primary: #ef4444;
+  --ldyx-primary-foreground: #ffffff;
+  --ldyx-muted: #27272a;
+  --ldyx-muted-foreground: #a8a29e;
+  --ldyx-border: #27272a;
+  --ldyx-input: #27272a;
+  --ldyx-ring: #ef4444;
+  --ldyx-surface: #18181b;
+  --ldyx-surface-2: #27272a;
+  --ldyx-ink: #f5f5f4;
+  --ldyx-ink-2: #d6d3d1;
+  --ldyx-ink-3: #a8a29e;
+  --ldyx-line: #27272a;
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--ldyx-background);
+    --color-foreground: var(--ldyx-foreground);
+    --color-card: var(--ldyx-card);
+    --color-card-foreground: var(--ldyx-card-foreground);
+    --color-popover: var(--ldyx-popover);
+    --color-popover-foreground: var(--ldyx-popover-foreground);
+    --color-primary: var(--ldyx-primary);
+    --color-primary-foreground: var(--ldyx-primary-foreground);
+    --color-muted: var(--ldyx-muted);
+    --color-muted-foreground: var(--ldyx-muted-foreground);
+    --color-border: var(--ldyx-border);
+    --color-input: var(--ldyx-input);
+    --color-ring: var(--ldyx-ring);
+    --radius-sm: var(--ldyx-radius-sm);
+    --radius-md: var(--ldyx-radius-md);
+    --radius-lg: var(--ldyx-radius-lg);
+    --radius-xl: var(--ldyx-radius-xl);
+  }
+  @layer base {
+    body { background: var(--ldyx-background); color: var(--ldyx-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--ldyx-background); }
+      .text-background { color: var(--ldyx-background); }
+      .border-background { border-color: var(--ldyx-background); }
+      .ring-background { --tw-ring-color: var(--ldyx-background); }
+      .bg-foreground { background-color: var(--ldyx-foreground); }
+      .text-foreground { color: var(--ldyx-foreground); }
+      .border-foreground { border-color: var(--ldyx-foreground); }
+      .ring-foreground { --tw-ring-color: var(--ldyx-foreground); }
+      .bg-card { background-color: var(--ldyx-card); }
+      .text-card { color: var(--ldyx-card); }
+      .border-card { border-color: var(--ldyx-card); }
+      .ring-card { --tw-ring-color: var(--ldyx-card); }
+      .bg-card-foreground { background-color: var(--ldyx-card-foreground); }
+      .text-card-foreground { color: var(--ldyx-card-foreground); }
+      .border-card-foreground { border-color: var(--ldyx-card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--ldyx-card-foreground); }
+      .bg-popover { background-color: var(--ldyx-popover); }
+      .text-popover { color: var(--ldyx-popover); }
+      .border-popover { border-color: var(--ldyx-popover); }
+      .ring-popover { --tw-ring-color: var(--ldyx-popover); }
+      .bg-popover-foreground { background-color: var(--ldyx-popover-foreground); }
+      .text-popover-foreground { color: var(--ldyx-popover-foreground); }
+      .border-popover-foreground { border-color: var(--ldyx-popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--ldyx-popover-foreground); }
+      .bg-primary { background-color: var(--ldyx-primary); }
+      .text-primary { color: var(--ldyx-primary); }
+      .border-primary { border-color: var(--ldyx-primary); }
+      .ring-primary { --tw-ring-color: var(--ldyx-primary); }
+      .bg-primary-foreground { background-color: var(--ldyx-primary-foreground); }
+      .text-primary-foreground { color: var(--ldyx-primary-foreground); }
+      .border-primary-foreground { border-color: var(--ldyx-primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--ldyx-primary-foreground); }
+      .bg-muted { background-color: var(--ldyx-muted); }
+      .text-muted { color: var(--ldyx-muted); }
+      .border-muted { border-color: var(--ldyx-muted); }
+      .ring-muted { --tw-ring-color: var(--ldyx-muted); }
+      .bg-muted-foreground { background-color: var(--ldyx-muted-foreground); }
+      .text-muted-foreground { color: var(--ldyx-muted-foreground); }
+      .border-muted-foreground { border-color: var(--ldyx-muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--ldyx-muted-foreground); }
+      .bg-border { background-color: var(--ldyx-border); }
+      .text-border { color: var(--ldyx-border); }
+      .border-border { border-color: var(--ldyx-border); }
+      .ring-border { --tw-ring-color: var(--ldyx-border); }
+      .bg-input { background-color: var(--ldyx-input); }
+      .text-input { color: var(--ldyx-input); }
+      .border-input { border-color: var(--ldyx-input); }
+      .ring-input { --tw-ring-color: var(--ldyx-input); }
+      .bg-ring { background-color: var(--ldyx-ring); }
+      .text-ring { color: var(--ldyx-ring); }
+      .border-ring { border-color: var(--ldyx-ring); }
+      .ring-ring { --tw-ring-color: var(--ldyx-ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+    <main>
+    </main>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

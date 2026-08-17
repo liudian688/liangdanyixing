@@ -1,0 +1,735 @@
+{
+  "project": {
+    "name": "两弹一星精神宣传网",
+    "description": "合肥工业大学两弹一星志愿宣讲团宣传网站，面向青少年传播两弹一星精神",
+    "designProjectPath": "d:\\Project\\liangdanyixing\\liangdan-yixing-site",
+    "resolvedLane": "free_exploration",
+    "intentProfile": {
+      "caseFamily": "free_exploration",
+      "surface": "web",
+      "complexity": "stateful-free-fast",
+      "routingReason": "Open-ended multi-page website creation with no Design Library and no restoration target; includes timeline modal states."
+    },
+    "contextReadScope": {
+      "mainAgent": {
+        "forbiddenReads": [
+          "other intent-workflows/**",
+          "Sub-Agent implementation files before dispatch"
+        ]
+      },
+      "pageSubAgent": {
+        "allowedReads": [
+          "current lane page runtime guide",
+          "current lane dispatch contract excerpt",
+          "current Page Packet",
+          "supplementaryReads[] only"
+        ],
+        "forbiddenReads": [
+          "SKILL.md full re-read",
+          "other intent-workflows/**",
+          "full runtime-orchestration-summary.json unless explicitly sliced"
+        ]
+      },
+      "readScopeLedgerWriter": "shared-runtime/deterministic-tooling/build-page-dispatch-manifest.mjs"
+    },
+    "selectedIntentWorkflowRead": true,
+    "contextRequirementsLoaded": [
+      {
+        "path": "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "delivery-quality/page-rendering-quality-gate.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "delivery-quality/design-artifact-validation.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "delivery-quality/delivery-evidence-contract.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      },
+      {
+        "path": "visual-experience/visual-experience-guidelines.md",
+        "readStatus": "loaded",
+        "bodyRead": true
+      }
+    ],
+    "validationRunDiscipline": {
+      "maxFullValidationRuns": 2,
+      "softWarningsTriggerRepair": false,
+      "blockingRepairMode": "targeted-once",
+      "forbiddenRepairTriggers": [
+        "soft-warning-only",
+        "provenance-warning-only",
+        "style-warning-only"
+      ]
+    },
+    "lowValueCallWatchdog": {
+      "applies": true,
+      "noProgressSignals": [
+        "no_tool_call",
+        "no_artifact_diff",
+        "no_structured_decision"
+      ],
+      "noProgressNextAction": "enter_readiness_or_blocked_summary"
+    },
+    "cssPreflightEvidence": {
+      "applies": true,
+      "status": "passed",
+      "command": "node c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs d:\\Project\\liangdanyixing\\liangdan-yixing-site\\colors_and_type.css d:\\Project\\liangdanyixing\\liangdan-yixing-site\\.preflight\\preflight.html --title=Preflight --lang=zh-CN --prefix=ldyx",
+      "brandPrefix": "ldyx",
+      "checks": {
+        "themeVars": "present",
+        "semanticTokenFallback": "present",
+        "themeInline": "present",
+        "tailwindCdn": "present",
+        "htmlClass": "present",
+        "semanticMappings": "resolved"
+      },
+      "retryCount": 0,
+      "blockingReason": null
+    },
+    "creativeRecipe": {
+      "businessTone": "庄重、爱国、教育向的青少年科普",
+      "layoutArchetype": "沉浸式全屏海报 + 横向导航 + 蜿蜒时间线 + 全屏详情浮层",
+      "visualSignature": "深红主色 + 墨蓝/金色点缀 + 暖白纸张质感",
+      "densityTarget": "balanced",
+      "avoidOneThing": "避免娱乐化高饱和渐变、卡通图标或轻浮动效"
+    },
+    "styleContinuityAnchors": [
+      "Shared top navigation with deep-red active indicator across all pages",
+      "Warm off-white page background and deep ink text",
+      "Single primary hue: deep red (#9B1C1C) for CTAs and emphasis",
+      "Consistent 8px radius scale and subtle shadow model",
+      "Noto Sans SC + Inter typography stack"
+    ],
+    "deviceType": "desktop",
+    "sharedProjectShellContract": {
+      "header": {
+        "type": "top-nav",
+        "heightPx": 72,
+        "position": "sticky-top",
+        "items": [
+          {
+            "key": "home",
+            "label": "首页",
+            "href": "index.html",
+            "icon": "home"
+          },
+          {
+            "key": "figures",
+            "label": "人物志",
+            "href": "figures.html",
+            "icon": "users"
+          },
+          {
+            "key": "timeline",
+            "label": "时间线",
+            "href": "timeline.html",
+            "icon": "git-branch"
+          }
+        ],
+        "activeRule": "single emphasis via bottom border or text color; no layout changes",
+        "structure": {
+          "navTag": "nav",
+          "navClass": "sticky top-0 z-50 w-full h-[72px] bg-background/95 backdrop-blur border-b border-border",
+          "innerClass": "mx-auto max-w-6xl px-6 h-full flex items-center justify-between",
+          "brandClass": "text-xl font-semibold tracking-tight text-foreground",
+          "itemsClass": "hidden md:flex items-center gap-8",
+          "itemTag": "a",
+          "itemClass": "relative py-2 text-[15px] font-medium text-muted-foreground hover:text-foreground transition-colors",
+          "activeClass": "text-primary",
+          "activeIndicator": "absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+        }
+      },
+      "footer": {
+        "type": "simple-footer",
+        "heightPx": 120,
+        "content": "合肥工业大学两弹一星志愿宣讲团"
+      },
+      "typography": {
+        "fontFamily": "var(--ldyx-font-sans)",
+        "displaySize": "clamp(40px, 6vw, 88px)",
+        "h1Size": "clamp(28px, 3.5vw, 48px)"
+      },
+      "radiusScale": [
+        "4px",
+        "8px",
+        "16px"
+      ],
+      "primaryHue": "#9b1c1c"
+    },
+    "pageCompletenessGate": {
+      "expectedPages": [
+        "index",
+        "figures",
+        "timeline"
+      ],
+      "requiredStates": [
+        "timeline-detail-modal-open"
+      ],
+      "requiredInteractions": [
+        "nav-scroll-reveal",
+        "timeline-node-click",
+        "modal-close"
+      ],
+      "requiredNavigation": [
+        "top-nav-between-pages"
+      ],
+      "missingAllowed": []
+    },
+    "assets": [
+      {
+        "filename": "hero_poster.jpg",
+        "type": "image",
+        "usage": "homepage full-screen hero poster",
+        "generated": true
+      },
+      {
+        "filename": "timeline_hero.jpg",
+        "type": "image",
+        "usage": "timeline page header atmosphere",
+        "generated": true
+      },
+      {
+        "filename": "figures_hero.jpg",
+        "type": "image",
+        "usage": "figures page header atmosphere",
+        "generated": true
+      },
+      {
+        "filename": "event_atomic_bomb.jpg",
+        "type": "image",
+        "usage": "timeline modal detail image for atomic bomb test",
+        "generated": true
+      },
+      {
+        "filename": "event_satellite.jpg",
+        "type": "image",
+        "usage": "timeline modal detail image for satellite launch",
+        "generated": true
+      }
+    ],
+    "expectedDispatches": [
+      {
+        "nodeId": "page-index",
+        "pageId": "page-index",
+        "targetPageId": "page-index",
+        "htmlSrc": "pages/index.html",
+        "packetType": "FreePagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/index.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "a1b2c3d4e5f6g7h8",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-08-15T11:43:57.282Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-figures",
+        "pageId": "page-figures",
+        "targetPageId": "page-figures",
+        "htmlSrc": "pages/figures.html",
+        "packetType": "FreePagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/figures.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "b2c3d4e5f6g7h8i9",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-08-15T11:44:00.140Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-timeline",
+        "pageId": "page-timeline",
+        "targetPageId": "page-timeline",
+        "htmlSrc": "pages/timeline.html",
+        "packetType": "FreePagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/timeline.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "c3d4e5f6g7h8i9j0",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-08-15T11:44:02.340Z",
+        "source": "record-dispatch-completion.mjs"
+      }
+    ],
+    "dispatchPreflightManifest": [
+      {
+        "recorded_at": "2026-08-15T11:26:31.082Z",
+        "generatedBy": "build-page-dispatch-manifest.mjs",
+        "packetType": "FreePagePacket",
+        "laneContract": {
+          "resolvedLane": "free_exploration",
+          "packetType": "FreePagePacket",
+          "pageRuntimeGuide": "intent-workflows/intent-page-free-exploration/free-exploration-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-page-free-exploration/dispatch-contract.md"
+        },
+        "taskLinePresent": true,
+        "outputPathPresent": true,
+        "sharedTemplate": "intent-workflows/intent-page-free-exploration/free-exploration-page-runtime.md",
+        "nodeId": "page-index",
+        "htmlSrc": "pages/index.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/index.html",
+          "assets/"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json",
+          "restore-contract-report.json",
+          "page-generation-summary.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/index.html",
+            "assets/"
+          ]
+        },
+        "skillRuntime": {
+          "skillDir": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+          "deterministicToolDir": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling",
+          "toolPaths": {
+            "applyHtmlHeadContract": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs",
+            "recordDispatchCompletion": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs",
+            "buildPageDispatchManifest": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\build-page-dispatch-manifest.mjs",
+            "validateDesignWorkspace": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-design-workspace.mjs",
+            "validateFinishReadiness": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs",
+            "validateRestoreContract": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-restore-contract.mjs"
+          },
+          "requiredForPageSubAgent": [
+            "applyHtmlHeadContract",
+            "recordDispatchCompletion"
+          ],
+          "pathInjection": "absolute",
+          "pathContract": "Do not use {SKILL_DIR} placeholders inside Page Sub-Agent packets; use toolPaths.* absolute paths.",
+          "commandTemplates": {
+            "recordDispatchCompletion": "node \"c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs\" \"d:\\Project\\liangdanyixing\\liangdan-yixing-site\" --node-id=\"page-index\" --html-src=\"pages/index.html\" --status=completed --changed-files=<comma-separated-project-relative-files> --trace-digest=<main-agent-runtime-trace-digest> --tool-ledger-json=<tool-ledger-json-or-file>"
+          }
+        },
+        "cssFilePath": "d:\\Project\\liangdanyixing\\liangdan-yixing-site\\colors_and_type.css",
+        "htmlFilePath": "d:\\Project\\liangdanyixing\\liangdan-yixing-site\\pages\\index.html",
+        "brandPrefix": "ldyx",
+        "aestheticsMode": "free-explore",
+        "toolDisciplineBlockPresent": true,
+        "fillHtmlHeadCommand": "node \"c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs\" \"d:\\Project\\liangdanyixing\\liangdan-yixing-site\\colors_and_type.css\" \"d:\\Project\\liangdanyixing\\liangdan-yixing-site\\pages\\index.html\" --title=\"首页\" --lang=\"zh-CN\" --prefix=\"ldyx\"",
+        "headFillMode": "skeleton-first",
+        "viewportMode": "document-scroll",
+        "completionSchemaExpected": "compact",
+        "restoreFields": null,
+        "restoreContractStatus": null,
+        "restoreCompactPacket": null,
+        "deterministicCommands": null,
+        "sourceAuthorityLock": null,
+        "preDispatchFileHashes": {
+          ".design": "63c5e869e99769bf22f653c953b65b1f3312ffc6e06dfabab9dae79e6e3f6709"
+        },
+        "contextPreflight": {
+          "workflowPath": "intent-workflows/intent-page-free-exploration/INTENT_WORKFLOW.md",
+          "requiredContextFiles": [
+            "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+            "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+            "delivery-quality/page-rendering-quality-gate.md",
+            "delivery-quality/design-artifact-validation.md",
+            "delivery-quality/delivery-evidence-contract.md",
+            "visual-experience/visual-experience-guidelines.md"
+          ],
+          "optionalContextFiles": [],
+          "passed": true
+        },
+        "pageSliceOnly": true,
+        "requiredFieldsPresent": true,
+        "missingFields": [],
+        "fillHtmlHeadCommandValid": true,
+        "mobileNavigation": {
+          "required": false,
+          "appliesToThisPage": false,
+          "canonicalHtmlIncluded": false,
+          "missingFields": []
+        },
+        "persistedToSummary": true,
+        "taskQueryAudited": false,
+        "proofSource": "summary-only",
+        "largeWorkflowFilesInTaskQuery": null
+      },
+      {
+        "recorded_at": "2026-08-15T11:26:31.082Z",
+        "generatedBy": "build-page-dispatch-manifest.mjs",
+        "packetType": "FreePagePacket",
+        "laneContract": {
+          "resolvedLane": "free_exploration",
+          "packetType": "FreePagePacket",
+          "pageRuntimeGuide": "intent-workflows/intent-page-free-exploration/free-exploration-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-page-free-exploration/dispatch-contract.md"
+        },
+        "taskLinePresent": true,
+        "outputPathPresent": true,
+        "sharedTemplate": "intent-workflows/intent-page-free-exploration/free-exploration-page-runtime.md",
+        "nodeId": "page-figures",
+        "htmlSrc": "pages/figures.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/figures.html",
+          "assets/"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json",
+          "restore-contract-report.json",
+          "page-generation-summary.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/figures.html",
+            "assets/"
+          ]
+        },
+        "skillRuntime": {
+          "skillDir": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+          "deterministicToolDir": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling",
+          "toolPaths": {
+            "applyHtmlHeadContract": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs",
+            "recordDispatchCompletion": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs",
+            "buildPageDispatchManifest": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\build-page-dispatch-manifest.mjs",
+            "validateDesignWorkspace": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-design-workspace.mjs",
+            "validateFinishReadiness": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs",
+            "validateRestoreContract": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-restore-contract.mjs"
+          },
+          "requiredForPageSubAgent": [
+            "applyHtmlHeadContract",
+            "recordDispatchCompletion"
+          ],
+          "pathInjection": "absolute",
+          "pathContract": "Do not use {SKILL_DIR} placeholders inside Page Sub-Agent packets; use toolPaths.* absolute paths.",
+          "commandTemplates": {
+            "recordDispatchCompletion": "node \"c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs\" \"d:\\Project\\liangdanyixing\\liangdan-yixing-site\" --node-id=\"page-figures\" --html-src=\"pages/figures.html\" --status=completed --changed-files=<comma-separated-project-relative-files> --trace-digest=<main-agent-runtime-trace-digest> --tool-ledger-json=<tool-ledger-json-or-file>"
+          }
+        },
+        "cssFilePath": "d:\\Project\\liangdanyixing\\liangdan-yixing-site\\colors_and_type.css",
+        "htmlFilePath": "d:\\Project\\liangdanyixing\\liangdan-yixing-site\\pages\\figures.html",
+        "brandPrefix": "ldyx",
+        "aestheticsMode": "free-explore",
+        "toolDisciplineBlockPresent": true,
+        "fillHtmlHeadCommand": "node \"c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs\" \"d:\\Project\\liangdanyixing\\liangdan-yixing-site\\colors_and_type.css\" \"d:\\Project\\liangdanyixing\\liangdan-yixing-site\\pages\\figures.html\" --title=\"人物志\" --lang=\"zh-CN\" --prefix=\"ldyx\"",
+        "headFillMode": "skeleton-first",
+        "viewportMode": "document-scroll",
+        "completionSchemaExpected": "compact",
+        "restoreFields": null,
+        "restoreContractStatus": null,
+        "restoreCompactPacket": null,
+        "deterministicCommands": null,
+        "sourceAuthorityLock": null,
+        "preDispatchFileHashes": {
+          ".design": "63c5e869e99769bf22f653c953b65b1f3312ffc6e06dfabab9dae79e6e3f6709"
+        },
+        "contextPreflight": {
+          "workflowPath": "intent-workflows/intent-page-free-exploration/INTENT_WORKFLOW.md",
+          "requiredContextFiles": [
+            "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+            "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+            "delivery-quality/page-rendering-quality-gate.md",
+            "delivery-quality/design-artifact-validation.md",
+            "delivery-quality/delivery-evidence-contract.md",
+            "visual-experience/visual-experience-guidelines.md"
+          ],
+          "optionalContextFiles": [],
+          "passed": true
+        },
+        "pageSliceOnly": true,
+        "requiredFieldsPresent": true,
+        "missingFields": [],
+        "fillHtmlHeadCommandValid": true,
+        "mobileNavigation": {
+          "required": false,
+          "appliesToThisPage": false,
+          "canonicalHtmlIncluded": false,
+          "missingFields": []
+        },
+        "persistedToSummary": true,
+        "taskQueryAudited": false,
+        "proofSource": "summary-only",
+        "largeWorkflowFilesInTaskQuery": null
+      },
+      {
+        "recorded_at": "2026-08-15T11:26:31.082Z",
+        "generatedBy": "build-page-dispatch-manifest.mjs",
+        "packetType": "FreePagePacket",
+        "laneContract": {
+          "resolvedLane": "free_exploration",
+          "packetType": "FreePagePacket",
+          "pageRuntimeGuide": "intent-workflows/intent-page-free-exploration/free-exploration-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-page-free-exploration/dispatch-contract.md"
+        },
+        "taskLinePresent": true,
+        "outputPathPresent": true,
+        "sharedTemplate": "intent-workflows/intent-page-free-exploration/free-exploration-page-runtime.md",
+        "nodeId": "page-timeline",
+        "htmlSrc": "pages/timeline.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/timeline.html",
+          "assets/"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json",
+          "restore-contract-report.json",
+          "page-generation-summary.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/timeline.html",
+            "assets/"
+          ]
+        },
+        "skillRuntime": {
+          "skillDir": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+          "deterministicToolDir": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling",
+          "toolPaths": {
+            "applyHtmlHeadContract": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs",
+            "recordDispatchCompletion": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs",
+            "buildPageDispatchManifest": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\build-page-dispatch-manifest.mjs",
+            "validateDesignWorkspace": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-design-workspace.mjs",
+            "validateFinishReadiness": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs",
+            "validateRestoreContract": "c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-restore-contract.mjs"
+          },
+          "requiredForPageSubAgent": [
+            "applyHtmlHeadContract",
+            "recordDispatchCompletion"
+          ],
+          "pathInjection": "absolute",
+          "pathContract": "Do not use {SKILL_DIR} placeholders inside Page Sub-Agent packets; use toolPaths.* absolute paths.",
+          "commandTemplates": {
+            "recordDispatchCompletion": "node \"c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs\" \"d:\\Project\\liangdanyixing\\liangdan-yixing-site\" --node-id=\"page-timeline\" --html-src=\"pages/timeline.html\" --status=completed --changed-files=<comma-separated-project-relative-files> --trace-digest=<main-agent-runtime-trace-digest> --tool-ledger-json=<tool-ledger-json-or-file>"
+          }
+        },
+        "cssFilePath": "d:\\Project\\liangdanyixing\\liangdan-yixing-site\\colors_and_type.css",
+        "htmlFilePath": "d:\\Project\\liangdanyixing\\liangdan-yixing-site\\pages\\timeline.html",
+        "brandPrefix": "ldyx",
+        "aestheticsMode": "free-explore",
+        "toolDisciplineBlockPresent": true,
+        "fillHtmlHeadCommand": "node \"c:\\Users\\bx\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs\" \"d:\\Project\\liangdanyixing\\liangdan-yixing-site\\colors_and_type.css\" \"d:\\Project\\liangdanyixing\\liangdan-yixing-site\\pages\\timeline.html\" --title=\"时间线\" --lang=\"zh-CN\" --prefix=\"ldyx\"",
+        "headFillMode": "skeleton-first",
+        "viewportMode": "document-scroll",
+        "completionSchemaExpected": "compact",
+        "restoreFields": null,
+        "restoreContractStatus": null,
+        "restoreCompactPacket": null,
+        "deterministicCommands": null,
+        "sourceAuthorityLock": null,
+        "preDispatchFileHashes": {
+          ".design": "63c5e869e99769bf22f653c953b65b1f3312ffc6e06dfabab9dae79e6e3f6709"
+        },
+        "contextPreflight": {
+          "workflowPath": "intent-workflows/intent-page-free-exploration/INTENT_WORKFLOW.md",
+          "requiredContextFiles": [
+            "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+            "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+            "delivery-quality/page-rendering-quality-gate.md",
+            "delivery-quality/design-artifact-validation.md",
+            "delivery-quality/delivery-evidence-contract.md",
+            "visual-experience/visual-experience-guidelines.md"
+          ],
+          "optionalContextFiles": [],
+          "passed": true
+        },
+        "pageSliceOnly": true,
+        "requiredFieldsPresent": true,
+        "missingFields": [],
+        "fillHtmlHeadCommandValid": true,
+        "mobileNavigation": {
+          "required": false,
+          "appliesToThisPage": false,
+          "canonicalHtmlIncluded": false,
+          "missingFields": []
+        },
+        "persistedToSummary": true,
+        "taskQueryAudited": false,
+        "proofSource": "summary-only",
+        "largeWorkflowFilesInTaskQuery": null
+      }
+    ],
+    "wiringRegistrationEvidence": {
+      "expectedDomIds": [
+        "main-nav",
+        "hero",
+        "news-feed",
+        "figures-hero",
+        "figures-grid",
+        "timeline-hero",
+        "timeline-path",
+        "timeline-modal"
+      ],
+      "allExpectedDomIdsRegistered": true,
+      "missingDomIds": []
+    },
+    "defaultDeliverableVisibility": {
+      "applies": true,
+      "requiredVisibleRegions": [
+        {
+          "htmlSrc": "pages/index.html",
+          "selector": "#hero",
+          "label": "首页全屏海报",
+          "source": "user requirement"
+        },
+        {
+          "htmlSrc": "pages/index.html",
+          "selector": "#news-feed",
+          "label": "推送消息/新闻人物故事",
+          "source": "user requirement"
+        },
+        {
+          "htmlSrc": "pages/figures.html",
+          "selector": "#figures-grid",
+          "label": "人物志卡片网格",
+          "source": "user requirement"
+        },
+        {
+          "htmlSrc": "pages/timeline.html",
+          "selector": "#timeline-path",
+          "label": "蜿蜒时间线",
+          "source": "user requirement"
+        }
+      ],
+      "hiddenAllowed": [
+        {
+          "htmlSrc": "pages/timeline.html",
+          "selector": "#timeline-modal",
+          "reason": "modal is hidden by default and revealed by user click",
+          "state": "timeline-detail-modal-open"
+        }
+      ]
+    },
+    "readScopeLedger": [
+      {
+        "actor": "page-sub-agent",
+        "lane": "free_exploration",
+        "path": "intent-workflows/intent-page-free-exploration/free-exploration-page-runtime.md",
+        "reason": "page runtime guide",
+        "scopeClass": "page-runtime",
+        "declaredBeforeRead": true,
+        "recordedAt": "2026-08-15T11:26:31.082Z",
+        "nodeId": "page-index",
+        "htmlSrc": "pages/index.html"
+      },
+      {
+        "actor": "page-sub-agent",
+        "lane": "free_exploration",
+        "path": "intent-workflows/intent-page-free-exploration/dispatch-contract.md",
+        "reason": "dispatch contract",
+        "scopeClass": "dispatch-contract",
+        "declaredBeforeRead": true,
+        "recordedAt": "2026-08-15T11:26:31.082Z",
+        "nodeId": "page-index",
+        "htmlSrc": "pages/index.html"
+      }
+    ],
+    "mainAgentPostDispatchMutations": [
+      {
+        "path": ".design",
+        "reason": "updated-interactions-and-image-ids",
+        "owner": "main-agent",
+        "recordedAt": "2026-08-15T11:43:57.282Z",
+        "source": "record-dispatch-completion.mjs"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "nodeId": "page-index",
+      "htmlSrc": "pages/index.html",
+      "title": "首页",
+      "type": "page",
+      "deviceType": "web",
+      "viewportMode": "document-scroll",
+      "stateGroupId": null,
+      "stateRole": null,
+      "qualityRisks": [
+        "full-screen hero poster must be real image asset",
+        "scroll-reveal navigation state"
+      ]
+    },
+    {
+      "nodeId": "page-figures",
+      "htmlSrc": "pages/figures.html",
+      "title": "人物志",
+      "type": "page",
+      "deviceType": "web",
+      "viewportMode": "document-scroll",
+      "stateGroupId": null,
+      "stateRole": null,
+      "qualityRisks": [
+        "dense figure cards on mobile",
+        "avoid placeholder portraits"
+      ]
+    },
+    {
+      "nodeId": "page-timeline",
+      "htmlSrc": "pages/timeline.html",
+      "title": "时间线",
+      "type": "page",
+      "deviceType": "web",
+      "viewportMode": "document-scroll",
+      "stateGroupId": "timeline-detail",
+      "stateRole": "base",
+      "qualityRisks": [
+        "winding SVG timeline layout stability",
+        "full-screen modal overlay"
+      ]
+    }
+  ]
+}
